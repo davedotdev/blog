@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Automation: Tools vs Languages">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Automation: Tools vs Languages</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>February 20, 2019</span>
+                        </li>
+                    </ul>
+                </div>
+                <p>When it comes to expressing intent in automation workflows, there is validation in both using a task or workflow engine and also knocking it together using scripting in some language. I try not to get involved in tool or language wars, but quite honestly sometimes can’t help myself. I’ve even been known to throw fire on the fuel and get the marshmallows out.</p>
+<h4 id="task--workflow-engines">Task &amp; Workflow Engines</h4>
+<p>Sometimes a framework or tool can feel constrained and by design can force you to work in a way that is computable. Let’s take what Ansible or Mistral does. It has a set of ordered tasks, an entry point, some input variables that &ldquo;flow&rdquo; through the lists of tasks and some calls to some modules that deal with outputs. I can understand how network engineers don’t like some of these approaches because it feels like dynamic feedback is missing from the engineering. Testing through both verification and validation phases is supposed to replace that immediate dynamic feedback and it can take some time to get used to.</p>
+<p>These kinds of automation tools require installation and also the correct modules for integration against the networking components. The tool build can also be automated and thus made repeatable.</p>
+<p><strong>Pros</strong></p>
+<ul>
+<li>Re-usable declaration of intent</li>
+<li>Anyone with basic understanding of a generic tool can understand what the workflow does</li>
+<li>Forced into using proper keywords and laying out information, which is the equivalent of a programming style guide</li>
+<li>Modules for the engine handle errors so the workflow designer only has to handle workflow errors</li>
+<li>Connections are handled by the engines and engines drivers/providers. This load is taken away from you, the workflow designer</li>
+<li>Support for the tool by the vendor is normally available, plus a community of fellow users</li>
+<li>Logging and tracing is normally built in</li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
+<li>Engines, frameworks and tools can feel very constrained and remove ‘creativity’ or dynamism</li>
+<li>You’re at the mercy of a thing that might one day not be supported or backwards compatible with your deployments</li>
+<li>Engineers often have pets and choose badly based on nostalgia or social media recommendations</li>
+<li>Data manipulations are at the mercy of inbuilt or plugin type systems</li>
+<li>Semantic versioning of the data is possible with tools, but to manage estates of networking equipment with different versions of the networking software can be a challenge. In reality, dynamic loading and unloading of modules could be required</li>
+</ul>
+<h4 id="programming-languages">Programming Languages</h4>
+<p>With a script or compile-able code, you have all of the creativity power at your finger tips, but also a huge amount of rope. Not only plenty to hang yourself with, but enough rope to turn yourself into Poppa Geppetto’s favourite little wooden person.</p>
+<p>Just because a programming language has an SDK for a device, or a basic abstraction library covering a set of devices, it doesn’t mean it’s the right choice by default for your organisation or needs. Can your team code in said language? What about discipline and code intent? I’ve seen scripts without comments, any blank lines (at all) and thousand line scripts without error handling or common chunks of code put into functions. I’ve seen the two organisation heroes telling everyone to use <code>$.language</code> because it’s better. Better than what? Without a style guide to enfoce readability, maintainability and intent, you could be back at the design phase within six months because of runaway complexities and bad technical choices.</p>
+<p>That said, scripts that follow a style guide and display adhereance, can be read, understood and maintained. Be warned, this takes discipline and it doesn’t take much for engineers to moan that their creativity has been taken away (again). It’s not that this should be boring, it’s just the fact that network software is versioned, tasks can be complex, data has to be transformed and southbound handling of connections and logic can be a nightmare. Not to mention logging, tracing and observability!</p>
+<p><strong>Pros</strong></p>
+<ul>
+<li>Native use of data structures and manipulations</li>
+<li>Full control of logic flow without constraints of tool modules</li>
+<li>Fully coupled semantic versioning at your finger tips so it’s easier to keep in check with the target South-Bound API</li>
+<li>Lots of engineers are prepared to invest mental energy into learning because it’s their future</li>
+</ul>
+<p><strong>Cons</strong></p>
+<ul>
+<li>Lack of discipline just produces a pet. The creator called it Dave and put its picture on Instagram</li>
+<li>Pets to control cattle is just ironic</li>
+<li>Very few script writers handle connection management, authentication, ETL processes and real time logic well</li>
+<li>Lots of engineers want opportunities to learn and be on a stage somewhere giving their hero talk so will take selfish risks</li>
+</ul>
+<h4 id="close">Close</h4>
+<p>I don’t think there is a single answer nor a single approach. Decisions are affected by technology appetite, risk aversion, current company culture, aspirational culture, vendor involvement and management. Both approaches have their place and they’re not by nature exclusive. Both can yield both great and terrible results. One thing I always try and keep in mind is to question a severe bias to one or the other and figure out what it is actually that needs to be done. Neither is better than the other in the same way moonboots ar better than a pogo stick. Both get you from A to B.</p>
+<p>As per all technology challenges, the viewer looking at the end result, that might be a number of layers away, might not care how the process is automated. They might only care that their access port or WAN circuit is alive. Sometimes getting the job done just means that and avoiding cool.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

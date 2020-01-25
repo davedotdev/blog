@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Network Automation Engineer Persona: Part Three">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Network Automation Engineer Persona: Part Three</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>October 12, 2017</span>
+                        </li>
+                    </ul>
+                </div>
+                <p>Part three! Let’s get straight to business and carry on where we left off from <a href="/blog/2017/10/network-automation-engineer-persona-part-two/">part two</a>.</p>
+<h4 id="key-skill-one">Key Skill One</h4>
+<p>Thinking about automation in an agnostic way is your first footstep. Automation is about data flowing through building blocks that do things and decision points, allow you when to do things.</p>
+<p>Removing CLI and replacing it with an abstraction layer isn’t much of a win. For instance, I regularly talk about the process of creating a VLAN and applying it to an Ethernet switch-port on a tagged interface. This somewhat simple ‘workflow’ creates more conversational friction than imagine-able. Let’s work through it.</p>
+<p><em>Task: Create a VLAN</em>
+This task requires domain-specific parameters to a VLAN. These are: ‘VLAN_Number’ and ‘VLAN_Description’.</p>
+<p><em>Task: Apply VLAN to Switchport</em>
+This task requires domain-specific parameters to a switchport. These are: ‘Port_Name’ and ‘VLAN_Number’.</p>
+<p>Note how the inputs flow through the actions within the workflow?</p>
+<p><img src="/images/blog/networking_persona_workflow3.png#floatleft" alt="networking_persona_workflow3"></p>
+<p>The green arrows descending illustrate the ‘success transition path’ for each action component.</p>
+<p>So, what about these questions?</p>
+<ol>
+<li>Is the VLAN in use?</li>
+</ol>
+<p>We can be more specific here, but it adds complications to the answer. Version two is: “Is the VLAN in use in the network zone that the device resides in?” To get a reliable answer, we now need to model the network and test for true/false values against a rule. It might be to ensure that the VLAN doesn’t appear in a device radius of +1 around the device in question. See how complex this just got?</p>
+<ol start="2">
+<li>When I convert this flowchart to a workflow, for the task “Apply VLAN to Switchport”, how do I make sure the VLAN is applied to the correct device?</li>
+</ol>
+<p>The answer to this is “This task will accept a hostname, driver kind and credentials to reach the device”. More complexity. What is a driver in this scenario? It is something that converts our declarative information and through the process of an imperative implementation (could be an application or a script), it delivers the information transformed in device specific parlance. In other words? The input is sent to something that talks the same languages as the device. Different automation platforms have different ways of dealing with these constructs, but the theory still applies.</p>
+<ol start="3">
+<li>Is it good practice to record the changes I make?</li>
+</ol>
+<p>Yes! The reason why we have so many broken ‘sources of truth’ in our trade is because we do not record enough. We are used to making a change, then updating the ‘source of truth’. Why not change the ‘source of truth’ automatically as part of the automation? Totally possible and considered normal. What, how and where, are conversations to have with your organization.</p>
+<ol start="4">
+<li>When the data has been applied, do I validate?</li>
+</ol>
+<p>Yes, validate, but decide how deep you go before you commit to creating the workflow. For our simple example, which is already growing in complexity, there are layers of validation we can achieve. That list looks like:
+– “Check that the configuration appears in the device configuration”
+– “Check that the configuration appears in operational output (show commands in CLI parlance)”
+– “Can I see hosts on the VLAN?”. This requires gaining Layer2 and Layer3 visibility on to the VLAN using operational API calls.
+– “I’m going to ensure its passing traffic”. This approach is a separate workflow in its own right. Now we might plumb a traffic generator between a set of ports over this VLAN to ensure it’s passing traffic.</p>
+<p>Our workflow now looks different and can take many forms. We have decision making happening within the flowchart and sub-requirements for deeper integration with our target devices as well as supporting infrastructure like traffic generation capabilities.</p>
+<p>To summarise this key skill, an “agnostic view” is a key skill to develop. Network operating systems have a weird way of getting under your skin and you learn to love some and loath others. As hard as it might be, it’s time to move on.</p>
+<h4 id="key-skill-two">Key Skill Two</h4>
+<p>Figure out what your automation requirements actually are before you side with a technology.</p>
+<p>This might not sound like a skill, but our habits of siding with a network vendor and then trying to make the technology fit is an old habit. Call it cultural or bad habit, same point.</p>
+<p>Just because one platform is written in Python and another is with Ruby, it should not lead you to a decision on platform choice. Support for third-party integration is a decision point and ease of creating workflows is another. Using modern expectations, if the community is dead then the life-length might be under question.</p>
+<p>The right tool for the right job is the logical answer, but it’s a case of understanding your environment requirements end-to-end, the potential future and attitude of your organisation. Your analysis might result in listing multiple platforms. <img src="/images/blog/donkey-vs-unicorn.jpg#floatleft" alt="donkey-vs-unicorn"> This is normal and just because one platform doesn’t offer everything on your list, it does not mean the things it can do are to be discounted.</p>
+<p>This skill will allow you to be aware of Unicorns. More often than not, Unicorns are just Donkeys wearing a carrot with sparkly hooves. There is no all encompassing wonder platform. Even more fun, the offerings constantly change!</p>
+<p></br></br></br></br></p>
+<h4 id="key-skill-three">Key Skill Three</h4>
+<p>Understand how, why and when to consume vendor automation extensions. Vendor automation extensions or libraries simply provide one interface for you to consume, whilst talking something else underneath, like CLI, NETCONF or even perhaps SNMP. There are no hard or fast rules on the binding methods.</p>
+<p>Simple translation: This could be to consume an <a href="https://ansible.com/">Ansible</a> module or <a href="https://stackstorm.com/">StackStorm</a> pack. These modules and packs consume arbitrary and agnostic data and deal with the imperative how. No longer do you worry about memorizing a command, but the focus is on feeding arbitrary data parameters into a black software box and something happening on the target device.</p>
+<p>Network vendors also offer abstraction libraries. Juniper for example offer the <a href="https://github.com/Juniper/py-junos-eznc">PyEZ</a> library. These libraries are designed to be used by script writers and application developers. Unless someone has written an integration to an automation platform, deciding to consume the library requires more technical expertise to keep your environment loosely-coupled. You might wonder what this means if you’re a network engineer and a simple answer is: “Imagine automation integrations being like a child’s play set. Both play sets allow you to push shapes through shaped holes. Both play sets have a circle shape and a circle shaped hole. One circle shape might not fit through the hole on the playset it doesn’t belong to, despite the shapes being the same”. Taking a real example, creating a VLAN on one vendor library might be a direct call to a <code>createVLAN()</code> function. In another library it might be <code>runCommand(commands)</code> function. Both achieve the same thing, but now you have a different coupling method, which technically is an abstraction problem. This is referred to in general as “tightly-coupled”. It means you can’t swap one thing for another with ease.</p>
+<p>If your automation layer strategy is to arrange declarative/imperative blocks into an engineering flow chart arrangement and have data flow through it like a stream, then your stream will be choppy if it has to move around different objects and blocks. Imagine a multi-layer stream with a focus on making the top stream as smooth as possible. It’s not always possible, but you can reduce some of the pain. As a good example, <a href="https://github.com/napalm-automation/napalm">NAPALM</a> tries to do just that. For getting information each driver aims to support the same set of ‘getters’, and setting information is down to pushing specific configuration chunks over whatever mechanism the driver supports. This tool offers a <a href="http://napalm.readthedocs.io/en/latest/support/">support matrix</a> that show the potential of what ‘could’ be supported. Actual supported features against vendor platforms comes down to the implementation of each driver. This approach means you get one ‘getter’ for showing BGP neighborships for instance for all the vendor platforms supported by the tool. This means your flowchart calls the same function or module irrelevant of the vendor. To boil this point down to the basics, your automation implementation doesn’t change when you change the vendor. Going back to the stream anecdote, the stream gifts us with smooth sailing.</p>
+<p>Agnostic and good tools try to avoid introducing more entropy as their list of supported systems increases. Usage based friction is reduced and declarative modules become familiar despite the systems you are interfacing against.</p>
+<h4 id="close">Close</h4>
+<p>The next article will contain three more key skills.</p>
+<p>Notice that these skills are not product based, or vendor parlance based. These are generic skills that can be applied widely. Are these not worth investing in?</p>
+<p>Some of these skills have been approached at a high level. I’ll look at creating more articles to describe these key skills in more depth! Please make comments or email to show interest!</p>
+<p>This is part three of a four part series. <a href="/blog/2017/10/network-automation-engineer-persona-part-four/">Here is the last part</a> if you want to read on.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

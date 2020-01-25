@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Using Ciscos onePK">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Using Cisco’s onePK with Python [Beginner]</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>May 24, 2014</span>
+                        </li>
+                    </ul>
+                </div>
+                <p>This is a self contained guide on how to use <a href="http://www.cisco.com/c/en/us/products/ios-nx-os-software/onepk.html">Cisco’s onePK</a> to connect to a Cisco device running the onePK service and interact with it. As well as being a self contained guide, it’s also linked to from <a href="http://ipengineer.net/2014/05/using-ciscos-onepk-python/LINK">this</a> article which provides an overview of Python programmability. This article is not an introduction to onePK and it’s capabilities. Check <a href="http://www.cisco.com/c/dam/en/us/products/collateral/ios-nx-os-software/at_a_glance_c45-708540.pdf">this</a> link for more information around onePK.</p>
+<p>Here is the data to be obtained with code from our Cisco ISR router running onePK. If you didn’t complete the exercise described in the <a href="http://ipengineer.net/2014/05/from-cli-to-python-beginner/">introduction article</a>, it might be worth doing it to help gain the mindset. It’s not mandatory however!</p>
+<ol>
+<li>Hostname</li>
+<li>Model</li>
+<li>Uptime of each device</li>
+<li>Current software version</li>
+<li>Device serial number</li>
+<li>MAC address for each active Ethernet interface</li>
+</ol>
+<h4 id="lets-begin">Let's begin</h4>
+<p>First things first, we download either the all-in-one VM which can be found <a href="https://developer.cisco.com/site/networking/one/onepk/sdk-and-docs/all-in-one-vm/index.gsp">here</a> or download the Python SDK which can be found <a href="https://developer.cisco.com/site/networking/one/onepk/sdk-and-docs/sdk-and-docs-for-python/index.gsp">here</a>. The links may change so <a href="https://developer.cisco.com/site/devnet/home/index.gsp">here</a> is the link for the Cisco DevNet site. It goes without saying, if you download the Python SDK, you need an IOS, NX-OS or IOS-XE/XR device capable of running the onePK service. The all-in-one VM has a limited version of VIRL with vIOS which allows you to rapidly test. Finally <a href="https://developer.cisco.com/site/networking/one/onepk/documents/api-reference/python/">here</a> is the Python API page (which you’ll need from time to time!)</p>
+<p>As a summary, we’re trying to connect and call some API methods from our coding environment with the Python onePK SDK installed (or it could be a server) to a network element with the onePK service running, like so:</p>
+<p><img src="/images/blog/Element-Object-Model2.png#center" alt="Element-Object-Model2"></p>
+<h4 id="assuming-all-in-one-vm">Assuming all in one VM</h4>
+<p>As previously stated, the all-in-one VM provided by Cisco has everything we need to get started with onePK. Let’s start there and see how easily our objectives can be reached. Eclipse comes pre-loaded with examples on the VM, which provides a great starting point to get familiar with the onePK platform. Also, once the VM is launched, I tend not to work on the VM desktop, but use X11 to forward the Eclipse GUI and a separate SSH session for running the code. In order to achieve this, login to the VM like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh user@x.x.x.x -o X11Forward<span style="color:#f92672">=</span>yes
+<span style="color:#75715e"># Once you&#39;ve entered your password and logged on (or via keys etc), then start Eclipse.</span>
+eclipse
+<span style="color:#75715e"># At this point, Eclipse should appear on your desktop. Windows users need to use a tool such as Xming.</span>  
+</code></pre></div><p>Now that we have Eclipse open, ensure that you’re working from the Python workspace. Open up the file ‘BaseTutorial.py’ and take a look. What do you see? Lots more than you expected? OnePK is not a micro-framework, on first looks it appears to be a monster! With anything of this nature, documentation and a few examples is key to utilising it.</p>
+<p>First things first, let’s break down our requirements in to steps:</p>
+<ol>
+<li>Connect to Cisco ISR element via onePK and TLS (on our all-in-one VM we know that onePK is enabled. Ensure it is!)</li>
+<li>Use the hard work Cisco have already put in and reuse their code for speed.</li>
+<li>For each of our objectives, figure out the correct API method and call.</li>
+<li>Pretty print the data.</li>
+</ol>
+<p>Let’s create an object like below to help us reach and complete our objectives. Let’s follow the example from the <a href="http://ipengineer.net/2014/05/using-juniper-pyez-library">Juniper PyEZ Post</a> and populate the object directly from the constructor. This involves passing the object a device handle.</p>
+<p><img src="/images/blog/PyEZ_Object.png#center" alt="PyEZ_Object"></p>
+<h4 id="let-the-battle-commence">Let the battle commence!</h4>
+<p>But first – some basic standards to adhere to.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Methods = thisMethod()  
+Functions = thisFunction()  
+Variables  = this_is_a_value = x  
+Class   = ThisClass()  
+Fields = this_is_a_value = x  
+Private field = _private_field = x  
+Comment = # Comment blah blah stuff blah
+</code></pre></div><p>In the spirit of not creating ourselves more work than absolutely necessary, we’ll re-use the code examples provided by Cisco to get a connection to the device.</p>
+<p>So for task one in our five task list, let’s just take onePK for a test drive and connect up. In it’s most simplest form, we’ll spool up the ‘Start 3node’ link on the VM desktop which will start three vIOS routers and then fire up Eclipse ensuring that the workspace is set to the Python based onePK environment ‘home/cisco/workspace-python’. The weird thing you discover first time is that they like you to run the files from the command line. You could of course just create a run configuration within Eclipse. Next run the ‘BaseTutorial.py’ code from the base Python directory (however you choose). Just for ease here’s one I made earlier: <code>cisco@onepk:~/onePK-sdk-1.2.0.173/python/tutorials$ ./BaseTutorial.py -a 10.10.10.110 -R ~/ca.pem</code>. This connects the test onePK application to the node 10.10.10.110 and uses the certificate (ca.pem) for the TLS aspect of the connection. If this doesn’t work, you might have serious problems as this is the ‘hello world’ of onePK. If it does work, you should see something like the below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cisco@onepk:~/onePK-sdk-1.2.0.173/python/tutorials$ ./BaseTutorial.py -a 10.10.10.110 -R ~/ca.pem 
+INFO:onep:BaseTutorial:Reading arguments...
+Enter Username : dgee
+Enter Password : 
+INFO:onep:BaseTutorial:Connecting to Network Element...
+INFO:onep:BaseTutorial:We have a NetworkElement : 
+NetworkElement <span style="color:#f92672">[</span> 10.10.10.110 <span style="color:#f92672">]</span>
+
+INFO:onep:BaseTutorial:Successful connection to NetworkElement - 
+INFO:onep:BaseTutorial:Done.
+</code></pre></div><p>Task two is a little more complicated and involves some design decisions. How do we want to write the code? Do we want to create an object that self populates by passing an element reference to it? Or do we want to use Java and .Net style getters/setters to populate the object? I typically go for the tidy one and use a self populating object that does it’s magic on a single function call. That’s great for testing however it doesn’t suit every requirement, so make sure if you’re new to this that you know what all of your options are before becoming accustomed to a single design pattern. With the chosen design pattern, reusing Cisco’s code is easy. We’ll just inherit the BaseTutorial object in our object and then extend it! Simples.</p>
+<p>On to task three! If you’re a newcomer to automation and programmability, finding your way through the <a href="https://developer.cisco.com/site/networking/one/onepk/documents/api-reference/python/">API documentation</a> can be a daunting task. The information we want luckily is straight forward to get hold of. We want typical element information and a list of MAC addresses specific to active Ethernet interfaces. In summary:</p>
+<ol>
+<li>
+<p>Element information</p>
+</li>
+<li>
+<p>Active Ethernet interface information</p>
+</li>
+<li>
+<p>MAC addresses relevant to active Ethernet interfaces</p>
+</li>
+</ol>
+<p>Analysing the BaseTutorial object, all of our information is directly available from that barring interface lists. The object methods below facilitate us to get this data:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">_hostname <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_element_hostname()
+_properties <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_network_element()<span style="color:#f92672">.</span>properties
+_model <span style="color:#f92672">=</span> _properties<span style="color:#f92672">.</span>product_id
+_uptime <span style="color:#f92672">=</span> _properties<span style="color:#f92672">.</span>sys_uptime
+_version <span style="color:#f92672">=</span>_properties<span style="color:#f92672">.</span>version_id
+_serial <span style="color:#f92672">=</span> _properties<span style="color:#f92672">.</span>SerialNo
+</code></pre></div><p>So next job, our active interface list! How to go about this? We need to get a list of interfaces, then get the status. Then for every active interface, obtain the MAC address. This was the code I opted for. It works and is fairly clean. The first line returns a reference to the network element we have a connection to. Once we have the element, the second line returns a list of interfaces. We then iterate over the list and get a status for each interface using a for loop, which then has a conditional statement which checks to make sure the interface is operational. If the interface is operational then it obtains configuration data for the interface and populates the dictionary object (_interfaces) with a name (key) and the ‘mac_address’ (value) pair.</p>
+<h4 id="whoaa-hold-on-how-did-you-find-this-stuff">Whoaa, hold on, how did you find this stuff?</h4>
+<p>Jumped ahead a bit there. Sorry! In the code sample above, the hostname variable is populated by the get_element_hostname() method that was inherited from the ‘BaseTutorial’ object. Check the source code of that module in Eclipse. The element ‘_properties’ object is populated by returning the get_network_element().properties field from the ‘BaseTutorial’ object. Once we have properties object, we can just call what we need from that. Find API references below for the information just covered off:</p>
+<p><a href="https://developer.cisco.com/media/onepk_python_api/onep.element.NetworkApplication.NetworkApplication-class.html#get_network_element">Link for <code>get_network_element()</code></a></p>
+<p><a href="https://developer.cisco.com/media/onepk_python_api/onep.element.ElementProperty.ElementProperty-class.html">Link for <code>get_network_element().properties</code></a></p>
+<p>The next step involves acquiring a list of interfaces, obtaining the status, then iterating over the list to pull the MAC addresses. After some searching around the API documentation, below are the links I found which achieved this set of tasks:</p>
+<p><a href="https://developer.cisco.com/media/onepk_python_api/onep.interfaces.InterfaceFilter.InterfaceFilter-class.html">Link for <code>InterfaceFilter</code></a></p>
+<p><a href="https://developer.cisco.com/media/onepk_python_api/onep.element.NetworkElement.NetworkElement-class.html#get_interface_list">Link for <code>get_interface_list()</code></a></p>
+<p><a href="https://developer.cisco.com/media/onepk_python_api/onep.interfaces.NetworkInterface.NetworkInterface-class.html#get_status">Link for <code>get_status()</code></a></p>
+<p><a href="https://developer.cisco.com/media/onepk_python_api/onep.interfaces.NetworkInterface.NetworkInterface-class.html#get_config">Link for <code>get_config()</code></a></p>
+<p>Once we have the mechanisms to obtain the required data, all we need to do now is wield them and get it!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">_element <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_network_element()
+_filter <span style="color:#f92672">=</span> InterfaceFilter(None,InterfaceTypes<span style="color:#f92672">.</span>ONEP_IF_TYPE_ETHERNET)
+_int_list <span style="color:#f92672">=</span> _element<span style="color:#f92672">.</span>get_interface_list(_filter)
+        
+<span style="color:#66d9ef">for</span> _interface <span style="color:#f92672">in</span> _int_list:
+    _intStatus <span style="color:#f92672">=</span> _interface<span style="color:#f92672">.</span>get_status()
+
+    <span style="color:#66d9ef">if</span> (_intStatus<span style="color:#f92672">.</span>link <span style="color:#f92672">==</span> InterfaceStatusTypes<span style="color:#f92672">.</span>ONEP_IF_STATE_OPER_UP <span style="color:#f92672">and</span> _intStatus<span style="color:#f92672">.</span>lineproto <span style="color:#f92672">==</span> InterfaceStatusTypes<span style="color:#f92672">.</span>ONEP_IF_STATE_OPER_UP):
+        _intConfig <span style="color:#f92672">=</span> NetworkInterface<span style="color:#f92672">.</span>get_config(_interface)
+        <span style="color:#75715e"># The next line updates a dictionary object called &#39;_interfaces&#39;</span>
+        self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>update({_intStatus<span style="color:#f92672">.</span>interface_name : _intConfig<span style="color:#f92672">.</span>mac_address })
+</code></pre></div><p>In order for us to run this code, the following modules need to be imported. I’ve also included the Enums (enumerations), which allows us to reference states in our case with values such as ‘ONEP_IF_STATE_OPER_UP’ instead of ‘3’. Although Python doesn’t officially support Enums as a native type, you can define your own type and be done with it (as Cisco have done). Mapping of Enums are the two lines at the bottom.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> onep.interfaces <span style="color:#f92672">import</span> InterfaceFilter
+<span style="color:#f92672">from</span> onep.interfaces <span style="color:#f92672">import</span> InterfaceStatus
+<span style="color:#f92672">from</span> onep.interfaces <span style="color:#f92672">import</span> NetworkInterface
+<span style="color:#f92672">from</span> onep.element <span style="color:#f92672">import</span> NetworkElement
+<span style="color:#f92672">from</span> onep.core.util <span style="color:#f92672">import</span>  OnepConstants
+<span style="color:#f92672">from</span> onep.core.util <span style="color:#f92672">import</span> enum
+
+InterfaceTypes <span style="color:#f92672">=</span> NetworkInterface<span style="color:#f92672">.</span>InterfaceTypes
+InterfaceStatusTypes <span style="color:#f92672">=</span> InterfaceStatus<span style="color:#f92672">.</span>InterfaceState
+</code></pre></div><p>The final task it to make the information presentable to the end user, administrator or operator. This involves creating a <code>def __str__(self):</code> method in our class object and printing the information in string representation. The code for that object is directly below. It’s straight forward. We create a pretty title in ASCII, then go through each field and then iterate over the interface information.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> __str__(self):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    This is our special print function which returns a string (text) version of the object.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    We need to build our text up and structure it. We do this by appending the required text to a variable</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    which we</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ve called </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">return_string</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    n is a special sequence to insert a new line and t (can you guess?) is a tab.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    Once our string is complete, we </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">return</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> it to the caller.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+    return_string <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Element Report</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hostname:tt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_hostname)
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Model:ttt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_model)
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Uptime:ttt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_uptime)
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Version:tt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_version)
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Serial:ttt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_serial)
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n </span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Active Interface List    return_string += 40*</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> +</span><span style="color:#e6db74">&#34;</span>n<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"></span>
+        
+    <span style="color:#66d9ef">for</span> _key <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>keys        
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Interface </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(_key) <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> MAC is </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>get(_key)) <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+    
+    return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+               
+    <span style="color:#66d9ef">return</span> return_string 
+</code></pre></div><p>At the bottom of the page is the complete code listing. In Eclipse (because you’re using that right?) create a new package and call it what you will. Create a new .py file and drop the code in and save. Either via the bash shell or a run configuration, give the code a whirl. Directly below is the pretty output we so desire! Note that the version number is missing. This is a development limited version of vIOS so we can’t expect miracles!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cisco@onepk:~/onePK-sdk-1.2.0.173/python/tutorials$ ./ACMELift/ACMELift.py -a 10.10.10.110 -R ~/ca.pem
+INFO:onep:NetElementBase:Reading arguments...
+Enter Username : dgee
+Enter Password : 
+INFO:onep:BaseTutorial:We have a NetworkElement : 
+NetworkElement <span style="color:#f92672">[</span> 10.10.10.110 <span style="color:#f92672">]</span>
+
+INFO:onep:BaseTutorial:Successful connection to NetworkElement - 
+Connected to Network Element 10.10.10.110
+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>
+                        Element Report
+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>
+Hostname:               10.10.10.110
+Model:                  IOSv
+Uptime:                 216521
+Version:		
+Serial:                 9DOX22DL6UTZJVXWO2ZA5
+----------------------------------------
+          Active Interface List
+----------------------------------------
+Interface GigabitEthernet0/3 MAC is 52.54.00.c0.9f.3e
+Interface GigabitEthernet0/2 MAC is 52.54.00.46.d6.7f
+Interface GigabitEthernet0/1 MAC is 52.54.00.6d.11.f9
+Interface GigabitEthernet0/0 MAC is 52.54.00.10.30.12
+----------------------------------------
+</code></pre></div><p>And the code. Please note I’ve left in ‘code’ which allows you to enter interactive mode and play with the loaded objects using the Python functions <code>help(x)</code> and <code>dir(x)</code>. If you can’t figure how to handle an object I highly recommend doing this.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
+
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># * Copyright (c) 2010-2013 by Cisco Systems, Inc.</span>
+<span style="color:#75715e"># *</span>
+<span style="color:#75715e"># * THIS SAMPLE CODE IS PROVIDED &#34;AS IS&#34; WITHOUT ANY EXPRESS OR IMPLIED WARRANTY</span>
+<span style="color:#75715e"># * BY CISCO SOLELY FOR THE PURPOSE of PROVIDING PROGRAMMING EXAMPLES.</span>
+<span style="color:#75715e"># * CISCO SHALL NOT BE HELD LIABLE FOR ANY USE OF THE SAMPLE CODE IN ANY</span>
+<span style="color:#75715e"># * APPLICATION.</span>
+<span style="color:#75715e"># *</span>
+<span style="color:#75715e"># * Redistribution and use of the sample code, with or without</span>
+<span style="color:#75715e"># * modification, are permitted provided that the following conditions</span>
+<span style="color:#75715e"># * are met:</span>
+<span style="color:#75715e"># * Redistributions of source code must retain the above disclaimer.</span>
+<span style="color:#75715e"># </span>
+<span style="color:#75715e"># package: NetElementInfoObjs.interfaces</span>
+
+<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74"># </span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74"> The goal is to get network element attributes as below and pretty print them.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74"> </span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">1.  Hostname</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">2.  Model</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">3.  Uptime of each device</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">4.  Current software version</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">5.  Device serial number</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">6.  MAC address for each active Ethernet interface</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74"> </span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  @author The onePK Team (onepk-feedback@cisco.com) and modified by @LSP42</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">  </span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+<span style="color:#f92672">import</span> logging
+<span style="color:#f92672">from</span> BaseTutorial <span style="color:#f92672">import</span> BaseTutorial
+<span style="color:#f92672">from</span> onep.interfaces <span style="color:#f92672">import</span> InterfaceFilter
+<span style="color:#f92672">from</span> onep.interfaces <span style="color:#f92672">import</span> InterfaceStatus
+<span style="color:#f92672">from</span> onep.interfaces <span style="color:#f92672">import</span> NetworkInterface
+<span style="color:#f92672">from</span> onep.element <span style="color:#f92672">import</span> NetworkElement
+<span style="color:#f92672">from</span> onep.core.util <span style="color:#f92672">import</span>  OnepConstants
+<span style="color:#f92672">from</span> onep.core.util <span style="color:#f92672">import</span> enum
+<span style="color:#f92672">import</span> code
+
+InterfaceTypes <span style="color:#f92672">=</span> NetworkInterface<span style="color:#f92672">.</span>InterfaceTypes
+InterfaceStatusTypes <span style="color:#f92672">=</span> InterfaceStatus<span style="color:#f92672">.</span>InterfaceState
+logger <span style="color:#f92672">=</span> logging<span style="color:#f92672">.</span>getLogger(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">onep:NetElementBase</span><span style="color:#e6db74">&#39;</span>)
+logger<span style="color:#f92672">.</span>setLevel(logging<span style="color:#f92672">.</span>INFO)
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ACMENetData</span>(BaseTutorial):
+    _hostname <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    _model <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    _uptime <span style="color:#f92672">=</span>  <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    _version <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    _serial <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    _interfaces <span style="color:#f92672">=</span> {}
+    _element <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+    _properties <span style="color:#f92672">=</span> []
+    
+    <span style="color:#66d9ef">def</span> __str__(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        This is our special print function which returns a string (text) version of the object.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        We need to build our text up and structure it. We do this by appending the required text to a variable</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        which we</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ve called </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">return_string</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        n is a special sequence to insert a new line and t (can you guess?) is a tab.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        Once our string is complete, we </span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">return</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> it to the caller.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+        return_string <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Element Report</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hostname: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_hostname)
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Model: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_model)
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Uptime: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_uptime)
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Version: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_version)
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Serial: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_serial)
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Active Interface Listn</span><span style="color:#e6db74">&#34;</span>
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+        
+        <span style="color:#66d9ef">for</span> _key <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>keys():
+            return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Interface </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(_key) <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> MAC is </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>get(_key)) <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+            
+        return_string <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">40</span><span style="color:#f92672">*</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+               
+        <span style="color:#66d9ef">return</span> return_string 
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_data</span>(self):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        This method obtains the required data and populates the fields in this object.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+        self<span style="color:#f92672">.</span>_element <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_network_element()
+        self<span style="color:#f92672">.</span>_hostname <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_element_hostname()
+        self<span style="color:#f92672">.</span>_properties <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>get_network_element()<span style="color:#f92672">.</span>properties
+        self<span style="color:#f92672">.</span>_model <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_properties<span style="color:#f92672">.</span>product_id
+        self<span style="color:#f92672">.</span>_uptime <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_properties<span style="color:#f92672">.</span>sys_uptime
+        self<span style="color:#f92672">.</span>_version <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_properties<span style="color:#f92672">.</span>version_id
+        self<span style="color:#f92672">.</span>_serial <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_properties<span style="color:#f92672">.</span>SerialNo
+        
+        <span style="color:#75715e">#_element = self.get_network_element()</span>
+        _filter <span style="color:#f92672">=</span> InterfaceFilter(None,InterfaceTypes<span style="color:#f92672">.</span>ONEP_IF_TYPE_ETHERNET)
+        _int_list <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>_element<span style="color:#f92672">.</span>get_interface_list(_filter)
+        
+        <span style="color:#66d9ef">for</span> _interface <span style="color:#f92672">in</span> _int_list:
+            _intStatus <span style="color:#f92672">=</span> _interface<span style="color:#f92672">.</span>get_status()
+            
+            <span style="color:#66d9ef">if</span> (_intStatus<span style="color:#f92672">.</span>link <span style="color:#f92672">==</span> InterfaceStatusTypes<span style="color:#f92672">.</span>ONEP_IF_STATE_OPER_UP <span style="color:#f92672">and</span> _intStatus<span style="color:#f92672">.</span>lineproto <span style="color:#f92672">==</span> InterfaceStatusTypes<span style="color:#f92672">.</span>ONEP_IF_STATE_OPER_UP):
+                _intConfig <span style="color:#f92672">=</span> NetworkInterface<span style="color:#f92672">.</span>get_config(_interface)
+                self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>update({_intStatus<span style="color:#f92672">.</span>interface_name : _intConfig<span style="color:#f92672">.</span>mac_address })
+                    
+                    
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
+    <span style="color:#f92672">import</span> sys
+    NetElementObj <span style="color:#f92672">=</span> ACMENetData(sys<span style="color:#f92672">.</span>argv)
+    logger<span style="color:#f92672">.</span>info(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Reading arguments...</span><span style="color:#e6db74">&#34;</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> NetElementObj<span style="color:#f92672">.</span>parse_command_line():
+        logger<span style="color:#f92672">.</span>error(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Error in parsing arguments</span><span style="color:#e6db74">&#34;</span>)
+        sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+
+    <span style="color:#66d9ef">try</span>:
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> NetElementObj<span style="color:#f92672">.</span>connect(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ISR1</span><span style="color:#e6db74">&#34;</span>):
+            sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+        
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Connected to Network Element </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> str(NetElementObj<span style="color:#f92672">.</span>get_element_hostname())
+        
+        NetElementObj<span style="color:#f92672">.</span>get_data()
+        <span style="color:#66d9ef">print</span> NetElementObj
+        
+                 
+        code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals())
+    
+    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span>, e:
+        <span style="color:#66d9ef">print</span> e
+    <span style="color:#66d9ef">finally</span>:
+        
+        
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Disconnecting from the Network Element</span><span style="color:#e6db74">&#34;</span>
+        NetElementObj<span style="color:#f92672">.</span>disconnect()
+        sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">0</span>)
+</code></pre></div><p>Please feel free to comment whether it be positive or negative. All feedback is gratefully received and helps to improve the quality of future posts.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

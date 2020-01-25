@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/git/</link>
+    <description>Recent content in Git on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Sep 2019 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.dev/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Replacing a Network Element Config System with Git</title>
+      <link>https://dave.dev/blog/2019/09/replacing-network-element-config-system-git/</link>
+      <pubDate>Mon, 09 Sep 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/09/replacing-network-element-config-system-git/</guid>
+      <description>In this post I’ll explore replacing the heart of a network operating system’s configuration mechanism with the software developers take on version control.</description>
+    </item>
+    
+    <item>
+      <title>Git For Network Engineers</title>
+      <link>https://dave.dev/blog/2015/04/git-for-network-engineers/</link>
+      <pubDate>Tue, 07 Apr 2015 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2015/04/git-for-network-engineers/</guid>
+      <description>What is Git?
+Git is a source control manager (SCM), also known as revision control.</description>
+    </item>
+    
+  </channel>
+</rss>

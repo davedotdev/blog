@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Linux Systemd &amp; Golang Services using Kardianos Service">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Linux Systemd &amp; Golang Services using Kardianos Service</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>March 15, 2017</span>
+                        </li>
+                    </ul>
+                </div>
+                <p><img src="/images/blog/gopher.png#center" alt="Gopher"></p>
+<p>This week I have done something new, but I found myself dealing with a ‘zero knowledge’ situation or something I like to call ZKS. This is one of those ones where it’s fun, but it also feels a bit stressy as there was enough rope to hang myself with.</p>
+<p>That something new is Systemd, which is a Linux operating system thing that manages the initialisation of user things. To speak about this more technically, it is a drop in replacement ‘init’ system that starts services and sets up the user environment. Wikipedia has this to say about it:</p>
+<blockquote>
+<p>Systemd is an init system used in Linux distributions to bootstrap the user space and manage all processes</p>
+</blockquote>
+<p>For those lacking <a href="http://www.zdnet.com/article/linus-torvalds-and-others-on-linuxs-systemd/">historic knowledge</a> around systemd, it previously many upset devs and administrators, which in turn setup a site called ‘boycottsystemd’ which looks to be offline. They said it flies in the face of doing it the Unix way, which is (to summarise) do one thing and do it well. Systemd is now the default init system for Ubuntu 15x and newer releases. Can’t be that bad…right?</p>
+<p>Whilst this is not a complete education around systemd, it’s popular and is reasonably easy to understand from a ‘getting things done’ aspect. This article is targeted at networking people and here’s the odd thing about networking, we rarely have to worry about how services start on the operating systems we’ve used for years. Cisco IOS, JunOS, NOS, whatever, they all start services for us and have never had to run about it. Linux provides us with fun like this as the power is in our hands. We can start services in whatever state or target state the underlying operating system is in. We can add services ourselves, destroy services and generally we have the power to cause utter chaos. However, don’t be scared. Like anything tech, be foolish and get bitten. Do the right thing or at least try and most people will forgive you for the odd error here and there.</p>
+<h4 id="fun-of-the-circus">Fun Of The Circus</h4>
+<p>The crux of this story begins here. I’ve been building a pack for StackStorm which allows users to create rules for regular expression pattern matching on syslogs sent to a special syslog collector I’ve written in Go. It’s very ‘alpha’ at the minute and the source code is not open sourced for the Golang part. The ST2 pack (with binaries) is available here:</p>
+<p><a href="https://github.com/DavidJohnGee/ghost2loggeralpha">https://github.com/DavidJohnGee/ghost2loggeralpha</a></p>
+<p>Also see the video:</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/JnxoNuIs2hE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>The Golang code might be open sourced one day and it needs tidying from an aesthetic point of view, but it works and is efficient at what it does. Like most things Golang, I use channels and go routines quite heavily. Also I spit out logs via Stdout and via a log file for easy debugging of issues as and when they come up, plus getting a general feel to ensure that things are running smoothly. This causes other issues though as if I try to run this in the background, the Stdout messages (i.e. fmt.Print) pop out on the terminal.</p>
+<p>My first attempt at releasing a Go binary to use a service was just a dumb console application which I ran in ‘screen’. Screen allows you to start an application in the foreground and then detach, leaving it running in the ‘back ground’. During writing this ‘service’ I also experienced a few high cpu bugs where something wasn’t yielding properly, which lead me down a rat maze. If the app ran in the foreground, everything was fine. If it ran in the background, CPU rocketed to 90%+. A little strange initially, but I found the problems and mended them. Much late night head scratching.</p>
+<p>When I posted the Ghost2logger YouTube video, Irek Romaniuk got in touch about the pack and also made me aware of something I previously wasn’t. That thing is a project by GitHub user Kardianos called <a href="https://github.com/kardianos/service">service</a>. Turns out it solved my requirement to create a service that systemd can handle as well as still being able run in the foreground. Superb! It also handles MacOS (Darwin), Linux and Windows. One of my difficulties is I develop on OSX and cross compile for Linux. Can you see the circus now? Thanks as well to <a href="http://ipengineer.net/2017/03/linux-systemd-golang-services-using-kardianos-service/">William Kennedy</a> for writing this post: <a href="https://www.goinggo.net/2013/06/running-go-programs-as-background.html">https://www.goinggo.net/2013/06/running-go-programs-as-background.html</a> This was also recommended reading by Irek and proved to be both an excellent knowledge dump and educational.</p>
+<p>Starting off quite simply with <a href="https://github.com/kardianos/service/blob/master/example/simple/main.go">this</a> example file, I was able to port my code to ‘service’ with ease. I always launch go routines in main() (we all have our habits), so converting my code was a breeze. Almost drag and drop! I had to do a little more wiring like passing in my <code>svcConfig</code> into the <code>program{}</code> struct, but it works a treat. This service project also allows me to run run either in service mode or foreground mode. It’s the gift that keeps on giving!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Copyright 2015 Daniel Theophanes.
+</span><span style="color:#75715e"></span><span style="color:#75715e">// Use of this source code is governed by a zlib-style
+</span><span style="color:#75715e"></span><span style="color:#75715e">// license that can be found in the LICENSE file.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// simple does nothing except block while running the service.
+</span><span style="color:#75715e"></span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+    <span style="color:#e6db74">&#34;log&#34;</span>
+
+    <span style="color:#e6db74">&#34;github.com/kardianos/service&#34;</span>
+)
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">logger</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">Logger</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">program</span> <span style="color:#66d9ef">struct</span>{}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">program</span>) <span style="color:#a6e22e">Start</span>(<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">Service</span>) <span style="color:#66d9ef">error</span> {
+    <span style="color:#75715e">// Start should not block. Do the actual work async.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">go</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">run</span>()
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+}
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">program</span>) <span style="color:#a6e22e">run</span>() {
+    <span style="color:#75715e">// Do work here
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">p</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">program</span>) <span style="color:#a6e22e">Stop</span>(<span style="color:#a6e22e">s</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">Service</span>) <span style="color:#66d9ef">error</span> {
+    <span style="color:#75715e">// Stop should not block. Return with a few seconds.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+    <span style="color:#a6e22e">svcConfig</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">Config</span>{
+        <span style="color:#a6e22e">Name</span>:        <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">GoServiceExampleSimple</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;,
+        <span style="color:#a6e22e">DisplayName</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">Go</span> <span style="color:#a6e22e">Service</span> <span style="color:#a6e22e">Example</span><span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;,
+        <span style="color:#a6e22e">Description</span>: <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;<span style="color:#a6e22e">This</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">an</span> <span style="color:#a6e22e">example</span> <span style="color:#a6e22e">Go</span> <span style="color:#a6e22e">service</span>.<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">quot</span>;,
+    }
+
+    <span style="color:#a6e22e">prg</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">amp</span>;<span style="color:#a6e22e">program</span>{}
+    <span style="color:#a6e22e">s</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">service</span>.<span style="color:#a6e22e">New</span>(<span style="color:#a6e22e">prg</span>, <span style="color:#a6e22e">svcConfig</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+    }
+    <span style="color:#a6e22e">logger</span>, <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Logger</span>(<span style="color:#66d9ef">nil</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">Fatal</span>(<span style="color:#a6e22e">err</span>)
+    }
+    <span style="color:#a6e22e">err</span> = <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">Run</span>()
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        <span style="color:#a6e22e">logger</span>.<span style="color:#a6e22e">Error</span>(<span style="color:#a6e22e">err</span>)
+    }
+}
+</code></pre></div><p>Finally, I created (well, stole from another service to be blunt) <a href="https://github.com/DavidJohnGee/ghost2loggeralpha/blob/master/sensors/ghost2logger.service">this service file</a> for ghost2logger.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">[Unit]
+Description=Ghost2logger Service for ST2
+Documentation=https://github.com/DavidJohnGee/ghost2logger
+
+[Service]
+Type=simple
+ExecStart=/opt/stackstorm/packs/ghost2logger/sensors/ghost2logger-linux-x64-alpha-service
+StandardOutput=null
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+Alias=ghost2logger.service
+</code></pre></div><h4 id="want-to-test">Want To Test?</h4>
+<p>Download the ST2 pack using the below. You will also need to generate an st2-api-key and place it in the pack config file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">st2 pack install github.com/DavidJohnGee/ghost2loggeralpha
+</code></pre></div><p>Copy the service file to systemd</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ghost2logger.service file to /etc/systemd/system/
+</code></pre></div><p>Start the service</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl start ghost2logger.service
+</code></pre></div><p>Voila. From here you can check that ghost2logger is working by issuing the ss command below. First you need to get the PID of our running service. We can get this from systemctl.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ubuntu@st2vagrant:/opt/stackstorm/packs/ghost2logger/sensors$ systemctl status ghost2logger.service
+● ghost2logger.service - Ghost2logger Service <span style="color:#66d9ef">for</span> ST2
+   Loaded: loaded <span style="color:#f92672">(</span>/etc/systemd/system/ghost2logger.service; enabled; vendor preset: enabled<span style="color:#f92672">)</span>
+   Active: active <span style="color:#f92672">(</span>running<span style="color:#f92672">)</span> since Wed 2017-03-15 12:14:22 UTC; 2h 2min ago
+     Docs: https://github.com/DavidJohnGee/ghost2logger
+ Main PID: <span style="color:#ae81ff">18789</span> <span style="color:#f92672">(</span>ghost2logger-li<span style="color:#f92672">)</span>
+    Tasks: 7
+   Memory: 1.6M
+      CPU: 439ms
+   CGroup: /system.slice/ghost2logger.service
+           └─18789 /opt/stackstorm/packs/ghost2logger/sensors/ghost2logger-linux-x64-alpha-service
+
+Mar <span style="color:#ae81ff">15</span> 12:14:22 st2vagrant systemd<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>: Started Ghost2logger Service <span style="color:#66d9ef">for</span> ST2.
+Mar <span style="color:#ae81ff">15</span> 12:14:22 st2vagrant Ghost2logger<span style="color:#f92672">[</span>18789<span style="color:#f92672">]</span>: Starting Ghost2logger
+
+ubuntu@st2vagrant:/opt/stackstorm/packs/ghost2logger/sensors$ sudo ss -nlp | grep 18789
+u_dgr  UNCONN     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>         * <span style="color:#ae81ff">1116380</span>               * <span style="color:#ae81ff">8995</span>                users:<span style="color:#f92672">(</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ghost2logger-li&#34;</span>,pid<span style="color:#f92672">=</span>18789,fd<span style="color:#f92672">=</span>5<span style="color:#f92672">)</span><span style="color:#f92672">)</span>
+udp    UNCONN     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        :::514                  :::*                   users:<span style="color:#f92672">(</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ghost2logger-li&#34;</span>,pid<span style="color:#f92672">=</span>18789,fd<span style="color:#f92672">=</span>8<span style="color:#f92672">)</span><span style="color:#f92672">)</span>
+tcp    LISTEN     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">128</span>      :::12023                :::*                   users:<span style="color:#f92672">(</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ghost2logger-li&#34;</span>,pid<span style="color:#f92672">=</span>18789,fd<span style="color:#f92672">=</span>7<span style="color:#f92672">)</span><span style="color:#f92672">)</span>
+</code></pre></div><h4 id="journal-journald-journalctl--logging">Journal, Journald, Journalctl &amp; Logging</h4>
+<p>We’ve not covered logging yet, which is excellent on Systemd based machines. If you use the logger implementation that Kardianos himself has provided, it logs to the Systemd journal system. Journald is the daemon that deals with the actual logging and ‘journalctl’ is the tool we can use to grab our logs! I’ve built a function which aggregates all informational logging in Ghost2logger, so whether it’s running in the foreground or as a service, logs make it somewhere. When we run Ghost2logger as a systemd service, logs hit the journal. We can find those logs by running this command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">journalctl -f -u ghost2logger.service
+</code></pre></div><p>-f gives us the most recent
+-u is the systemd unit, in our case, the ghost2logger.service unit.</p>
+<h4 id="show-me-some-useful-systemd-stuff">Show Me Some Useful Systemd Stuff</h4>
+<p>These are the bash commands I found helpful whilst figuring out the basics of Systemd, where”x” is the name of your service.
+Mask and unmask (the only non self-explanatory arguments) prevent the service from starting on boot and allow it to start on boot.
+I did find a reference to enable and disable, but they were not accepted on my version, so have purposefully left them off the list below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl status x.service
+systemctl start x.service
+systemctl stop x.service
+systemctl restart x.service
+systemctl reload x.service
+systemctl mask x.service
+systemctl unmask x.service
+systemctl list-unit-files –type<span style="color:#f92672">=</span>service
+</code></pre></div><h4 id="sources-of-info-you-might-find-useful">Sources of Info You Might Find Useful</h4>
+<ul>
+<li>
+<p><a href="">https://www.howtogeek.com/216454/how-to-manage-systemd-services-on-a-linux-system/</a></p>
+</li>
+<li>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units">https://www.digitalocean.com/community/tutorials/how-to-use-systemctl-to-manage-systemd-services-and-units</a></p>
+</li>
+<li>
+<p><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sect-Managing_Services_with_systemd-Unit_Files.html</a></p>
+</li>
+<li>
+<p><a href="http://www.devdungeon.com/content/creating-systemd-service-files">http://www.devdungeon.com/content/creating-systemd-service-files</a></p>
+</li>
+<li>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs">https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs</a></p>
+</li>
+</ul>
+<p>Thanks and happy hacking.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

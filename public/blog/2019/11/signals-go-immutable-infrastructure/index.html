@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Signals, Go &amp; Immutable Infrastructure">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Signals, Go &amp; Immutable Infrastructure</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>November 23, 2019</span>
+                        </li>
+                    </ul>
+                </div>
+                <p><img src="/images/blog/arsonistgopher_small.png#center" alt="gopher"></p>
+<p>From the days of old, setting fire to a large torch would signal to a neighbouring town something was going on. On the Great Wall in China, reports of signals reaching some 470 miles can be read on <a href="https://en.wikipedia.org/wiki/Smoke_signal">Wikipedia!</a>. Back to the future and modern day times, signals are transmitted and received as part of every application we touch. Signals underpin a system’s communications, irrelevant of what that system is. Software gives off many signals of a wide variety in normal operations and through signal correlation, we can yield useful events. Signals can also be used to achieve an outcome in a remote system as well as direct application API calls.</p>
+<p>Being a fan of systems that have a natural synergy to them, I also look for ways to tie application functionality into natural system interactions.</p>
+<p>For this post, I want to talk about the separation of concerns between an application’s functionality via it’s primary operational interface, likely an API of some sort, versus the application’s operational configuration, which allows it start on the correct TCP/IP port and consume the correct credential information.</p>
+<p>Why not just get the application to refresh its configuration through the operational interface? The best way I can explain this would be akin to trying to chop ones axe wielding arm off whilst attempting to chop off the branch of the tree you’re sitting on with said arm.</p>
+<h4 id="usable-signals">Usable Signals</h4>
+<p>Whether an application is hosted in a Docker container or on an operating system directly, we can consume signals emitted from the kernel towards our application to achieve some operational tasks. Information below is relevant for Unix, Linux and OSX.</p>
+<p><strong>SIGKILL</strong></p>
+<p>We can intercept this signal and have our application code exit gracefully and safely. It doesn’t have to be a panic situation if we need to exit. If the application doesn’t exit on a <code>SIGKILL</code>, then it can be forcibly exited with <code>kill -9</code> being initiated from the operating system.</p>
+<p><strong>SIGINT</strong></p>
+<p>This signal interrupts a process, typically by <code>Ctrl+C</code>, <code>break</code> or <code>delete</code>.</p>
+<p><strong>SIGHUP</strong></p>
+<p>This signal is from the days of modem connectivity and represents a “Signal Hung-up” from the network. It can also be used to tell an application to reload its configuration as well as the controlling terminal has been closed.</p>
+<p><strong>SIGUSR1, SIGUSR2</strong></p>
+<p>These are custom signals and there are no recommended uses for them. If you use these signals, ensure that usage is documented in your code and user documentation.</p>
+<p><strong>SENDING THE SIGNAL</strong>
+It’s a little disconcerting perhaps that in order to transmit your desired signal, the ‘kill’ application is used.</p>
+<ol>
+<li>
+<p>Get the process ID (PID) of the target application. If your application doesn’t store it’s PID in a file, then you can use the traditional methods to find the PID like using ps.</p>
+</li>
+<li>
+<p>Once you have the PID, you can use kill &ndash;signal SIGHUP $PID to send the signal, in this case, it sends SIGHUP.</p>
+</li>
+</ol>
+<h4 id="so-how-do-we-intercept-the-signal">SO HOW DO WE INTERCEPT THE SIGNAL?</h4>
+<p>The example code I am using here is readily available from the <a href="https://gobyexample.com/signals">https://gobyexample.com</a> website.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;os&#34;</span>
+	<span style="color:#e6db74">&#34;os/signal&#34;</span>
+	<span style="color:#e6db74">&#34;sync&#34;</span>
+	<span style="color:#e6db74">&#34;syscall&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+	<span style="color:#a6e22e">sigs</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Signal</span>, <span style="color:#ae81ff">1</span>)
+
+	<span style="color:#a6e22e">signal</span>.<span style="color:#a6e22e">Notify</span>(<span style="color:#a6e22e">sigs</span>)
+
+	<span style="color:#a6e22e">wg</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>{}
+	<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Add</span>(<span style="color:#ae81ff">1</span>)
+
+	<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">wg</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">sync</span>.<span style="color:#a6e22e">WaitGroup</span>) {
+		<span style="color:#66d9ef">for</span> {
+			<span style="color:#a6e22e">sig</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">sigs</span>
+
+			<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sig</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGINT</span> {
+				<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Received SIGINT, exiting&#34;</span>)
+				<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Done</span>()
+				<span style="color:#66d9ef">break</span>
+			} <span style="color:#66d9ef">else</span> {
+				<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Received: &#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">sig</span>.<span style="color:#a6e22e">String</span>())
+			}
+		}
+	}(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">wg</span>)
+
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;PID is: %d\n&#34;</span>, <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Getpid</span>())
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Awaiting signal...&#34;</span>)
+	<span style="color:#a6e22e">wg</span>.<span style="color:#a6e22e">Wait</span>()
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exiting()&#34;</span>)
+}
+</code></pre></div><p><em>I edited this code just shortly after publishing to be idiomatic with regards to sync and WaitGroups. Without a significant hall-pass, it was just a bad display of an example.</em></p>
+<p>Next, compile the code and invoke it. The output below is from the sample application.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"> $ go build
+ $ ./signals
+PID is: 4440
+Awaiting signal...
+Received: user defined signal 1
+Received: hangup
+^CReceived S
+</code></pre></div><p>Output below is from a bash terminal where I sent signals to the application.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Check for the available signals</span>
+$ kill -l
+HUP INT QUIT ILL TRAP ABRT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM <span style="color:#ae81ff">16</span> CHLD CONT STOP TSTP TTIN TTOU URG XCPU XFSZ VTALRM PROF WINCH POLL <span style="color:#ae81ff">30</span> SYS
+ 
+ $ kill -s USR1 4440
+ $ kill -s HUP <span style="color:#ae81ff">4440</span> 
+</code></pre></div><h4 id="close">Close</h4>
+<p>I hope this post was useful and despite it seeming kind of obvious, it’s a really useful pattern to embrace for your run-time configuration. With regards to immutable infrastructure, it could seem an anti-pattern, but being able to update the configuration of one container or service without restarting it potentially with much wider disruption, it feels like a nice capability instead of an anti one.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

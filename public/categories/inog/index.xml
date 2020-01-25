@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>iNOG on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/inog/</link>
+    <description>Recent content in iNOG on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Jul 2018 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.dev/categories/inog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iNOG-10 &amp; RIPE-Hackathon</title>
+      <link>https://dave.dev/blog/2018/07/inog-10-ripe-hackathon/</link>
+      <pubDate>Thu, 05 Jul 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/07/inog-10-ripe-hackathon/</guid>
+      <description>In June 2018, I was lucky enough to attend the iNOG::10 session in Dublin, co-present a talk and also take part in the RIPE hackathon.</description>
+    </item>
+    
+  </channel>
+</rss>

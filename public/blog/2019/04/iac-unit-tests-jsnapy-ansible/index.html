@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="IaC – unit tests with jSNAPy and Ansible">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>IaC – unit tests with jSNAPy and Ansible</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>April 24, 2019</span>
+                        </li>
+                    </ul>
+                </div>
+                <p>JSNAPY is an open source tool released by Juniper Networks circa 2015 that is the Python version of the Juniper Snapshot Administrator. This tool in the most simplest sense gives us the ability to have unit-tests when working with Junos, much in the same way a developer would write tests against their code. JSNAPy creates snapshots of a device’s operational or configurational state, the content of which depends on tests. JSNAPy then can diff and check these snapshots, which when combined with your test logic, means you can detect when things change or don’t change as per your desire. It’s a simple but effective tool when working with Junos. In fact, if you have another system to take the snapshot, JSNAPy is really an XML snippet checking tool and thus, it can be used for multi-vendored environments!!!</p>
+<p>JSNAPy is a great tool for not only dealing with operational changes, but also also for steady state change operations too through the use of both <code>pre</code> and <code>post</code> tests and the logical operators JSNAPy supports. It’s worth mentioning you can call the snaps and tests anything you want. Bob and Alice are both valid examples of a snap name, but the advice here is to use meaningful naming.</p>
+<p>All tests and configuration are written in YAML and are quite simple providing you spend five minutes to get acquainted with the keywords.</p>
+<p>Here are the installation instructions in case you haven’t installed it yet: <a href="https://github.com/Juniper/jsnapy/wiki/1.-Installation">https://github.com/Juniper/jsnapy/wiki/1.-Installation</a></p>
+<p>Just in case you didn’t know, JSNAPy can also be used in Ansible directly, the gains of which need to be said. Here is a link to an Ansible example to help shortcut the ramp-up time! <a href="https://github.com/arsonistgopher/Juniper5StepDemos/tree/master/Ansible">https://github.com/arsonistgopher/Juniper5StepDemos/tree/master/Ansible</a></p>
+<p>Here are the logical test operators supported by JSNAPy at the time of writing.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">- Execute Tests Over Elements with Numeric or String Values
+    1. all-same: Check if all content values for the specified element are the same. It can also be used to compare 
+                 all content values against another specified element.
+           - all-same: flap-count
+             checks if all values of node &lt;flap-count&gt; in given Xpath is same or not.
+
+    2. is-equal: Check if the value (integer or string) of the specified element matches a given value.
+           - is-equal: admin-status, down
+             check if value of node &lt;admin-status&gt; in given Xpath is down or not.  
+
+    3. not-equal: Check if the value (integer or string) of the specified element does not match a given value.
+           - not-equal: oper-status, down
+             check that value of node &lt;oper-status&gt; should not be equal to down.  
+
+    4. exists:  verifies the existence of an XML element in the snapshot.
+           - exists: no-active-alarm 
+             checks if node &lt;/no-active-alarm&gt; is present or not  
+ 
+    5. not-exists: verifies xml element should not be present in snapshot
+           -not-exists: no-active-alarm 
+            checks &lt;/no-active-alarm &gt; node should not be present in snapshot.  
+
+    6. contains: determines if an XML element string value contains the provided test-string value.
+           - contains: //package-information/name[1], jbase
+           checks if jbase is present in given node or not. 
+
+    7. not-contains: determines if an XML element string value does not contain the provided test-string value.
+           - not-contains: //output, sync_alarm
+           checks if sync_alarm is present in given node or not.
+
+ - Execute Tests Over Elements with Numeric Values
+    1. is-gt: Check if the value of a specified element is greater than a given numeric value.
+            - is-gt: cpu-total, 2
+              checks value of &lt;cpu-total&gt; should be greater than 2  
+
+    2. is-lt: Check if the value of a specified element is lesser than a given numeric value.
+            - is-lt temperature, 55
+              checks value of &lt;temperature&gt; is 55 or not.  
+
+    3. in-range: Check if the value of a specified element is in the given numeric range.
+            - in-range memory-buffer-utilization, 20, 70 
+              check if value of &lt;memory-buffer-utilization&gt; is in range of 20, 70  
+
+    4. not-range: Check if the value of a specified element is outside of a given numeric range.
+              - not-range: memory-heap-utilization, 5 , 40
+                checks if value of &lt;memory-heap-utilization&gt; is not in range of 5 to 40
+
+ - Execute Tests Over Elements with String Values: 
+    1. contains: determines if an XML element string value contains the provided test-string value.
+           - contains: //package-information/name[1], jbase
+             checks if jbase is present in given node or not.
+
+    2. not-contains: determines if an XML element string value does not contain the provided test-string value.
+           - not-contains: //output, sync_alarm
+           checks if sync_alarm is present in given node or not.
+
+    3. is-in: Check if the specified element string value is included in a given list of strings.
+           - is-in: oper-status, down, up
+             check if value of &lt;oper-status&gt; in is list (down, up)  
+
+    4. not-in: Check if the specified element string value is NOT included in a given list of strings.
+           - not-in :oper-status, down, up
+             check if value of &lt;oper-status&gt; in not in list (down, up)
+</code></pre></div><p><em>Taken from <a href="https://github.com/Juniper/jsnapy/wiki">https://github.com/Juniper/jsnapy/wiki</a></em></p>
+<p>JSNAPy is great for use in upgrade &amp; update scenarios. The aim is to ‘finger print’ the pre change state and then take another fingerprint of the post state for comparison.</p>
+<p><strong>Junos Upgrade</strong></p>
+<p>You want to update Junos on a production device in the quickest and most reliable way possible. JSNAPy can be used to snapshot the state of interfaces, routing protocols and general health from both an operational and configuration perspective. Anywhere we can access XML data (everywhere on Junos), we can use JSNAPy to snapshot and run checks!</p>
+<ol>
+<li>Take pre snapshots of test hotspot areas, for example:</li>
+</ol>
+<ul>
+<li>Number of routes in <code>inet.0</code> routing table</li>
+<li>Number of interfaces in physical up state</li>
+<li>Number of BGP peers in the established state</li>
+</ul>
+<ol start="2">
+<li>
+<p>Upgrade Junos</p>
+</li>
+<li>
+<p>Take new post snapshots after a short period of time (to allow protocols and state to settle)</p>
+</li>
+<li>
+<p>Run JSNAPy checks to ensure the <code>post</code> state is the same as the <code>pre</code> state</p>
+</li>
+</ol>
+<p>This is a pretty straight forward example and the <code>is-equal</code> test operator will suffice here. The trickiest thing will be to find the correct XML xpath statement with regards to pinning the data described in the short list.</p>
+<p><strong>Addition of an Interface</strong></p>
+<p>This one isn’t so straight forward as ensuring the pre state matches the post state and so examples are included! Also the pre test is being used as a collision check to make sure that the network attribute isn’t being used before we intend to use it! If you’re familiar with Junos, you’ll also understand that if an interface isn’t configured, you just won’t see it in the configuration XML. If it’s an SFP based line card or fixed-form device, chances are you also won’t see it in the operational XML if the SFP is missing. All the fun of the circus with this example and exactly why I chose to write about it.</p>
+<p>The way to deal with JSNAPy in this scenario is based on the logic of XML elements missing for pre-tests and on the logic of XML elements being present and correct for the post checks.</p>
+<p>First of all, we need device configuration files for JSNAPy which are here:</p>
+<p>Pre-configuration:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext"># Pre-Test for basic automation
+hosts:
+  - device: demo01
+    username: tf
+    passwd: Passw0rd
+tests:
+  - ./tests/pre.yml
+</code></pre></div><p>Post configuration:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext"># Post-Test for basic automation
+hosts:
+  - device: demo01
+    username: tf
+    passwd: Passw0rd
+tests:
+  - ./tests/post.yml
+</code></pre></div><p>Github link for pre config <a href="https://github.com/arsonistgopher/Juniper5StepDemos/blob/master/Terraform/pre.yml">here</a>.
+Github link for post config <a href="https://github.com/arsonistgopher/Juniper5StepDemos/blob/master/Terraform/post.yml">here</a>.</p>
+<p>The workflow for the set of pre tests looks like below:</p>
+<ol>
+<li>Check that interface <code>ge-0/0/42</code> isn’t configured</li>
+<li>Check that <code>irb.42</code> isn’t configured</li>
+<li>Check that the <code>VLAN DT</code> isn’t configured – <em>DT for DeepThought, a large and beefy server that likes watching TV</em></li>
+</ol>
+<p>We could take this further and ensure that the VLAN number isn’t in use, so let’s assume we have one source-of-truth and name/number is tightly coupled. Also, we could add another test in the style of the existing ones if you’re paranoid!</p>
+<p>Here are the actual pre tests. Note we iterate through the list of interfaces and check that all of them are not equal. Take the <code>test_phy</code> test as an example, here we check that each name of the interface in the interface list is NOT equal to <code>ge-0/0/42</code>. Simple but effective logic.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">test_phy:
+  - rpc: get-config
+  - kwargs:
+      filter_xml: configuration/interfaces
+  - iterate:
+      id: ./name
+      xpath: &#39;interfaces/interface&#39;
+      tests:
+        - not-equal: name, ge-0/0/42
+          info: &#34;Interface does not exist&#34;
+          err: &#34;-&#34;
+
+test_irb:
+  - rpc: get-config
+  - kwargs:
+      filter_xml: configuration/interfaces
+  - iterate:
+      id: ./name
+      xpath: &#39;interfaces/interface[name=&#34;irb&#34;]/unit&#39;
+      tests:
+        - not-equal: name, 42
+          info: &#34;Interface does not exist&#34;
+          err: &#34;-&#34;
+
+test_vlan:
+  - rpc: get-config
+  - kwargs:
+      filter_xml: configuration/vlans
+  - iterate:
+      id: ./vlan
+      xpath: &#39;vlans/vlan&#39;
+      tests:
+        - not-equal: name, DT
+          info: &#34;VLAN does not exist&#34;
+          err: &#34;-&#34;
+</code></pre></div><p>GitHub link for pre test <a href="https://github.com/arsonistgopher/Juniper5StepDemos/blob/master/Terraform/tests/pre.yml">here</a>.</p>
+<p>The workflow for the post test is a little different to the pre. We’ll check for direct matches and do not iterate through the list.</p>
+<ol>
+<li>Check that interface <code>ge-0/0/42</code> exists</li>
+<li>Check that <code>irb.42</code> exists</li>
+<li>Check that <code>VLAN DT</code> exists</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">test_phy:
+  - rpc: get-config
+  - kwargs:
+      filter_xml: configuration/interfaces
+  - item:
+      id: ./name
+      xpath: &#39;interfaces/interface[name=&#34;ge-0/0/42&#34;]&#39;
+      tests:
+        - is-equal: name, ge-0/0/42
+          info: &#34;Interface exists&#34;
+          err: &#34;-&#34;
+
+test_irb:
+  - rpc: get-config
+  - kwargs:
+      filter_xml: configuration/interfaces
+  - item:
+      id: ./name
+      xpath: &#39;interfaces/interface[name=&#34;irb&#34;]/unit[name=&#34;42&#34;]&#39;
+      tests:
+        - is-equal: name, 42
+          info: &#34;Interface exists&#34;
+          err: &#34;-&#34;
+
+test_vlan:
+  - rpc: get-config
+  - kwargs:
+      filter_xml: configuration/vlans
+  - item:
+      id: ./vlan
+      xpath: &#39;vlans/vlan[name=&#34;DT&#34;]&#39;
+      tests:
+        - is-equal: name, DT
+          info: &#34;VLAN exists&#34;
+          err: &#34;-&#34;
+</code></pre></div><p>GitHub link for post test <a href="https://github.com/arsonistgopher/Juniper5StepDemos/blob/master/Terraform/tests/post.yml">here</a>.</p>
+<h4 id="executing-tests">Executing Tests</h4>
+<p>JSNAPy tests are super easy to run providing you have it installed and the credentials to the device under test are correct.</p>
+<p>The below example shows running both the pre and post tests using the <code>--snapcheck</code> switch. This switch makes JSNAPy do a snapshot and also perform a check against the tests referenced by the <code>x.yml</code> file the command line call references.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">JSNAPy --snapcheck pre -f pre.yml
+JSNAPy --snapcheck post -f post.yml
+</code></pre></div><h4 id="close">Close</h4>
+<p>Whilst this post doesn’t serve as a full blown guide with install, it does deliver some “how-to” logic if you’re wondering about the tool.</p>
+<p>Hopefully this post has proved to be a useful view into a use of JSNAPy and has delivered some value in payment for your time.</p>
+<p>You may want to trigger these tests within a CI/CD pipeline as separate stages to really get the value out of the tool and tests. This way, tests that fail can prevent the pipeline from progressing any further in the case of pre tests and failed post tests can be used to trigger revert workflows.</p>
+<p><strong>Useful Links</strong></p>
+<p>– Matt Oswalt wrote about JSNAPy <a href="https://keepingitclassless.net/2018/02/unit-testing-junos-with-jsnapy/">here</a>.</p>
+<p>– <a href="https://labs.networkreliability.engineering/advisor/courseplan.html?lessonId=12">NRELabs has a JSNAPy lesson</a> which means you can use it for free and extremely quickly in a browser session.</p>
+<p>– <a href="https://github.com/Juniper/jsnapy/blob/master/README">https://github.com/Juniper/jsnapy/blob/master/README</a></p>
+<p>– <a href="https://github.com/Juniper/jsnapy/wiki/2.-Writing-test-and-config-file">https://github.com/Juniper/jsnapy/wiki/2.-Writing-test-and-config-file</a></p>
+<p>– <a href="https://github.com/Juniper/jsnapy/wiki/3.-Command-Line-Tool">https://github.com/Juniper/jsnapy/wiki/3.-Command-Line-Tool</a></p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

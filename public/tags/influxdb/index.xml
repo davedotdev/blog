@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>InfluxDB on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/influxdb/</link>
+    <description>Recent content in InfluxDB on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Aug 2018 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.dev/tags/influxdb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Junos Kafka &amp; InfluxDB Exporters</title>
+      <link>https://dave.dev/blog/2018/08/junos-kafka-influxdb-exporters/</link>
+      <pubDate>Thu, 23 Aug 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/08/junos-kafka-influxdb-exporters/</guid>
+      <description>This post acts as the introduction for two other posts, which cover Junos data collection tools for Kafka and InfluxDB.</description>
+    </item>
+    
+  </channel>
+</rss>

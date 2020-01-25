@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Global Multicast Addressing: IPv4 and IPv6">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>IPv4 and IPv6 Global Multicast Addressing</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>October 15, 2013</span>
+                        </li>
+                    </ul>
+                </div>
+                <p>This is a short post covering globally unique multicast IP addresses for both IPv4 and IPv6; this does not cover IGMP, MLD, PIM, BGP-MP, MSDP or any other MC technology other than global addressing. Whole books are dedicated to multicast so I’ll try and keep this focussed!</p>
+<p>Multicast is often misunderstood and can be an uphill battle for those who are fresh to the technology. There can be quite a few moving parts to a multicast deployment, all of which are covered by the network friendly “it depends” statement.</p>
+<p>March 1992 the MBone appeared on the internet, the Multicast Internet Backbone which used an application called SDR (Session DiRectory tool) to view what sessions were underway. Many multicast sessions were enjoyed across the infantile backbone, including live concerts by The Rolling Stones, NASA space walks and web broadcasts such as NANOG meetings.</p>
+<p>The MBone was in fact not a physically disparate network, but one of the first network overlays that provided tunnels between different networks to transit multicast packets. The MBone is forgot about these days, however, there are IXPs globally such as LINX that have a separate peering multicast platform for Autonomous Systems (ASes) enable inter-AS multicast connectivity. Most ISPs limit intra-AS multicast to their own set of services such as cable TV, or on demand films, so don’t expect much joy on that front. Next generation multicast VPNs (i.e. MPLS L3 VPN supporting MC) are also sold as a premium service by ISPs, so they’re not going to give this stuff away for free J</p>
+<p>Multicast is one of those things that crops up every now and then, so it’s always worth holding on to the knowledge and expanding it. Also with overlay networking becoming so prevalent, most of the technology gets released with multicast requirements first, with unicast lagging by a release or so. I still think there’s life in the old dog yet. Sure, with more bandwidth you could always argue multicast is superfluous, but as it’s user traffic that keeps pushing the demand for bandwidth, this never ending cycle could be improved on with higher usage of multicast, especially on the internet.</p>
+<p>Global Multicast addressing is one of those things that you normally know about if you’ve had a requirement to use it, if not, you may not even know it exists. Globally unique (i.e. public) multicast addresses exist for both IPv4 and IPv6. There are numerous ways to get this address space, but the journey normally starts with IANA and registering a block of AD-HOC space. There really isn’t a need to do this though if you’re just starting out with inter-AS multicast.</p>
+<p>Finally, if you’re wondering why there is any interest at all in this, with so many users joining the internet every year, it’s inevitable at some point that multicast usage will be picked up. On-demand TV, films and events delivered over a heterogeneous medium is desirable. Would you agree? The BBC have tried this several times: <a href="http://support.bbc.co.uk/multicast/">http://support.bbc.co.uk/multicast/</a></p>
+<p>Now that I’ve veered off the beaten track, I’ll jump back on it with the two sections below.</p>
+<h4 id="global-multicast-addressing-ipv4-glop">Global Multicast Addressing: IPv4 GLOP</h4>
+<p>If you have a 16 bit ASN (AS Number), you already have a /24 prefix of globally unique multicast addresses. Cool right? This is known as GLOP addressing. GLOP doesn’t actually stand for anything. Just a made up term to describe the method below: “GLOP it together”!</p>
+<pre><code>Multicast GLOP Prefix range: 233.x.x.y/24
+(where X.X is your 16 bit ASN split in two bytes)
+</code></pre><p>Let’s take a well-known ASN of 31459 (BBC – from the link above), split this to form 2x octets:</p>
+<pre><code>+--------+----------------------+
+ASN      | 31459 = BBC          |
++--------+----------------------+
+Binary   | 0111 1010 1110 0011  |
++--------+----------------------+
+Octets   | 122       227        |
++--------+----------------------+
+</code></pre><pre><code>BBC Range = &lt;strong&gt;233.122.227/24&lt;/strong&gt;
+</code></pre><p>This is defined in <a href="http://tools.ietf.org/html/rfc3180">RFC 3180</a>.</p>
+<p>What if you do not have a 16 bit ASN? Do not panic. <a href="http://tools.ietf.org/html/rfc6034">RFC 6034</a> defines a different method as the RFC extract demonstrates below.</p>
+<pre><code>A multicast address with the prefix 234/8 indicates that the address is a Unicast-Based Multicast (UBM) address. The remaining 24 bits are used as follows:
++-------+-------------------+-----------------------+---------------+
+Bits:   |       0 thru 7    |         8 thru N      |  N+1 thru 31  |
++-------+-------------------+-----------------------+---------------+
+Value:  |        234        |      Unicast Prefix   |   Group ID    |
++-------+-------------------+-----------------------+---------------+
+</code></pre><p>So, ok, if you have a /24, you might not have a great range as you’ll have a single IPv4 multicast address as demonstrated:</p>
+<pre><code>Existing /24:    &lt;strong&gt;192.168.10.0/24&lt;/strong&gt;
+&lt;em&gt;(Using RFC1918 for demonstration purposes)&lt;/em&gt;
+
+Multicast group: &lt;strong&gt;234.192.168.10&lt;/strong&gt;
+</code></pre><p>It goes without saying, the larger the block of unicast address space you have, the more multicast address space you can get. If you have a prefix longer than a /24 are you scuppered? You can ask your provider to borrow addresses from a pool of RFC6034 or RFC3180 addresses. As long as it’s all documented and track-able, it’s down to the discretion of the provider.</p>
+<h4 id="global-multicast-addressing-ipv6">Global Multicast Addressing: IPv6</h4>
+<p>I am a huge fan of IPv6, so I’ll treat IPv6 the same as IPv4. GLOP doesn’t exist for IPv6; however, “Unicast-Prefix-Based IPv6 Multicast” does, a bit like Unicast Based Multicast (UBM) for IPv4. It’s also worth having a read of <a href="http://www.ietf.org/rfc/rfc4291.txt">RFC 4291</a> which covers IPv6 addressing.</p>
+<p><a href="http://tools.ietf.org/html/rfc3306">RFC 3306</a> references the actual multicast addressing method used.</p>
+<p><a href="http://tools.ietf.org/html/rfc2373">RFC 2373</a> is inherited by <a href="http://tools.ietf.org/html/rfc3306">RFC 3306</a> for the explanation of certain flags. Both are well worth a read.</p>
+<p>An excerpt from RFC3306.</p>
+<pre><code>This document introduces a new format that incorporates unicast prefix information in the multicast address. The following illustrates the new format:
+
++--------+----+----+--------+------+----------------+----------+
+|   8    | 4  | 4  |    8   |   8  |        64      |    32    |
++--------+----+----+--------+------+----------------+----------+
+|11111111|flgs|scop|reserved| plen | network prefix | group ID |
++--------+----+----+--------+------+----------------+----------+
+
+11111111 at the start of the address identifies the address as being a multicast address.
+
+flgs is a set of 4 flags: |0|0|P|T|
+
+scope
+1 = Node
+2 = Link
+5 = Site
+8 = Organization
+E = Global
+
+
+o P = 0 indicates a multicast address that is not assigned based on the network prefix. 
+This indicates a multicast address as defined in [&lt;a title=&quot;&amp;quot;IP Version 6 Addressing Architecture&amp;quot;&quot; href=&quot;http://tools.ietf.org/html/rfc3306#ref-ADDRARCH&quot;&gt;ADDRARCH&lt;/a&gt;].
+
+o P = 1 indicates a multicast address that is assigned based on the network prefix.
+
+o If P = 1, T MUST be set to 1, otherwise the setting of the T bit is defined in Section 2.7 of [&lt;a title=&quot;&amp;quot;IP Version 6 Addressing Architecture&amp;quot;&quot; href=&quot;http://tools.ietf.org/html/rfc3306#ref-ADDRARCH&quot;&gt;ADDRARCH&lt;/a&gt;].
+
+T = 0 indicates a permanently-assigned (&quot;well-known&quot;) multicast address, assigned by the  global internet numbering authority.
+
+T = 1 indicates a non-permanently-assigned (&quot;transient&quot;) multicast address.
+
+The reserved field MUST be zero.
+
+plen indicates the actual number of bits in the network prefix field that identify the subnet when P = 1.
+</code></pre><p>So if we take a prefix such as: 2a00:bb40:1:1/64, the multicast version looks like:
+<em>At the time of writing, this address block was under my own RIPE account</em>.</p>
+<pre><code>FF3E:40:2A00:BB40:1:1/96 = 32 bits worth of multicast 
+group addresses!!!
+
+FF3E = Multicast assigned based on unicast prefix of global scope
+
+40 = prefix length in hex of /64
+</code></pre><p>Bye for now.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

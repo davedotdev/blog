@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Project on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/project/</link>
+    <description>Recent content in Project on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Apr 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.dev/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Zen of Sailing Through IT Projects</title>
+      <link>https://dave.dev/blog/2015/04/the-zen-of-sailing-through-it-projects/</link>
+      <pubDate>Tue, 07 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2015/04/the-zen-of-sailing-through-it-projects/</guid>
+      <description>For those of you who have worked in large companies, it’s common territory to be stuck riding waves on a ship without a sail.</description>
+    </item>
+    
+  </channel>
+</rss>

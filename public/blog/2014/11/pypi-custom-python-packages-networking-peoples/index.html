@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Custom Python Packages With PyPi For Networking Peoples">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Custom Python Packages With PyPi For Networking Peoples</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>November 16, 2014</span>
+                        </li>
+                    </ul>
+                </div>
+                <p><img src="/images/blog/pypi.jpg#center" alt="pypi"></p>
+<p>Quite frequently I write and build code to control and harvest data from network infrastructure. Whether it’s writing modules for a stack automation tool like Ansible or writing modules for run to completion scripts, code is often spawned to meet requirements. Sometimes this code is more than a little complex with many dependencies. In addition, sometimes code is written to extend an existing module, like the Python NetConf library NCClient. This happened recently for example when the NCClient library failed to meet expectations.</p>
+<p>Two options exist for complicated projects from an arbitrary point of view:</p>
+<ol>
+<li>Include all of the dependencies in a directory and provide everything including the kitchen sink to allow your code to function as per design.</li>
+<li>Create an installable which takes care of all dependencies.</li>
+</ol>
+<p>With Python, option 2. is an interesting one that I’ve never previously thought about doing.</p>
+<p>Information for this post and my initial requirement came from these two sources which were most helpful:</p>
+<p><a href="http://www.scotttorborg.com/python-packaging/minimal.html">http://www.scotttorborg.com/python-packaging/minimal.html</a>
+<a href="http://peterdowns.com/posts/first-time-with-pypi.html">http://peterdowns.com/posts/first-time-with-pypi.html</a></p>
+<h4 id="pypi-introduction">PyPi Introduction</h4>
+<p>How many times have you installed a module using something like
+<code>sudo pip install 'blah'</code> without really wondering what the repository is that hosts the code for you to just automagically install it?</p>
+<p><a href="http://pypi.python.org/">PyPi</a> is a hosted package index that anyone can setup an account on for free, which ultimately helps you deliver your code in a nice installable. Matt Oswalt (<a href="http://twitter.com/mierdin">@Mierdin</a>) via Twitter queried layer eight issues, of which there are non. No membership, no costs, it’s just down to you to create something that works and accept it’s a widely used system for indexing packages. It’s a little more complex than just creating an account however and this post covers off where to get started and what worked for me including some lessons learnt.</p>
+<p>Finally, there is also a test PyPi repository for you to run tests against and explore with which is found <a href="http://testpypi.python.org/">here</a>. The ability to test against something which gets wiped from time to time is great as it means you can bash away without worrying about clearing up your learning aftermath! Whilst I recommend you use the testpypi repo, this blog post does not use it for testing as this is a very simple example. Technically, the run through is identical baring the use of testpypi instead of the production pypi index.</p>
+<h4 id="project-structure">Project Structure</h4>
+<p>For a project to be made in to an installable and eventually uploaded to PyPi, a structure needs to be applied to your project directories which includes a <code>setup.py</code> file amongst other things. Using a real example, let’s take my project “ipngxmlr2d”. This project uses <code>libxml</code> and returns a dictionary of child element rows, with a custom ingress point to a given XML tree. Please note too that this article was written with Mac users in mind, but should work for Windows users in a round about way. The file structure is shown below. Note that the actual code is in the <code>__init__.py</code> file and not shown for the purpose of brevity. The file structure in itself is quite prescriptive and it is wise not to deviate from the pattern found in the two articles linked to at the beginning of this blog post.</p>
+<p><img src="/images/blog/Init_Tree.png#center" alt="Init_Tree"></p>
+<p>For anyone who’s familiar with Eclipse, you’ll notice that the directory is also a .git repository. This article does not go in to git, but git is a snapshot system that allows you to check files in and out. It is at a high level a popular version control system. Not this:</p>
+<p><img src="/images/blog/git.png#center" alt="git"></p>
+<p>In addition, this project is on GitHub located <a href="http://github.com/davidjohngee/ipngxr2d">here</a>. Also if you’re not sharing code, then shame on you! Get yourself an account at <a href="https://github.com/">https://github.com</a> right now! Not only is it good to share, by welcoming the criticism of your peers, you can only get better at this!</p>
+<p>Here is the content of the <code>setup.py</code> file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Copyright 2014 David Gee (@davidjohngee)</span>
+
+<span style="color:#f92672">from</span> setuptools <span style="color:#f92672">import</span> setup, find_packages
+<span style="color:#f92672">from</span> distutils.command.install <span style="color:#f92672">import</span> install <span style="color:#66d9ef">as</span> _install
+
+<span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> platform
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> sys<span style="color:#f92672">.</span>version_info[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>:
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Sorry, Python 3 is not supported (yet)</span><span style="color:#e6db74">&#34;</span>
+    exit()
+
+<span style="color:#66d9ef">if</span> sys<span style="color:#f92672">.</span>version_info[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">and</span> sys<span style="color:#f92672">.</span>version_info[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">&amp;</span>lt; <span style="color:#ae81ff">6</span>:
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Sorry, Python &amp;lt; 2.6 is not supported</span><span style="color:#e6db74">&#34;</span>
+    exit()
+
+setup(name<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ipngxr2d</span><span style="color:#e6db74">&#39;</span>,
+      version<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">0.1</span><span style="color:#e6db74">&#39;</span>,
+      description<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Python XML parsing utility returning dictionary of children (uses lxml)</span><span style="color:#e6db74">&#34;</span>,
+      long_description <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Python XML utility for returning a dictionary of dictionaries from XML children.</span><span style="color:#e6db74">&#34;</span>,
+      author<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">David Gee</span><span style="color:#e6db74">&#34;</span>,
+      author_email<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">david.gee@ipengineer.net</span><span style="color:#e6db74">&#34;</span>,
+      url<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">https://github.com/DavidJohnGee/ipngxr2d</span><span style="color:#e6db74">&#34;</span>,
+      packages<span style="color:#f92672">=</span>find_packages(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">.</span><span style="color:#e6db74">&#39;</span>),
+      license<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Apache License 2.0</span><span style="color:#e6db74">&#34;</span>,
+      platforms<span style="color:#f92672">=</span>[<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Posix; OS X; Windows</span><span style="color:#e6db74">&#34;</span>],
+      keywords<span style="color:#f92672">=</span>(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">XML Parser</span><span style="color:#e6db74">&#39;</span>),
+      classifiers<span style="color:#f92672">=</span>[
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Development Status :: 5 - Production/Stable</span><span style="color:#e6db74">&#39;</span>,
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Programming Language :: Python :: 2.6</span><span style="color:#e6db74">&#39;</span>,
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Programming Language :: Python :: 2.7</span><span style="color:#e6db74">&#39;</span>,
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Topic :: System :: Networking</span><span style="color:#e6db74">&#39;</span>,
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Intended Audience :: Developers</span><span style="color:#e6db74">&#39;</span>,
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Operating System :: OS Independent</span><span style="color:#e6db74">&#39;</span>,
+          <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Topic :: Software Development :: Libraries :: Python Modules</span><span style="color:#e6db74">&#39;</span>,
+      ]
+      )
+</code></pre></div><p>Before building a package and registering it against PyPi, let’s make sure this code is usable locally.</p>
+<h4 id="local-test">Local Test</h4>
+<p>From the directory of the project, I ran the following bash command to generate the build and install locally in to my Python install directory.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Davids-MacBook-Pro-2:ipngxr2d davidgee$ sudo python setup.py install
+</code></pre></div><p>The output looked like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">running install
+Checking .pth file support in /Library/Python/2.7/site-packages/
+/usr/bin/python -E -c pass
+TEST PASSED: /Library/Python/2.7/site-packages/ appears to support .pth files
+running bdist_egg
+running egg_info
+creating ipngxr2d.egg-info
+writing ipngxr2d.egg-info/PKG-INFO
+writing top-level names to ipngxr2d.egg-info/top_level.txt
+writing dependency_links to ipngxr2d.egg-info/dependency_links.txt
+writing manifest file <span style="color:#e6db74">&#39;ipngxr2d.egg-info/SOURCES.txt&#39;</span>
+reading manifest file <span style="color:#e6db74">&#39;ipngxr2d.egg-info/SOURCES.txt&#39;</span>
+writing manifest file <span style="color:#e6db74">&#39;ipngxr2d.egg-info/SOURCES.txt&#39;</span>
+installing library code to build/bdist.macosx-10.9-intel/egg
+running install_lib
+running build_py
+creating build
+creating build/lib
+creating build/lib/ipngxr2d
+copying ipngxr2d/__init__.py -&gt; build/lib/ipngxr2d
+creating build/bdist.macosx-10.9-intel
+creating build/bdist.macosx-10.9-intel/egg
+creating build/bdist.macosx-10.9-intel/egg/ipngxr2d
+copying build/lib/ipngxr2d/__init__.py -&gt; build/bdist.macosx-10.9-intel/egg/ipngxr2d
+byte-compiling build/bdist.macosx-10.9-intel/egg/ipngxr2d/__init__.py to __init__.pyc
+creating build/bdist.macosx-10.9-intel/egg/EGG-INFO
+copying ipngxr2d.egg-info/PKG-INFO -&gt; build/bdist.macosx-10.9-intel/egg/EGG-INFO
+copying ipngxr2d.egg-info/SOURCES.txt -&gt; build/bdist.macosx-10.9-intel/egg/EGG-INFO
+copying ipngxr2d.egg-info/dependency_links.txt -&gt; build/bdist.macosx-10.9-intel/egg/EGG-INFO
+copying ipngxr2d.egg-info/top_level.txt -&gt; build/bdist.macosx-10.9-intel/egg/EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating dist
+creating <span style="color:#e6db74">&#39;dist/ipngxr2d-0.1-py2.7.egg&#39;</span> and adding <span style="color:#e6db74">&#39;build/bdist.macosx-10.9-intel/egg&#39;</span> to it
+removing <span style="color:#e6db74">&#39;build/bdist.macosx-10.9-intel/egg&#39;</span> <span style="color:#f92672">(</span>and everything under it<span style="color:#f92672">)</span>
+Processing ipngxr2d-0.1-py2.7.egg
+Removing /Library/Python/2.7/site-packages/ipngxr2d-0.1-py2.7.egg
+Copying ipngxr2d-0.1-py2.7.egg to /Library/Python/2.7/site-packages
+ipngxr2d 0.1 is already the active version in easy-install.pth
+
+Installed /Library/Python/2.7/site-packages/ipngxr2d-0.1-py2.7.egg
+Processing dependencies <span style="color:#66d9ef">for</span> ipngxr2d<span style="color:#f92672">=</span><span style="color:#f92672">=</span>0.1
+Finished processing dependencies <span style="color:#66d9ef">for</span> ipngxr2d<span style="color:#f92672">=</span><span style="color:#f92672">=</span>0.1&amp;
+</code></pre></div><p>Now the tree in Eclipse looks like below after the build process.</p>
+<p><img src="/images/blog/Post_Build_Tree.png#center" alt="Post_Build_Tree"></p>
+<p>At this point, I will see if I can use the code as part of a simple test. See below!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> ipngxr2d <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+
+test_data <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&lt;stuff&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    &lt;data&gt;blah&lt;/data&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        &lt;child&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">            &lt;name&gt;Dave&lt;/name&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">            &lt;mood&gt;relaxed&lt;/mood&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">            &lt;modifier&gt;+1 sarcasm&lt;/modifier&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        &lt;/child&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        &lt;child&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">            &lt;name&gt;Alternate Dave&lt;/name&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">            &lt;hero&gt;Spider Man&lt;/hero&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        &lt;/child&gt;</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&lt;/stuff&gt;       </span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+<span style="color:#75715e">#----------------- MAIN ENTRY POINT ---------------</span>
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">__main__</span><span style="color:#e6db74">&#39;</span>:
+
+<span style="color:#75715e"># Create Dictionary ready for output</span>
+table_result <span style="color:#f92672">=</span> {}
+
+<span style="color:#75715e"># Using our test data, send the data and the TABLE_ENTRY_POINT and ROW_ENTRY_POINT to &#39;return_table(data, TABLE_FORMAT, ROW_FORMAT)&#39;</span>
+table_result <span style="color:#f92672">=</span> return_table(test_data,<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">data</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">blah</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">child</span><span style="color:#e6db74">&#34;</span>)
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">TEST 1</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">for</span> each <span style="color:#f92672">in</span> table_result:
+<span style="color:#66d9ef">print</span> table_result[each]
+</code></pre></div><p>And the result?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">TEST 1
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#39;modifier&#39;</span>: <span style="color:#e6db74">&#39;+1 sarcasm&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Dave&#39;</span>, <span style="color:#e6db74">&#39;mood&#39;</span>: <span style="color:#e6db74">&#39;relaxed&#39;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">{</span><span style="color:#e6db74">&#39;hero&#39;</span>: <span style="color:#e6db74">&#39;Spider Man&#39;</span>, <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Alternate Dave&#39;</span><span style="color:#f92672">}</span>
+</code></pre></div><p>Cool! So the package code works and the sample code too. The next step is to get this on to PyPi. Make sure that GitHub is up to date at this point too.</p>
+<p>Loading the package to PyPi
+From the working directory where the root of ipngxr2d is located, I ran the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Davids-MacBook-Pro-2:ipngxr2d davidgee$ python setup.py register
+</code></pre></div><p>The output looked like below. It’s worth mentioning at this point I already have an account registered with pypi.python.org and my credentials are stored. If you have followed the two links in the first paragraph of this blog post, then you should be set and non of this should be a surprise.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">running register
+Davids-MacBook-Pro-2:ipngxr2d davidgee$ sudo python setup.py register
+running register
+running egg_info
+writing ipngxr2d.egg-info/PKG-INFO
+writing top-level names to ipngxr2d.egg-info/top_level.txt
+writing dependency_links to ipngxr2d.egg-info/dependency_links.txt
+reading manifest file <span style="color:#e6db74">&#39;ipngxr2d.egg-info/SOURCES.txt&#39;</span>
+writing manifest file <span style="color:#e6db74">&#39;ipngxr2d.egg-info/SOURCES.txt&#39;</span>
+running check
+Registering ipngxr2d to http://pypi.python.org/pypi
+Server response <span style="color:#f92672">(</span>200<span style="color:#f92672">)</span>: OK
+</code></pre></div><p>The next step is to create the source distribution and upload.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Davids-MacBook-Pro-2:ipngxr2d davidgee$ sudo python setup.py sdist upload
+running sdist
+running egg_info
+writing ipngxr2d.egg-info/PKG-INFO
+writing top-level names to ipngxr2d.egg-info/top_level.txt
+writing dependency_links to ipngxr2d.egg-info/dependency_links.txt
+reading manifest file <span style="color:#e6db74">&#39;ipngxr2d.egg-info/SOURCES.txt&#39;</span>
+writing manifest file <span style="color:#e6db74">&#39;ipngxr2d.egg-info/SOURCES.txt&#39;</span>
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt
+
+running check
+creating ipngxr2d-0.1
+creating ipngxr2d-0.1/ipngxr2d
+creating ipngxr2d-0.1/ipngxr2d.egg-info
+making hard links in ipngxr2d-0.1...
+hard linking setup.py -&gt; ipngxr2d-0.1
+hard linking ipngxr2d/__init__.py -&gt; ipngxr2d-0.1/ipngxr2d
+hard linking ipngxr2d.egg-info/PKG-INFO -&gt; ipngxr2d-0.1/ipngxr2d.egg-info
+hard linking ipngxr2d.egg-info/SOURCES.txt -&gt; ipngxr2d-0.1/ipngxr2d.egg-info
+hard linking ipngxr2d.egg-info/dependency_links.txt -&gt; ipngxr2d-0.1/ipngxr2d.egg-info
+hard linking ipngxr2d.egg-info/top_level.txt -&gt; ipngxr2d-0.1/ipngxr2d.egg-info
+Writing ipngxr2d-0.1/setup.cfg
+Creating tar archive
+removing <span style="color:#e6db74">&#39;ipngxr2d-0.1&#39;</span> <span style="color:#f92672">(</span>and everything under it<span style="color:#f92672">)</span>
+running upload
+Submitting dist/ipngxr2d-0.1.tar.gz to http://pypi.python.org/pypi
+Server response <span style="color:#f92672">(</span>200<span style="color:#f92672">)</span>: OK
+</code></pre></div><p>So far so good! Let’s check my PyPi account found <a href="http://pypi.python.org/">here</a>. Obviously you will need to sign in with your own credentials as you can’t have mine 🙂</p>
+<p><img src="/images/blog/pypi-1024x497.png#center" alt="pypi-1024x497"></p>
+<p>Voila! The package is there and listed. The next step is for me to remove the locally installed one, install from PyPi using <code>pip</code> and test once more.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Davids-MacBook-Pro-2:ipngxr2d davidgee$ sudo pip uninstall ipngxr2d
+Uninstalling ipngxr2d:
+  /Library/Python/2.7/site-packages/ipngxr2d-0.1-py2.7.egg
+Proceed <span style="color:#f92672">(</span>y/n<span style="color:#f92672">)</span>? y
+  Successfully uninstalled ipngxr2d
+Davids-MacBook-Pro-2:ipngxr2d davidgee$ sudo pip install ipngxr2d
+Downloading/unpacking ipngxr2d
+  Downloading ipngxr2d-0.1.tar.gz
+  Running setup.py <span style="color:#f92672">(</span>path:/private/tmp/pip_build_root/ipngxr2d/setup.py<span style="color:#f92672">)</span> egg_info <span style="color:#66d9ef">for</span> package ipngxr2d
+    
+Installing collected packages: ipngxr2d
+  Running setup.py install <span style="color:#66d9ef">for</span> ipngxr2d
+    
+Successfully installed ipngxr2d
+Cleaning up...
+</code></pre></div><p>And for the test in Eclipse to make sure the test code still works…</p>
+<p><img src="/images/blog/test-1024x820.png#center" alt="test-1024x820"></p>
+<p>Awesome. It works. Interestingly, I did this in a live sense. The package ipngxr2d wasn’t on PyPi before this post and I’m happy to say I ate my own dog food. Rock on.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

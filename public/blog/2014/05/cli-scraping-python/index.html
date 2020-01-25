@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="CLI Scraping with Python">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>CLI Scraping with Python</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>May 24, 2014</span>
+                        </li>
+                    </ul>
+                </div>
+                <p>This is a self contained guide on how to use code driven CLI scraping to connect to a Cisco Catalyst 3560 device and interact with it. As well as being a self contained guide, it’s also linked to from <a href="http://ipengineer.net/2014/05/from-cli-to-python-beginner/">this</a> article which provides an overview of Python programmability.</p>
+<h4 id="what-is-cli-scraping">What is CLI scraping?</h4>
+<p>Driving the CLI from code and useful libraries.</p>
+<p><img src="/images/blog/NetOS_DataConnectivity_CLI.png#center" alt="NetOS_DataConnectivity_CLI"></p>
+<h4 id="why-should-i-do-it">Why should I do it?</h4>
+<p>What’s the first rule of CLI scraping? Just don’t do it. Simples. Go and find a supported API method. If you can’t find one on the device that you need to communicate with then upgrade the software. If no upgrade exists for said device that facilitates your objective, then go beat your vendor on the head with a big stick with some sharp things embedded. Maybe a crown of barbed wire. Vendor gone out of business or no longer supporting the product? Can you forklift it out? No? Welcome to CLI scraping 101.</p>
+<h4 id="so-you-have-to-do-cli-scraping-you-have-sympathy-from-the-industry">So you have to do CLI scraping? You have sympathy from the industry</h4>
+<p>CLI scraping done well can prove useful and if you write the code well, will prove repetitively useful to your company or employer. Write it once, use it many times etc. As per the introduction article found here, a good method of CLI scraping is to create objects which then can be populated as the output from the CLI is parsed. Need to update the device as well? Create clean functions and methods that allow you to retrieve and parse information in addition to those that build configuration statements. If you carried out the paper exercise in the introduction article, you could transpose this information in to set of objects or classes. You will quickly discover much manual bodgery is required to get your code to do what you want. Let’s get a bit more real world. Does your code work on a Cisco router? How about Alcatel Lucent? What about Brocade? What about a different model in the same range? The answer normally is _“Of course not, each CLI is different.” Fancy writing lots of plugins for your code to make it re-usable? sigh I don’t. Your CLI scraping code will inherently have narrow usage unless you get real determined and hire some coders to make a re-usable library based set of CLI scraping code. Suddenly have more respect for Tail-F NCS? You should.</p>
+<h4 id="ok-im-going-to-have-a-go-what-information-do-you-want-me-to-find-from-the-cisco-catalyst-switch">Ok, I’m going to have a go. What information do you want me to find from the Cisco Catalyst switch?</h4>
+<p>At this point kindness hasn’t been forthcoming and the objectives are not either. It’s important that the horrendous nature of CLI scraping is experienced first hand so that you enthusiastically join the voices in the industry screaming at vendors for programmable ease, with either vendor proprietary APIs or the likes of OpenFlow, I2RS etc etc.</p>
+<p>Here is the data to be obtained with code from our Cisco Catalyst switch. If you didn’t complete the exercise described in the <a href="http://ipengineer.net/2014/05/from-cli-to-python-beginner/">introduction article</a>, it might be worth doing it to help gain the mindset. It’s not mandatory however!</p>
+<ol>
+<li>Hostname</li>
+<li>Model</li>
+<li>Uptime of each device</li>
+<li>Current software version</li>
+<li>Device serial number</li>
+<li>MAC address for each active Ethernet interface</li>
+</ol>
+<h4 id="so-how-do-you-propose-i-get-this-information">So how do you propose I get this information?</h4>
+<p>For anyone familiar with Cisco’s IOS on the Catalyst 3560, you’ll know that the <code>show version</code> command and it’s derivatives ( <code>sh ver</code> etc) lists the information required from point 1. through point 5. How about to get the hostname? You could take the prompt line, but instead of just reading that, let’s go for <code>show run | inc hostname</code>, which is a command piped in to a regular expression which will filter out everything else but the hostname line. Next challenge, how to get the MAC address list for each active interface? How about <code>show interface sum</code>? That will provide a list. So, to find the active interfaces <code>show interface sum | inc *</code>. The backslash is a special escape sequence which allows you to search against * as opposed to it being entered as a literal wildcard character. Next, we take the list and run a command for each one in order to gain the MAC address detail. I’ve gone for this: <code>show interface X | inc bia</code>. Why bia (burned in address)? Address could also represent an IP address. The more granular we need to get, the more obscure the keywords to search against without getting data collisions (two things called address etc). So now we have lines of output, how can programmatically isolate the data? That involves needing to know where the expected output is. The great bit with CLI scraping needs an example. If we want to take a MAC address from a routed interface, the place of the data is different to the output from an SVI interface. The MAC address for an SVI is at word place 7 in the output of the last command, whilst a MAC address for a routed port is at place 8! Typical. Our data is a moving target.</p>
+<p>Below are commands with regular expressions which can be used to extract the required information from the specified device.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">show version | inc System serial|uptime|image|Model number
+show run | inc hostname
+show interface sum | inc *
+show interface &lt;+ interface +&gt; | inc bia
+</code></pre></div><h4 id="ok-youve-made-your-point-thou-shalt-only-cli-scrape-when-absolutely-necessary">Ok, you’ve made your point. Thou shalt only CLI scrape when absolutely necessary</h4>
+<p>Great.</p>
+<h4 id="show-me-the-code">Show me the code!</h4>
+<p>For this exercise, I’ve used the Python library <a href="https://github.com/paramiko/paramiko">Paramiko</a> which allows you to drive SSH programmatically. Install that using the below (if you haven’t got it installed yet).</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install parakmiko
+</code></pre></div><p>To use Paramiko, you must obtain the SSH key of the network element you wish to connect to. On OSX this can be found at <code>tail ~/.ssh/known_hosts | grep x.x.x.x</code> where <code>x.x.x.x</code> is the IP address of the node. You also need a valid username and password to create a connection. One final note, make sure the host key is complete. It must be padded to the correct 64 bit length due to the way the key is decoded. Here is the basic code required to get a connection to our network element:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> paramiko<span style="color:#f92672">,</span> base64
+
+key <span style="color:#f92672">=</span> paramiko<span style="color:#f92672">.</span>RSAKey(data<span style="color:#f92672">=</span>base64<span style="color:#f92672">.</span>decodestring(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">AAAA&lt;*snip*&gt;==</span><span style="color:#e6db74">&#39;</span>))
+
+client <span style="color:#f92672">=</span> paramiko<span style="color:#f92672">.</span>SSHClient()
+client<span style="color:#f92672">.</span>get_host_keys()<span style="color:#f92672">.</span>add(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">192.168.0.1</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ssh-rsa</span><span style="color:#e6db74">&#39;</span>, key)
+client<span style="color:#f92672">.</span>connect(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">192.168.0.1</span><span style="color:#e6db74">&#39;</span>, username<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">dgee</span><span style="color:#e6db74">&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Passw0rd</span><span style="color:#e6db74">&#39;</span>)
+</code></pre></div><p>In an ideal world, we would then create an object, pass the client object to it and call a get() or parse() function to populate the object with our information. THen we should be able to refer to the object and call out the information we require.</p>
+<p>Something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dev1 <span style="color:#f92672">=</span> NetElement()
+dev1<span style="color:#f92672">.</span>data_fetch(client)
+
+<span style="color:#75715e"># Now let&#39;s print out the network element report</span>
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">64</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">*</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Network Element Reportn</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">64</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hostname:t</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hostname</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Model:tt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">model</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Serial:tt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">serial</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Uptime:tt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">uptime</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Version:t</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">flash</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Active Interface List:</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">*</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> dev1<span style="color:#f92672">.</span>interfaces<span style="color:#f92672">.</span>keys():
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Interface </span><span style="color:#e6db74">&#34;</span>, key, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">nt</span><span style="color:#e6db74">&#34;</span>, dev1<span style="color:#f92672">.</span>interfaces<span style="color:#f92672">.</span>get(key)
+    
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">64</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>Ultimately what we’re asking for then is a nasty text search algorithm that extracts data and inserts it in to a searchable object, ideally a dictionary. Without any more introduction, here’s some code that works. It’s not the prettiest code and it could be tidier. Why isn’t it tidier? It’s a demonstration of the real world. I had one evening to write some code to facilitate reaching the requirements. Will I go back and tidy up? No. Like the real world, I will not. Why? BECAUSE CLI SCRAPING IS BAD! If this code was not an implementation of CLI scraping, then I would go back and iteratively improve it. Many organisations however would not. Once it’s deemed working, it’s signed off. The person leaves the company and it works in an arcane magic kind of way from that moment onwards. Here’s the code in it’s grandeur and in image of our class object used to store and process the data.</p>
+<p><img src="/images/blog/PyEZ_Object_2.png#center" alt="PyEZ_Object_2"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#    Class to store interface attribute data</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#    This class allows you to create dict fields and store them in the object.</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InterfaceObject</span>(dict):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    This object is inherited from a Dictionary object. This allows us to dynamically create fields programmatically.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    <span style="color:#66d9ef">def</span> __getattr__(self, attr):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        If attr is not a key, fall-back and get the attr</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>has_key(attr):
+            <span style="color:#66d9ef">return</span> super(InterfaceObject, self)<span style="color:#f92672">.</span>__getitem__(attr)
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">return</span> super(InterfaceObject, self)<span style="color:#f92672">.</span>__getattr__(attr)
+
+
+    <span style="color:#66d9ef">def</span> __setattr__(self, attr, value):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        Output the dict in its entirety.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        super(InterfaceObject, self)<span style="color:#f92672">.</span>__setitem__(attr, value)
+
+
+
+<span style="color:#75715e">#       Class to construct element and interface data store</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#       Easiest way to get this information is: show version | inc System serial|uptime|image|Model number</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#       self._up_time = uptime</span>
+<span style="color:#75715e">#       self._version = version</span>
+<span style="color:#75715e">#       self._serial = serial</span>
+<span style="color:#75715e">#       self._hostname = hostname</span>
+<span style="color:#75715e">#       self._model = model</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#       To get interface information, obtain an interface list that&#39;s up using:</span>
+<span style="color:#75715e">#       </span>
+<span style="color:#75715e">#       show interfaces | inc *</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#       Then from that list, generate a list of &#34;show interface X | inc address&#34;</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#       This information then needs to be parsed to form the object below.</span>
+<span style="color:#75715e">#</span>
+<span style="color:#75715e">#       self._interfaces = interfaces</span>
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NetElement</span>(dict):
+    <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    This class loads some fields with data from a Cisco IOS network element governed by the list here</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       Easiest way to get this information is: show version | inc System serial|uptime|image|Model number</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       self._up_time = uptime</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       self._version = version</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       self._serial = serial</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       self._hostname = hostname</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       self._model = model</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       To get interface information, obtain an interface list that</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s up using:</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       </span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       show interfaces | inc *</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       Then from that list, generate a list of </span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">show interface X | inc address</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       This information then needs to be parsed to form the object below.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    #       self._interfaces = interfaces</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">    </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+    
+    _element_array <span style="color:#f92672">=</span> []          <span style="color:#75715e"># Array that stores unstructured element data</span>
+    _interface_array <span style="color:#f92672">=</span> []        <span style="color:#75715e"># Array that stores unstructured interface names</span>
+    _interface_attrib_array <span style="color:#f92672">=</span> [] <span style="color:#75715e"># Array that stores unstructured interface attribute data</span>
+    interfaces <span style="color:#f92672">=</span> InterfaceObject()
+
+    <span style="color:#66d9ef">def</span> __init__(self):
+        <span style="color:#66d9ef">pass</span>
+    
+    <span style="color:#66d9ef">def</span> __getattr__(self, attr):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        If attr is not a key, fall-back and get the attr</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        <span style="color:#66d9ef">if</span> self<span style="color:#f92672">.</span>has_key(attr):
+            <span style="color:#66d9ef">return</span> super(NetElement, self)<span style="color:#f92672">.</span>__getitem__(attr)
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">return</span> super(NetElement, self)<span style="color:#f92672">.</span>__getattr__(attr)
+
+
+    <span style="color:#66d9ef">def</span> __setattr__(self, attr, value):
+        <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;&#34;&#34;</span><span style="color:#e6db74"></span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        Output the dict in its entirety.</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">        </span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+        super(NetElement, self)<span style="color:#f92672">.</span>__setitem__(attr, value)
+        super(NetElement, self)<span style="color:#f92672">.</span>__setattr__(attr, value)
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">data_parse</span>(self):
+        
+         <span style="color:#75715e"># Create an updater object components</span>
+        
+        _dname <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span> 
+        _daddress <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span> 
+        _dmtu <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+
+        interface_attrib_key <span style="color:#f92672">=</span> {}
+        
+        <span style="color:#75715e"># These dictionaries below represent where each keyword is in the output, not digit position!</span>
+        interface_attrib_key_svi <span style="color:#f92672">=</span> {<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interface</span><span style="color:#e6db74">&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">address</span><span style="color:#e6db74">&#34;</span> : <span style="color:#ae81ff">7</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MTU</span><span style="color:#e6db74">&#34;</span> : <span style="color:#ae81ff">3</span>}
+        interface_attrib_key_hw <span style="color:#f92672">=</span> {<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interface</span><span style="color:#e6db74">&#34;</span>: <span style="color:#ae81ff">2</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">address</span><span style="color:#e6db74">&#34;</span> : <span style="color:#ae81ff">8</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MTU</span><span style="color:#e6db74">&#34;</span> : <span style="color:#ae81ff">3</span>}
+        
+        <span style="color:#75715e"># Let&#39;s parse the element objects</span>
+        
+        <span style="color:#75715e"># We need a bit more control over the text we receive. I&#39;ve generated a buffered stream and populated it with our text.</span>
+        <span style="color:#75715e"># A buffered stream will allow us to readlines and do seek operations etc.</span>
+        <span style="color:#75715e"># Now we have the data, let&#39;s find what we&#39;re looking for. &#39;keys&#39; represents our search strings, keys_left </span>
+        <span style="color:#75715e"># and keys_right represents our actual text digit position.</span>
+         
+        keys <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">hostname</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">uptime</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">flash</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Model</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">serial</span><span style="color:#e6db74">&#34;</span>]        
+        keys_left <span style="color:#f92672">=</span> [<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">29</span>, <span style="color:#ae81ff">34</span>, <span style="color:#ae81ff">34</span>]
+        keys_right <span style="color:#f92672">=</span> [<span style="color:#ae81ff">18</span>, <span style="color:#ae81ff">56</span>, <span style="color:#ae81ff">65</span>, <span style="color:#ae81ff">49</span>, <span style="color:#ae81ff">45</span>]
+                
+        <span style="color:#66d9ef">for</span> element_data <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>_element_array:
+            <span style="color:#75715e"># This loop scans each line for our &#39;key&#39; word which identifies our content</span>
+         
+            key_offset_counter <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+            <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> keys:
+                 
+                <span style="color:#66d9ef">try</span>:
+                    <span style="color:#66d9ef">if</span> element_data<span style="color:#f92672">.</span>find(key) <span style="color:#f92672">!=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>:
+                        self[key<span style="color:#f92672">.</span>lower()] <span style="color:#f92672">=</span> element_data[keys_left[key_offset_counter]:keys_right[key_offset_counter]] 
+                <span style="color:#66d9ef">except</span>:
+                    <span style="color:#66d9ef">pass</span>
+                 
+                key_offset_counter <span style="color:#f92672">+</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+
+        
+        <span style="color:#75715e"># Parse the interface attributes</span>
+    
+        
+        <span style="color:#75715e"># Easiest way is to use a template like this {&#34;NAME&#34; &#34; {&#34;ATT_NAME&#34;: &#34;ATT_VALUE&#34;}</span>
+        <span style="color:#75715e"># Then we can use a list of attrib keys to index in to the dict like this:</span>
+        <span style="color:#75715e"># attrib_keys = [&#34;address&#34;, &#34;MTU&#34;]        </span>
+   
+        <span style="color:#66d9ef">for</span> _array <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>_interface_attrib_array:
+              
+            interface_attrib_list_stream <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>BytesIO(_array)
+         
+            EOF <span style="color:#f92672">=</span> False
+         
+            <span style="color:#66d9ef">while</span> EOF <span style="color:#f92672">!=</span> True:
+                data <span style="color:#f92672">=</span> interface_attrib_list_stream<span style="color:#f92672">.</span>readline()
+             
+                <span style="color:#66d9ef">if</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Vlan</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">in</span> data:
+                    interface_attrib_key <span style="color:#f92672">=</span> interface_attrib_key_svi
+                <span style="color:#66d9ef">elif</span> (<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Fast</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Gig</span><span style="color:#e6db74">&#34;</span>) <span style="color:#f92672">in</span> data:
+                    interface_attrib_key <span style="color:#f92672">=</span> interface_attrib_key_hw
+                
+                
+                <span style="color:#66d9ef">if</span> data <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>:
+                    EOF <span style="color:#f92672">=</span> True
+                <span style="color:#66d9ef">if</span> any([x <span style="color:#f92672">in</span> data <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> interface_attrib_key]):
+                    
+                    <span style="color:#75715e"># This section could be so much more tidier.</span>
+                    <span style="color:#75715e"># Instead of using this routine, it would be cleaner to decouple the actual search</span>
+                    <span style="color:#75715e"># terms like &#39;interface&#39; or &#39;address&#39; and use a key &amp;amp; value search method like the element</span>
+                    <span style="color:#75715e"># information search method.</span>
+                    <span style="color:#75715e"># However, it shows how attempts to keep code tidy and reusable isn&#39;t always possible</span>
+                    <span style="color:#75715e"># when you just &#39;need&#39; to get something done. Data decoupling and meta data would solve this issue.</span>
+
+                    split_array <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>split (<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>)
+                    
+                    <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> interface_attrib_key<span style="color:#f92672">.</span>keys():
+                        <span style="color:#66d9ef">if</span> key <span style="color:#f92672">in</span> split_array:
+                        
+                            _temp_field <span style="color:#f92672">=</span>  split_array[interface_attrib_key<span style="color:#f92672">.</span>get(key)]
+                            <span style="color:#66d9ef">if</span> key <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">interface</span><span style="color:#e6db74">&#34;</span>:
+                                _dname <span style="color:#f92672">=</span> _temp_field
+                            <span style="color:#66d9ef">elif</span> key <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">address</span><span style="color:#e6db74">&#34;</span>:
+                                _daddress <span style="color:#f92672">=</span> _temp_field
+                            <span style="color:#66d9ef">elif</span> key <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">MTU</span><span style="color:#e6db74">&#34;</span>:
+                                _dmtu <span style="color:#f92672">=</span> _temp_field
+            
+            dict_updater <span style="color:#f92672">=</span> { _dname : {<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">address</span><span style="color:#e6db74">&#39;</span> : _daddress, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">MTU</span><span style="color:#e6db74">&#39;</span> : _dmtu}}
+            self<span style="color:#f92672">.</span>interfaces<span style="color:#f92672">.</span>update(dict_updater)    
+            
+        <span style="color:#75715e"># We get to this level and we&#39;ve parsed our interface attributes and interfaces   </span>
+                            
+    
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">data_fetch</span>(self, client):
+        
+        client_conn <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>invoke_shell()
+        client_conn<span style="color:#f92672">.</span>send(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">term len 0n</span><span style="color:#e6db74">&#34;</span>)
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[DEV] Logged in and setting terminal length</span><span style="color:#e6db74">&#34;</span>
+        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+        output <span style="color:#f92672">=</span> client_conn<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">1000</span>)
+        client_conn<span style="color:#f92672">.</span>send(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>)
+        output <span style="color:#f92672">=</span> client_conn<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">1000</span>)
+        client_conn<span style="color:#f92672">.</span>send(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">show version | inc System serial|uptime|image|Model numbern</span><span style="color:#e6db74">&#34;</span>)
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[DEV] Submitted element regular expression</span><span style="color:#e6db74">&#34;</span>
+        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+        
+        self<span style="color:#f92672">.</span>_ssh_output <span style="color:#f92672">=</span> client_conn<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">500000</span>)
+        
+        <span style="color:#75715e"># We need a bit more control over the text we receive. I&#39;ve generated a buffered stream and populated it with our text.</span>
+        <span style="color:#75715e"># A buffered stream will allow us to readlines and do seek operations etc.</span>
+        
+        element_stream <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>BytesIO(self<span style="color:#f92672">.</span>_ssh_output)
+
+        <span style="color:#75715e"># ELEMENT TEXT EDITING</span>
+        <span style="color:#75715e"># We need to move the position in the buffer beyond the first line, which is the regex itself.</span>
+        element_stream<span style="color:#f92672">.</span>next()
+        
+        <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">4</span>):
+            self<span style="color:#f92672">.</span>_element_array<span style="color:#f92672">.</span>append (element_stream<span style="color:#f92672">.</span>readline()[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+        
+        
+        client_conn<span style="color:#f92672">.</span>send(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">show run | inc hostnamen</span><span style="color:#e6db74">&#34;</span>)
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[DEV] Submitted element hostname regular expression</span><span style="color:#e6db74">&#34;</span>
+        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">5</span>)
+        
+        self<span style="color:#f92672">.</span>_ssh_output <span style="color:#f92672">=</span> client_conn<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">500000</span>)
+        
+        <span style="color:#75715e"># We need a bit more control over the text we receive. I&#39;ve generated a buffered stream and populated it with our text.</span>
+        <span style="color:#75715e"># A buffered stream will allow us to readlines and do seek operations etc.</span>
+        
+        element_stream <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>BytesIO(self<span style="color:#f92672">.</span>_ssh_output)
+        
+        element_stream<span style="color:#f92672">.</span>next()
+        
+        self<span style="color:#f92672">.</span>_element_array<span style="color:#f92672">.</span>append(element_stream<span style="color:#f92672">.</span>readline()[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>)
+        
+        <span style="color:#75715e"># Now to get the active interface list</span>
+        
+        client_conn<span style="color:#f92672">.</span>send(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">show interface sum | inc *n</span><span style="color:#e6db74">&#34;</span>)
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[DEV] Submitted interface list regular expression</span><span style="color:#e6db74">&#34;</span>
+        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+        
+        self<span style="color:#f92672">.</span>_ssh_output <span style="color:#f92672">=</span> client_conn<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">500000</span>)
+        
+        interface_list_stream <span style="color:#f92672">=</span> io<span style="color:#f92672">.</span>BytesIO(self<span style="color:#f92672">.</span>_ssh_output)
+        
+        EOF <span style="color:#f92672">=</span> False
+        
+        interface_list_key <span style="color:#f92672">=</span> [<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Vlan</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Fast</span><span style="color:#e6db74">&#34;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Gig</span><span style="color:#e6db74">&#34;</span>]
+        
+        <span style="color:#66d9ef">while</span> EOF <span style="color:#f92672">!=</span> True:
+            data <span style="color:#f92672">=</span> interface_list_stream<span style="color:#f92672">.</span>readline()
+            
+            <span style="color:#66d9ef">if</span> data <span style="color:#f92672">==</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#39;</span>:
+                EOF <span style="color:#f92672">=</span> True
+            <span style="color:#66d9ef">if</span> any([x <span style="color:#f92672">in</span> data <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> interface_list_key]):
+                
+                split_array <span style="color:#f92672">=</span> data<span style="color:#f92672">.</span>split (<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>)
+                self<span style="color:#f92672">.</span>_interface_array<span style="color:#f92672">.</span>append(split_array[<span style="color:#ae81ff">1</span>])
+            <span style="color:#66d9ef">else</span>:
+                <span style="color:#66d9ef">pass</span>
+        
+        <span style="color:#75715e"># Once we have the active interface list, we need to get attributes from them and store them in an unstructured array</span>
+        
+        <span style="color:#66d9ef">for</span> interface <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>_interface_array:
+            
+            client_conn<span style="color:#f92672">.</span>send(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">show interface </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> interface <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> | inc bia|MTUn</span><span style="color:#e6db74">&#34;</span>)
+            <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">[DEV] Submitted interface regular expression for interface </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> interface <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> attributes</span><span style="color:#e6db74">&#34;</span>
+            time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)
+        
+            self<span style="color:#f92672">.</span>_ssh_output <span style="color:#f92672">=</span> client_conn<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">500000</span>)
+            
+            self<span style="color:#f92672">.</span>_interface_attrib_array<span style="color:#f92672">.</span>append(self<span style="color:#f92672">.</span>_ssh_output)
+
+        self<span style="color:#f92672">.</span>data_parse()
+
+
+
+<span style="color:#f92672">import</span> paramiko<span style="color:#f92672">,</span> base64<span style="color:#f92672">,</span> time<span style="color:#f92672">,</span> io<span style="color:#f92672">,</span> code
+
+key <span style="color:#f92672">=</span> paramiko<span style="color:#f92672">.</span>RSAKey(data<span style="color:#f92672">=</span>base64<span style="color:#f92672">.</span>decodestring(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">AAAA&lt;*snip*&gt;==</span><span style="color:#e6db74">&#39;</span>))
+
+client <span style="color:#f92672">=</span> paramiko<span style="color:#f92672">.</span>SSHClient()
+client<span style="color:#f92672">.</span>get_host_keys()<span style="color:#f92672">.</span>add(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">192.168.0.1</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">ssh-rsa</span><span style="color:#e6db74">&#39;</span>, key)
+client<span style="color:#f92672">.</span>connect(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">192.168.0.1</span><span style="color:#e6db74">&#39;</span>, username<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">dgee</span><span style="color:#e6db74">&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">Passw0rd</span><span style="color:#e6db74">&#39;</span>)
+
+
+
+dev1 <span style="color:#f92672">=</span> NetElement()
+dev1<span style="color:#f92672">.</span>data_fetch(client)
+
+<span style="color:#75715e"># Now let&#39;s print out the network element report</span>
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">64</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">*</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Network Element Reportn</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">64</span>
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hostname:t</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">hostname</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Model:tt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">model</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Serial:tt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">serial</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Uptime:tt</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">uptime</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Version:t</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">+</span> dev1<span style="color:#f92672">.</span>get(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">flash</span><span style="color:#e6db74">&#39;</span>)
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Active Interface List:</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">print</span> <span style="color:#ae81ff">32</span> <span style="color:#f92672">*</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">-</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> dev1<span style="color:#f92672">.</span>interfaces<span style="color:#f92672">.</span>keys():
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Interface </span><span style="color:#e6db74">&#34;</span>, key, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">nt</span><span style="color:#e6db74">&#34;</span>, dev1<span style="color:#f92672">.</span>interfaces<span style="color:#f92672">.</span>get(key)
+    
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">=</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">64</span> <span style="color:#f92672">+</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">n</span><span style="color:#e6db74">&#34;</span>
+
+<span style="color:#75715e"># Finally, drop in to the interactive shell</span>
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">nnWelcome to the interactive shell</span><span style="color:#e6db74">&#34;</span>
+code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals())
+
+
+<span style="color:#75715e"># client.close()</span>
+</code></pre></div><h4 id="output-from-our-dirty-code">Output from our dirty code</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Logged in and setting terminal length
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted element regular expression
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted element hostname regular expression
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface list regular expression
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface Vlan10 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface Vlan20 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface Vlan30 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface Vlan40 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface FastEthernet0/1 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface FastEthernet0/11 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface FastEthernet0/12 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface FastEthernet0/19 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface FastEthernet0/20 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface FastEthernet0/21 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface FastEthernet0/22 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface FastEthernet0/24 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface GigabitEthernet0/1 attributes
+<span style="color:#f92672">[</span>DEV<span style="color:#f92672">]</span> Submitted interface regular expression <span style="color:#66d9ef">for</span> interface GigabitEthernet0/2 attributes
+
+
+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>
+                    Network Element Report
+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>
+Hostname:   Home-3560
+Model:      WS-C3560-24PS-E
+Serial:     CAT1112ZJ5G
+Uptime:     <span style="color:#ae81ff">9</span> weeks, <span style="color:#ae81ff">1</span> day, <span style="color:#ae81ff">21</span> hours, <span style="color:#ae81ff">17</span> minutes
+Version:    c3560-ipservicesk9-mz.122-55.SE1.bin
+
+Active Interface List:
+--------------------------------
+Interface  Vlan10 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8641&#39;</span><span style="color:#f92672">}</span>
+Interface  Vlan20 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8642&#39;</span><span style="color:#f92672">}</span>
+Interface  Vlan30 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8643&#39;</span><span style="color:#f92672">}</span>
+Interface  GigabitEthernet0/1 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8601&#39;</span><span style="color:#f92672">}</span>
+Interface  FastEthernet0/24 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.861a&#39;</span><span style="color:#f92672">}</span>
+Interface  GigabitEthernet0/2 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8602&#39;</span><span style="color:#f92672">}</span>
+Interface  FastEthernet0/1 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8603&#39;</span><span style="color:#f92672">}</span>
+Interface  FastEthernet0/12 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.860e&#39;</span><span style="color:#f92672">}</span>
+Interface  FastEthernet0/11 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.860d&#39;</span><span style="color:#f92672">}</span>
+Interface  FastEthernet0/22 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8618&#39;</span><span style="color:#f92672">}</span>
+Interface  FastEthernet0/20 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8616&#39;</span><span style="color:#f92672">}</span>
+Interface  FastEthernet0/21 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8617&#39;</span><span style="color:#f92672">}</span>
+Interface  Vlan40 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8644&#39;</span><span style="color:#f92672">}</span>
+Interface  FastEthernet0/19 
+    <span style="color:#f92672">{</span><span style="color:#e6db74">&#39;MTU&#39;</span>: <span style="color:#e6db74">&#39;1500&#39;</span>, <span style="color:#e6db74">&#39;address&#39;</span>: <span style="color:#e6db74">&#39;001b.2bec.8615&#39;</span><span style="color:#f92672">}</span>
+<span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span><span style="color:#f92672">=</span>
+</code></pre></div><h4 id="how-could-it-be-better">How could it be better?</h4>
+<p>I don’t want to get beaten for CLI scraping, but I am curious
+Good question and one that you will naturally ask as a diligent engineer, administrator or consultant.</p>
+<ol>
+<li>
+<p>The CLI command, along with regular expression and data cursor or word positions could be placed in a list or dictionary.</p>
+</li>
+<li>
+<p>The list or dict could then be iterated on and each function (i.e. list of CLI commands) will then be executed in a loop.</p>
+</li>
+<li>
+<p>The updater object could be key and value driven from a dictionary object that could be iterated over.
+It could be written to handle exceptions and errors. Currently it is experimental code without any error handling.</p>
+</li>
+<li>
+<p>Delete it all and go ask a vendor to add some API capability.</p>
+</li>
+</ol>
+<h4 id="conclusion">Conclusion</h4>
+<p>Whilst this code isn’t reusable without some tweaking, the framework however is. You can replace keywords in the dictionaries and modify the updater object. The regular expressions can also be changed to suite another vendors platform. When it comes to CLI scraping, there is much more specific non-reusable code than anyone would like. That’s the nature of CLI scraping.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

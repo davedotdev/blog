@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Business on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/business/</link>
+    <description>Recent content in Business on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Dec 2015 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.dev/tags/business/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Business Titles: CEO, Founder, Managing Director, Proprietor</title>
+      <link>https://dave.dev/blog/2015/12/business-titles-ceo-founder-managing-director-proprietor/</link>
+      <pubDate>Fri, 18 Dec 2015 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2015/12/business-titles-ceo-founder-managing-director-proprietor/</guid>
+      <description>Twitter is a great place to air thoughts, gather thoughts, create allies and destroy bridges.</description>
+    </item>
+    
+  </channel>
+</rss>

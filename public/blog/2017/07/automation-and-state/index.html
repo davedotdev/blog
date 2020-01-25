@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Automation and State">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Automation and State</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>July 31, 2017</span>
+                        </li>
+                    </ul>
+                </div>
+                <p><img src="/images/blog/stateless.jpg#center" alt="Stateless"></p>
+<h4 id="to-state-or-not-to-state">To State or not to State</h4>
+<blockquote>
+<p>State</br></br>
+State its purpose.<br/>
+That is a state matter.</br>
+It was a messy night. Alice was filthy. She was in a state.</br>
+The router had some state.</p>
+</blockquote>
+<h4 id="what-to-do-with-state">What to do with state</h4>
+<p>Automation is a constantly changing state of affairs. It raises questions like:</p>
+<ol>
+<li>If a service or API is idempotent, do I have to track state?</li>
+<li>Should my workflows consider external state?</li>
+<li>Should I normalise state?</li>
+</ol>
+<h4 id="idempotency">Idempotency</h4>
+<p>Something is said to be idempotent if it gives you the same response if you call it repetitively.</p>
+<p>I always view idempotency quite simply.</p>
+<ol>
+<li>Bob makes a terrible mistake building a NETCONF server for Alice.</li>
+<li>Alice punished Bob with the task of hoovering the office floor.</li>
+<li>Bob starts hoovering at 3pm when Alice is out of the office.</li>
+<li>Alice Tweets Bob mid-hoovering (because they’re millennials) with “Bob, it’s time to hoover.”.</li>
+<li>As Bob is idempotent, Bob carries on hoovering and ignores Alice’s Tweet.</li>
+</ol>
+<p>If Bob wasn’t idempotent, he might have packed away the hoover, gotten it back out and started hoovering again (also assuming Bob was actually delivering on his punishment and hadn’t outsourced it to a cleaner).</p>
+<p>Can you imagine the chaos if a switch deleted and re-created a VLAN every time you inserted a number that already existed? Depending on the speed of the CPU, theinterface between the CPU and the forwarding system (HW/SW) and the speed of the data-plane interfaces, the number of frames dropped could be catastrophic! It’s a clear sign that idempotency is at play here and the control-plane tracks the VLANs that are currently active. We do not know however if the control-plane investigates the data-plane. That’s not clear from just looking at the operational interface of the software.</p>
+<p>Let’s reframe this query. How do we view idempotency through the lens of automation?</p>
+<p>Just because something should behave the same does it? Can you rely on it? Answer: Test test test test test. With automation we can also automate the tests!</p>
+<p>Checking for the existence of a setting or field can result in quicker execution of workflows. For instance, I could send a complex payload of data to an API, which might process 99% of it before rejecting due to a collision or duplicate entry. If my workflow doesn’t handle a data collision, then I’ve crashed out with an error code. If I do a GET first and validate and assert prior to pushing data for each state of my workflow, the chances of errors are reduced and barring the time spent error checking, I can be sure I’ve minimised ill spent time. This can be critical in infrastructure that expects timely and mostly error-free responses.</p>
+<p>Summary: avoid spray-and-pray.</p>
+<h4 id="should-my-workflows-consider-external-state">Should my workflows consider external state?</h4>
+<p>Yes.</p>
+<p>This is a complicated one and we must consider the scope of the workflow, end-points to influence and the validity of state. Workflows are the operational software manifestation of a process. These workflows should handle errors and the integrity of data just like your mental processes do.</p>
+<p>Let’s consider an example. A network operator provisions services using a workflow driven automation engine. Orders are fulfilled automatically from the order system. Engineers sometimes get involved to build complex services, but use the same workflows that the order fulfilment system consumes. Therefore, the source of truth is up-to-date and the local data is considered the first-class citizen. What about Bob? Bob is responsible for new products and it’s normal for him to try new things out that do not fit the service models. The things Bob does are not tracked by the workflows. So what do we do here?</p>
+<p>The higher the quantity of data to validate and assert during our workflows, the longer the workflow takes to execute and the more complex it appears. I would argue that workflows that validate their scoped data ensures integrity and data assertions are cheap in terms of clock cycles when compared against workflow execution time. Do we need to know what physical ports the VLANs are forwarded over? Do our workflows need to know? It’s possible this one does, but if it doesn’t then don’t collect the data. Data collected should expire and be refreshed.</p>
+<p>It’s critical practice to refresh the data prior to the execution of a workflow to ensure cleanliness and that our cache reflects the true state.</p>
+<blockquote>
+<p>If Alice’s team could write north-bound-interfaces that were idempotent, I wouldn’t have to validate my data”</br>
+– Bob</br>
+It’s no surprise Bob has all sorts of punishment routines to deal with.</p>
+</blockquote>
+<p>If our workflows are well thought out and we consume only relevant external state, then we’ve built for reliability and predictability. We’ve also decoupled ourselves from other poorly implemented code elsewhere.</p>
+<p>Summary: If the end-game is success, then stop pushing the buck when failure raises it’s head. Put the buck away. Avoid failure by being proactive.</p>
+<p>Should I normalise state?
+When was the last time one system you worked on represented data the same way as something else that does a similar job? Imagine two coffee machines from different vendors. As an office visitor and occasional worker, I’m familiar with several coffee machines. Each type consumes coffee differently. Some need beans, some need capsules. Some deliver milk, some do not. Some have water piped in permanently, some you need to fill up a reservoir. Some will give you a macchiato, some will not. Both still give you coffee.</p>
+<p>Domain Specific Languages (DSLs) exist to provide a level of data abstraction. JSON representation is good for software yet YAML is good for humans to read. Both can be used for very similar things but one is friendlier on the eyes.</p>
+<p>To provide true de-coupling from end-points we aim to influence, then our state needs to be normalised at a layer higher. By ‘normalising’ this data, anything can consume it, transform it and update it.</p>
+<p>Normalised data is our currency for automation, which can be passed around easily.</p>
+<p><em>Vendor Data</em></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">telnet@ICX6610-Stack#show vlan brief
+
+System-max vlan Params: Max<span style="color:#f92672">(</span>4095<span style="color:#f92672">)</span> Default<span style="color:#f92672">(</span>64<span style="color:#f92672">)</span> Current<span style="color:#f92672">(</span>64<span style="color:#f92672">)</span>
+Default vlan Id :1
+Total Number of Vlan Configured :3
+VLANs Configured :1 <span style="color:#ae81ff">10</span> 100
+</code></pre></div><p>This output tells us some things about our VLAN database. It doesn’t however tell us much about the VLANs.</p>
+<p>We can do better. Here’s some normalised data.</p>
+<p><em>Normalised data</em></p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VLAN:1</td>
+<td>Default</td>
+</tr>
+<tr>
+<td>VLAN:10</td>
+<td>Build VLAN</td>
+</tr>
+<tr>
+<td>VLAN:100</td>
+<td>New Product VLAN</td>
+</tr>
+</tbody>
+</table>
+</br>
+<p>We could represent this in YAML:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">--<span style="color:#e6db74">-</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"></span><span style="color:#e6db74">VLANS:</span>
+  <span style="color:#e6db74">-
+</span><span style="color:#e6db74">   </span><span style="color:#e6db74"> </span><span style="color:#e6db74">name: &#34;VLAN:1&#34;</span>
+    description: <span style="color:#e6db74">&#34;Default&#34;</span>
+  <span style="color:#e6db74">-
+</span><span style="color:#e6db74">   </span><span style="color:#e6db74"> </span><span style="color:#e6db74">name: &#34;VLAN:10&#34;</span>
+    description: <span style="color:#e6db74">&#34;Build VLAN&#34;</span>
+  <span style="color:#e6db74">-
+</span><span style="color:#e6db74">   </span><span style="color:#e6db74"> </span><span style="color:#e6db74">name: &#34;VLAN:100&#34;</span>
+    description: <span style="color:#e6db74">&#34;New Product VLAN&#34;</span>
+</code></pre></div><p>This data is still readable and can be consumed by workflows and serialised and put into a data-store for ease of access and manipulation.</p>
+<h4 id="stateless-automation">Stateless Automation</h4>
+<p>If we have normalised and validated our state, we have a ‘generic data set’. This data set can be fed in to generic workflows without fear of data from one vendor of an API screwing up another. This data is available to use at a metadata level (data that describes data).</p>
+<p>For data input, we normalise the data and store what’s relevant with a validity period.
+For data output, we transform to the domain specific type or style.
+Our workflows become metadata workflows and have no relation to the end-point style or types of data.</p>
+<ol>
+<li>Get ‘VLANS’</li>
+<li>If ‘NEW_VLAN’ is in ‘VLANS’ do c) else do d)</li>
+<li>Return “EXISTS”</li>
+<li>Push ‘NEW_VLAN’ to ‘METRO_NET’ + UPDATE_DB</li>
+</ol>
+<p>Using these paradigms, our workflows can be truly stateless and through the power of variable interpolation, simple workflows such as creating VLANs on switches can be re-used across any number of vendor devices.</p>
+<h4 id="summary">Summary</h4>
+<p>Data validation and data transformation result in high success for workflow execution. It allows us to insert state into workflows not pinned to a single vendor or style of device. Our workflows can be stored state-free, but deal with state at runtime.</p>
+<p>Even though it seems logical to rely on operating systems and APIs to handle idempotency, to be truly agile and keep up with your own demands, protect yourself with clean, normalised and fresh state and check for collisions prior to creating API calls.</p>
+<p>As we move fast to close our requirements, you can avoid snagging and false bugs being raised with a little investment at the time of creation.</p>
+<p>Scope your workflows, understand what your surface level adhesion is (what API types and specific calls are available), understand your data and how it should be manipulated north and south bound to ensure maximum decoupling.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

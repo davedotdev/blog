@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>StackStorm on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/stackstorm/</link>
+    <description>Recent content in StackStorm on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 27 Feb 2017 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.dev/tags/stackstorm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python: Real World Hacking on StackStorm (Network Engineer Focussed)</title>
+      <link>https://dave.dev/blog/2017/02/python-real-world-hacking-on-stackstorm-network-engineer-focussed/</link>
+      <pubDate>Mon, 27 Feb 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2017/02/python-real-world-hacking-on-stackstorm-network-engineer-focussed/</guid>
+      <description>It’s miserably cold, raining (the kind that gets you really wet) and a strange dark grey light covers the UK.</description>
+    </item>
+    
+  </channel>
+</rss>

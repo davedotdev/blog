@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="XML Unmarshal and XPath">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/arsonistgopherported.png" class="w-100 mb-3" alt="Post-Image">
+                <h2>XML Unmarshal and XPath</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>December 5, 2018</span>
+                        </li>
+                    </ul>
+                </div>
+                <p>Battling with data structures is a normal daily task and figuring out the best way manipulate XML isn’t just a case of writing something that works and walking away declaring job done. I’m currently working on a piece of software that is extensible and each designer will know ahead of time what the structure of the data is and a driver/client will go and retrieve said XML. To help these engineers that may extend the software, my desire is to create a re-usable pattern and not leave it to chance.</p>
+<h4 id="initial-approach">Initial Approach</h4>
+<p>For every great idea, there is a terrible solution, a mad solution and quite possible one or more that will result in success. The best solution might come down to readability or execution speed if it’s important. As per common sense, there is no need to just aim for speed by default, if re-usability and readability is the game! Ideas that I came up with that I had to second guess would even work I immediately discarded. Other than a sense of morbid curiosity, it would only waste time and probably result in much frustration. Here’s what was left on the drawing board:</p>
+<ul>
+<li>XML XPath to search to the part of the XML payload I’m interested in.</li>
+<li>Use the , innerxml rule of the Go encoding XML package.</li>
+<li>Create an elongated XML struct.</li>
+<li>Create a compact XML struct using annotations.</li>
+</ul>
+<p>My objective here is to find the tidiest solution for my scenario and make it so that any engineer can come along and add plugins with ease, harnessing the pattern uncovered in this post. Tidiest generally means without mess or having to think about it too hard. For the sakes of completion, I’ll also include some benchmarks at the end. Thanks to the type of application that’s being created (there are clues throughout this post but that’s down to you to figure out), speed isn’t a guiding factor when all of them complete in less than a second. For the sake of repetition, here is the XML I’m interested in parsing.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">&lt;configuration xmlns=&#34;http://xml.juniper.net/xnm/1.1/xnm&#34; junos:changed-seconds=&#34;1328506003&#34;&gt;
+    &lt;groups&gt;
+        &lt;name&gt;customerXY&lt;/name&gt;
+        &lt;vlans&gt;
+            &lt;vlan&gt;
+                &lt;name&gt;VLAN100&lt;/name&gt;
+                &lt;description&gt;Customer-XYZ-28-11-2018&lt;/description&gt;
+                &lt;vlan-id&gt;100&lt;/vlan-id&gt;
+            &lt;/vlan&gt;
+        &lt;/vlans&gt;
+    &lt;/groups&gt;
+&lt;/configuration&gt;
+</code></pre></div><h4 id="experiment-one-xml-xpath">Experiment One: XML XPath</h4>
+<p>In the automation world, it’s quite normal to query XML using XPath and my initial thought was that it might be a tidy solution here. After a quick hunt around I found a library that looked like it would do the job. The initial approach was to use a simple XPath query to find the XML I’m interested in and then extract it. That way, it’s easy to unmarshall on to a data structure. The inner <code>vlan</code> element is what I’m interested in so something like <code>//configuration/groups/vlans/vlan</code> should give a nice easy way to obtain the data. The second challenge will be then unmarshalling that data on to a struct instance. The code does this.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">// VLAN1 struct
+type VLAN struct {
+    XMLName xml.Name `xml:&#34;vlan&#34;`
+    Name    string   `xml:&#34;name&#34;`
+    Desc    string   `xml:&#34;description&#34;`
+    ID      string   `xml:&#34;vlan-id&#34;`
+}
+
+func main() {
+        var r io.Reader
+        r = strings.NewReader(data)
+
+        root, err := xmlquery.Parse(r)
+        if err != nil {
+            panic(err)
+        }
+        var n *xmlquery.Node
+
+        n = xmlquery.FindOne(root, &#34;//configuration/groups/vlans/vlan&#34;)
+        d := n.OutputXML(true)
+
+        cfgData := VLAN{}
+        err = xml.Unmarshal([]byte(d), &amp;cfgData)
+}
+</code></pre></div><p>This works and I think also think reads quite well. Any approach mentioned in this post requires intimate knowledge of the XML data structure that is to be worked with. In this example, the simple XPath query steps into the <code>vlan</code> part of the data structure within this post.</p>
+<p>Innerxml Rule
+The innerxml rule of the Go XML encoding/decoding package states: If the struct has a field of type []byte or string with tag “,innerxml”, Unmarshal accumulates the raw XML nested inside the element in that field.</p>
+<p>Interesting rule and would allow the client interface to get the XML to remain the same for each and every call, returning the raw and unknown nested XML. One minor issue with this I discovered was if there aren’t any outer elements, the XML isn’t unmarshaled. For instance if I created a struct that ripped off the configuration and groups elements, I’m left with raw XML that has a <code>name</code> element and <code>vlans</code>. I couldn’t figure out how to make this work given all examples I’ve seen rely on an outer element being opened and closed.</p>
+<p>I walked away from this idea, declaring defeat. I’ll pin it on the “one to look out for” Trello board. Just to note, I could retrieve the innerxml as per the library notes, but could not unmarshall. This is what that data looks like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">        &lt;name&gt;customerXY&lt;/name&gt;
+        &lt;vlans&gt;
+            &lt;vlan&gt;
+                &lt;name&gt;VLAN100&lt;/name&gt;
+                &lt;description&gt;Customer-XYZ-28-11-2018&lt;/description&gt;
+                &lt;vlan-id&gt;100&lt;/vlan-id&gt;
+            &lt;/vlan&gt;
+        &lt;/vlans&gt;
+</code></pre></div><h4 id="elongated-xml-struct">Elongated XML Struct</h4>
+<p>In the effort engineer ease, I thought this was lacking:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">type VLANStruct struct {
+    XMLName xml.Name `xml:&#34;configuration&#34;`
+    Groups  struct {
+        XMLName xml.Name `xml:&#34;groups&#34;`
+        VLANS   struct {
+            XMLName xml.Name `xml:&#34;vlans&#34;`
+            VLAN    struct {
+                XMLName xml.Name `xml:&#34;vlan&#34;`
+                Name    string   `xml:&#34;name&#34;`
+                Desc    string   `xml:&#34;description&#34;`
+                ID      string   `xml:&#34;vlan-id&#34;`
+            }
+        }
+    }
+}
+</code></pre></div><p>It’s structured and some of it feels like it doesn’t belong, even though it does. This is a “feelings” conversation. It didn’t feel right and felt bloated. However, it works.</p>
+<h3 id="compact-xml-struct">Compact XML Struct</h3>
+<p>This version is a more compact version of the previous attempt. It feels less bloated but covers the same data structure. The important thing to remember here is the nested struct formation and ensuring the bottom tag accurately reflects the data structure. You could view this as synonymous to XML XPath! We’re effectively stepping in to the data we’re actually interested in being able to have in our struct.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">VLAN</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">XMLName</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Name</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">xml:&#34;configuration&#34;</span><span style="color:#e6db74">`</span>
+	<span style="color:#a6e22e">VLAN</span>    <span style="color:#66d9ef">struct</span> {
+		<span style="color:#a6e22e">XMLName</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Name</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">xml:&#34;vlan&#34;</span><span style="color:#e6db74">`</span>
+		<span style="color:#a6e22e">Name</span>    <span style="color:#66d9ef">string</span>   <span style="color:#e6db74">`</span><span style="color:#e6db74">xml:&#34;name&#34;</span><span style="color:#e6db74">`</span>
+		<span style="color:#a6e22e">Desc</span>    <span style="color:#66d9ef">string</span>   <span style="color:#e6db74">`</span><span style="color:#e6db74">xml:&#34;description&#34;</span><span style="color:#e6db74">`</span>
+		<span style="color:#a6e22e">ID</span>      <span style="color:#66d9ef">string</span>   <span style="color:#e6db74">`</span><span style="color:#e6db74">xml:&#34;vlan-id&#34;</span><span style="color:#e6db74">`</span>
+	} <span style="color:#e6db74">`</span><span style="color:#e6db74">xml:&#34;groups&gt;vlans&gt;vlan&#34;</span><span style="color:#e6db74">`</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">cfgData</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">VLAN</span>{}
+
+    <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">xml</span>.<span style="color:#a6e22e">Unmarshal</span>([]byte(<span style="color:#a6e22e">data</span>), <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">cfgData</span>)
+
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#a6e22e">err</span>)
+	}
+
+    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%+v\n&#34;</span>, <span style="color:#a6e22e">cfgData</span>)
+}
+</code></pre></div><p>This is super simple, compact and works well.</p>
+<h4 id="decision-time">Decision Time</h4>
+<p>The aim of this post was to share research in choosing a pattern to do the XML unmarshalling with. I ended up picking the compact struct method because there is a lower surface area of code changes required to make a new plugin. I found both XPath and the compact struct to be as readable and curiosity got the better of me around execution speed. I had a healthy hunch that the xpath would take longer, but wasn’t sure how long. Here are the results between the compact struct and the xpath based approach. These benchmarks were ran from code <a href="https://gist.github.com/arsonistgopher/1a9ea2de11c8ac4f2ee3a2ba46a23d86">here</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">go test -bench=. -benchtime=10s
+goos: linux
+goarch: amd64
+pkg: github.com/arsonistgopher/tests/XML_Marshalling/Tests
+Benchmark1-12             500000             23522 ns/op
+Benchmark2-12            1000000             14343 ns/op
+PASS
+ok      github.com/arsonistgopher/tests/XML_Marshalling/Tests   26.512s
+</code></pre></div><p>So there we have it. The compact route is much quicker too! Speed isn’t important for this particular project, but it’s good to see benchmarks.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

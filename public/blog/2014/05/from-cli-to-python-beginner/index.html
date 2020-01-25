@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="CLI To Python">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>From CLI to Py(thon) [Beginner]</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>May 24, 2014</span>
+                        </li>
+                    </ul>
+                </div>
+                <blockquote>
+<p>Like StarWars has the prequels, the sequels and questionable Disney future releases, some blog posts need writing in the correct order. After an intense week of deep thoughts, reading and coding, <a href="/blog/2014/04/objectifying-network-using-python/">Objectifying the Network with Python [Part 1]</a> was written as an intro post. With the barrier being so high to industry change and making the mistake of assumed knowledge, it became apparent a much more gentle approach to programmability with a strong reference to networking as we know it today was required. Thank you to all of you that have given this feedback. Much appreciated as always.</p>
+</blockquote>
+<h4 id="cli-to-python--the-monty-variant">CLI to Py(thon) – The Monty Variant</h4>
+<p>A bit of geek knowledge before we dive in to this post. The name Python actually comes from Monty Python. A great British institute and not from the kingdom of serpents. Why Python? It’s rapidly becoming the adopted language of networking. To say ‘every man and his dog’ are adopting it would be an understatement. Think, Grandpa, Grandma, cousins, nieces, nephews…second cousins once removed…</p>
+<p>With respect to Python, it’s easy to learn, immensely powerful, even when not entirely mastered and it’s free!</p>
+<h3 id="overview">Overview</h3>
+<p>This post is actually four articles in one. The objective is to explore how we as engineers, consultants, architects and operators can harness Python as a way of interacting with a single or multiple network elements, whether in a ‘Power CLI’ guise or as an automation method. As an important step, this post will also explain how network operating systems contain structured data pertaining to functionality we’ve come to expect from switches, routers, firewalls and other network elements, how to manipulate said data and generally how to interact with APIs (Application Programmable Interfaces) like NETCONF and onePK. Do not let the term API intimidate you. The CLI could be considered a very simple API. The move from the traditional CLI toward this industry shift can be daunting for the uninitiated, but with little effort, familiarity can be gained in little time. The industry is rapidly moving in to an era of programmability and has demanded the vendors provide ubiquitous access to the underlying data structure. OpenDayLight I personally think can be attributed to the acceleration of this witnessed industry behaviour, but OpenFlow was one of the ignition points for this chain reaction. This post serves as the index or entry point to three how-to guides:</p>
+<ul>
+<li>
+<p>CLI scraping and client side objects (Just avoid doing this at all cost, beat the vendor with a stick from another vendor if you have to).</p>
+</li>
+<li>
+<p>Junos with NETCONF.</p>
+</li>
+<li>
+<p>Cisco’s onePK.</p>
+</li>
+</ul>
+<p>The image below illustrates how we connect to a network element via CLI, NETCONF or onePK from a client (laptop, server, Linux image etc) running Python. It also shows that each method of accessing the network element (now dubbed southbound APIs) actually interacts with the data set of the network operating system that runs on the network element.</p>
+<p><img src="/images/blog/NetOS_DataConnectivity.png#center" alt="NetOS_DataConnectivity"></p>
+<p>This guide isn’t an introduction to these technologies. The CLI (Command Line Interface) should be self explanatory. NETCONF is effectively an XML RPC (Remote Procedure) call which Junos happens to have an excellent implementation of and Cisco’s onePK is two things: a network element API service and a set of client side libraries, which are currently written in: C, Python and Java. Just to add, the Junos how to guide is focussed on the <a href="/blog/2014/05/from-cli-to-python-beginner/">superb PyEZ library</a>. CLI scraping as much as it pains us all to cover off, is necessary for legacy networks that have no other means of extracting or setting data via an API. Once data has been extracted via driving the CLI (i.e. CLI scraping), or via NETCONF and Cisco’s onePK, this data must be stored somewhere. Client side objects allow us to do that. Client side objects should mirror the structure of the data as we’re familiar with it. Therefore information such as interface speed, MTU, errors, MAC addresses etc, should be in an interface object. An interface object could be under a forwarding set of objects, so on and so forth. Structure your data wisely young padawan. A wise man once said (not me I’m hasten to add):</p>
+<p>Success comes from wisdom</p>
+<p>Wisdom comes from experience</p>
+<p>Experience comes from making mistakes</p>
+<p>Unlike the CLI, we don’t have a question mark (?) at our disposal, but you do have a neat little feature (which I almost forgot to write about), which is the <code>help(x)</code> function. This relies on docstrings being implemented within classes and modules. The <code>help(x)</code> function allows you to get information on an object. It will be demonstrated later on in this post. When learning anything new like this, you will make mistakes, but instead of letting them hinder and frustrate your progress, create ‘scratch pads’ to exercise and exploit the mistakes. Practice makes perfect (ultimately). If you’re unsure of how something works, create a separate file and experiment a bit. It’s not like configuring a null route and killing your network! Have fun and play. After all, this is a new set of skills. Wake up the labbing nerd in you and go for it. Why not run up some VMs? Juniper has the vSRX or Firefly Edge as it’s now known, Cisco has vIOS and the CSR which support onePK and you can also run up nodes like Vyatta to play with CLI scraping as well as older Cisco images via the likes of GNS3. It is possible to do all of this on a laptop or Mac with 8–16GB of RAM.</p>
+<p>Some extra useful pieces of knowledge before we go further:</p>
+<ol>
+<li>
+<p>Coders are mutant nocturnal creatures that consume more coffee than networking people. Do not risk getting in to a coffee drinking fight. You will come out of it decaffeinated.</p>
+</li>
+<li>
+<p>Based on the point above, if you get stuck offer a triple espresso to a coder.</p>
+</li>
+<li>
+<p>Coders will ‘try’ and handle errors and exceptions. Test driven development is one method that enforces this behaviour. Otherwise it’s experience and good luck.</p>
+</li>
+<li>
+<p>Try not to replicate what someone else has already done. Adopt the 80/20 rule:</p>
+<p>Utilise frameworks that are built already such as Juniper’s PyEZ and Cisco’s onePK.</p>
+</li>
+<li>
+<p>Write code that is easy to read and ridden with comments.</p>
+<p>Why? What if someone else has to pick your mess up and modify or mend it?</p>
+<p>Adopt a ‘buyer and seller’ attitude to writing code. Only hand down what you would like to buy.</p>
+</li>
+<li>
+<p>Python has a very large user and enthusiast base. If you really get stuck, harassing a coder will only get you shouted at. Ignore the second point in this list. Google is your friend and if that fails, use a forum. Do not be embarrassed. Any experienced ‘Pythonista’ probably got stuck just the same when they were learning.</p>
+</li>
+</ol>
+<p>The diagram below presents a simple overview of a network element and where all of the pieces fit:</p>
+<p><img src="/images/blog/Element-Object-Model1.png#center" alt="Element-Object-Model1"></p>
+<p>And now…something entirely different.</p>
+<h4 id="python-basics">Python Basics</h4>
+<p>To start exploring, you will need an install of Python. On Windows look at ActiveState for their implementation. On Mac OSX, it comes installed (a typically older version). Finally, for Linux, just use your favourite package manager and install it! On Debian (a personal favourite this would be <code>apt-get install python</code>)</p>
+<p>Let’s start by doing something that network operating systems do not traditionally provide functionality to do. Add some numbers! Start Python by typing ‘Python’ in to your bash or command prompt. Once Python has started you will notice <code>&gt;&gt;&gt;</code> which is a prompt for the Python interpreter. Once this is displayed, enter <code>1+1</code> and hit return.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Python 2.7.5 <span style="color:#f92672">(</span>default, Sep <span style="color:#ae81ff">12</span> 2013, 21:33:34<span style="color:#f92672">)</span>
+<span style="color:#f92672">[</span>GCC 4.2.1 Compatible Apple LLVM 5.0 <span style="color:#f92672">(</span>clang-500.0.68<span style="color:#f92672">)</span><span style="color:#f92672">]</span> on darwin  
+Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> or <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information.  
+&gt;&gt;&gt; 1+1
+<span style="color:#ae81ff">2</span>  
+&gt;&gt;&gt;
+</code></pre></div><p><strong>jazz hands</strong> Awesome! You have just used Python via the interpreter. It even displays the expected output! Awesome +1.</p>
+<p>What else would deliver some immediate results? How about some basic text manipulation?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; print <span style="color:#e6db74">&#34;This is awesome stuff. LS42, you&#39;re cool&#34;</span>
+This is awesome stuff. LS42, you<span style="color:#960050;background-color:#1e0010">&#39;</span>re cool  
+&gt;&gt;&gt;
+</code></pre></div><p>Pretty lame, but the print method is probably one you’ll use a lot to begin with and a lot for debugging purposes. It literally prints output to the ‘stdout’, in this case, the Python interpreter or the command prompt/shell if you’re executing this code in a file. Let’s add a minor step to our ‘complex’ math problem by using print.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">print</span> result
+<span style="color:#ae81ff">2</span>
+</code></pre></div><p>What we just did was just a variable to hold the result and then printed it. Variables hold information. Whether that be a number, text (called a string) or another type. Other types include ‘classes’ which are objects. Python works on the principal of objects. A string or number is an object in addition to a class, which is an object that can hold variables, which when in a class are called fields, or functions (which do stuff) which when in a class are called methods. With me so far? Remember reading about the <code>help(x)</code> function earlier? Let’s give this a whirl right now on our simple example above and see what we get. Enter the below and see all of the output that is related to our object. Try it from time to time on imported modules and associated classes. The functions <code>help()</code> and <code>dir()</code> are powerful utilities.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt;&gt;&gt; help<span style="color:#f92672">(</span>result<span style="color:#f92672">)</span>
+1
+</code></pre></div><p>Referring back up the page a little, we can also use print to enhance our self complimenting example. Let’s split our output in two sections and assign a variable to each.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> awesome <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">This is awesome stuff.</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> compliment <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">LSP42, you</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">re cool!</span><span style="color:#e6db74">&#34;</span>
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">print</span> awesome <span style="color:#f92672">+</span> compliment  
+This <span style="color:#f92672">is</span> awesome stuff<span style="color:#f92672">.</span> LSP42, you<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">re cool!</span>
+If we split out our <span style="color:#960050;background-color:#1e0010">‘</span>awesome<span style="color:#960050;background-color:#1e0010">’</span> <span style="color:#f92672">and</span> <span style="color:#960050;background-color:#1e0010">‘</span>compliment<span style="color:#960050;background-color:#1e0010">’</span> into the variables <span style="color:#66d9ef">as</span> above, then we can also reverse the order of what we want to say<span style="color:#f92672">.</span>
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">print</span> compliment <span style="color:#f92672">+</span> awesome  
+LSP42, you<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">re cool! This is awesome stuff.</span>
+</code></pre></div><p>Not bad. Pretty quickly we’ve covered off basic printing and variables. What if you want to dynamically <code>print</code> text based on user or data input?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> name <span style="color:#f92672">=</span> raw_input(<span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">What</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s your name? </span><span style="color:#e6db74">&#34;</span>)
+What<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">s your name? LSP42  </span>
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello {0}</span><span style="color:#e6db74">&#34;</span><span style="color:#f92672">.</span>format(name)  
+Hello LSP42  
+<span style="color:#f92672">&gt;&gt;</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">print</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello </span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">%</span> name  
+Hello LSP42
+</code></pre></div><p>Notice that we can print this data in two ways, using either the {} method or % method. Is one better than the other? The latter can make differentiating between types (integer number and text string for example) easier, but the former is much more readable.</p>
+<p>At this point have a play around and remember that Google is your friend along with the Python documentation library which can be found <a href="https://www.python.org/doc/">here</a>.</p>
+<p>The example covered off here is pretty simple and in the real world this might be data returned and parsed from an API call.</p>
+<p>This post is of course a speedy one minute guide to Python and it does not cover coding etiquette, tests, classes, loops, conditions…pretty much anything else that would be of use. If you’re completely fresh to this, then try the links below for some proper exposure to the feature rich language:</p>
+<ol>
+<li>
+<p>learnpython.org is a great way to get started with Python.</p>
+</li>
+<li>
+<p>Kirk Byer’s Python for network engineers is a great way to learn Python and focus on networking at the same time. Props to Kirk.</p>
+</li>
+</ol>
+<p>Find a way that you feel most comfortable learning. Whilst you could buy books and courses, my personality suits the ‘JFDI’ route. Have an iPhone? You can download a Python IDE (Integrated Development Environment) for your phone and tablet! Blow away those long hours on the tube, plane or train.</p>
+<p>It’s also worth checking out blogs like these listed below. If you’re entering the world of automation and software defined ‘stuff’, these blogs present valuable information and view points:</p>
+<p><a href="http://networkstatic.net/">Brent Salisbury’s ‘networkstatic.net’</a></p>
+<p>This site contains excellent information around network automation: <a href="http://workflowsherpas.com/">workflowsherpas.com</a></p>
+<p>Things about Python worth remembering
+(1) It’s named after something British; Monty Python (this is possibly the most important thing you’ll ever need to remember about Python).</p>
+<p>(2) Python is based on objects and is both dynamically and strongly typed. Check this wiki page for more information. What it allows you to do though is this:</p>
+<h4 id="the-useful-how-to-guides">The Useful How To Guides</h4>
+<p>Three links below are for the self contained how-to guides for: CLI scraping, PyEZ and onePK. In order to make this exercise meaningful and to provide parity across our three examples, directly below is a fictitious set of requirements. These requirements will also help you to think about the approach in a disciplined manor.</p>
+<p><strong>ACME Industries – NetOps requirements</strong></p>
+<p>ACME elevator music incorporated is seeing unprecedented growth for some unknown reason and have decided to do a health check on their network which currently consists of a Cisco Catalyst 3560, a Juniper Firefly Edge (vSRX) and a Cisco ISR running onePK.</p>
+<ol>
+<li>Hostname</li>
+<li>Model</li>
+<li>Uptime of each device</li>
+<li>Current software version</li>
+<li>Device serial number</li>
+<li>MAC address for each active Ethernet interface</li>
+</ol>
+<p>You are to find this information and present human readable output which can be entered in to a report. Only the Cisco C3560 provides a CLI. The CLI can only be accessed via the Python network automation console. Please create re-usable code and scripts to add value to the Network Operations team.</p>
+<p><strong>May Contain Traces of Nuts</strong></p>
+<p>So, if you’re new to programming, automation or both, then the thought of using a framework might be daunting to say the least. It’s completely expected and understood, so fear not! For the information contained in the links in the next section to make absolute sense and to provide maximum value, they should be followed top to bottom. It’s important that you experience how horrendously complicated or time consuming something can be doing it the hard way versus using a micro-framework like PyEZ which does all of the hard work for you.</p>
+<p><strong>Paper exercise – old world</strong></p>
+<p>As a paper exercise, take the list of requirements from the last section and quickly draft out how you would obtain this information from a Cisco Catalyst switch. Include the CLI commands and any regular expressions used to home in on the information required. Also how would you filter out the exact information? Next, try it out on a real or emulated device. Do your commands work? Did you get the approach right? More to the point, do you have just the information you require?</p>
+<p><strong>The Fun Part</strong></p>
+<p>Click on each link below to read each how-to guide. Have fun!</p>
+<p><a href="/blog/2014/05/cli-scraping-python/">Using CLI Scraping (for Cisco Catalyst Switching)</a>
+An example of how to build a CLI scraper library and how to wield it. Just avoid having to do this where possible.</p>
+<p><a href="/blog/2014/05/using-juniper-pyez-library/">Using Juniper’s PyEZ Library</a>
+This micro-framework is ideal to use as a ‘Power-CLI’!</p>
+<p><a href="/blog/2014/05/using-ciscos-onepk-python/">Using Cisco’s onePK</a>
+This is a full blown set of libraries and modules. A little verbose for use as a ‘Power-CLI’ but if semi-automated it could be done.</p>
+<h3 id="summary">Summary</h3>
+<p>If you’ve made it this far, well done. You’re well on your way to becoming a Pythonista.</p>
+
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

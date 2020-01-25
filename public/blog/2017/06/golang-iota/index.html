@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Fun with Iota">
+
+<meta name="generator" content="Hugo 0.62.0-DEV" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/">
+                        <img src="https://dave.dev/images/logo2.png" alt="logo">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section><div id="content">
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/arsonistgopherported.png" class="w-100 mb-3" alt="Post-Image">
+                <h2>Fun with Iota</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            David Gee
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span>June 27, 2017</span>
+                        </li>
+                    </ul>
+                </div>
+                <p>A super short word on <a href="https://github.com/golang/go/wiki/Iota#summary">Iota</a> with Golang.</p>
+<p>Sometime back I was creating a UDP application that presented a basic JSON-API. This application was split in to multiple packages and I needed to use consistent JSON operation verb codes in each.</p>
+<p>Iota is used with constant declarations. It starts at zero when used and can populate other sequentially listed constants without any other expressions. It’s useful and elegant hence I used it.</p>
+<p>I fell into a trap that even Admiral Ackbar would have noticed a mile off.</p>
+<p>Here’s some simple code that shows the constants I created for the JSON-API.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">const</span> (
+
+	<span style="color:#75715e">// Create constants using &#39;iota&#39; and start from 1 (iota starts from zero)
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">GET</span> = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#a6e22e">SET</span>
+	<span style="color:#a6e22e">DEL</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// Things check out as expected
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;GET: &#34;</span>, <span style="color:#a6e22e">GET</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;SET: &#34;</span>, <span style="color:#a6e22e">SET</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;DEL: &#34;</span>, <span style="color:#a6e22e">DEL</span>)
+
+	<span style="color:#75715e">// Output
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// -------
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// GET:  1
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// SET:  2
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// DEL:  3
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Output is as expected here. Great. The next task was to add another few constants for alarm levels and handling. For the sake of brevity in this example, I’ll add just one.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">const</span> (
+
+	<span style="color:#75715e">// Set alarm consts
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">ALARM_LEVEL</span> = <span style="color:#ae81ff">3</span>
+
+	<span style="color:#75715e">// Create constants using &#39;iota&#39; and start from 1 (iota starts from zero)
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">GET</span> = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#a6e22e">SET</span>
+	<span style="color:#a6e22e">DEL</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// Things check out as expected
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;GET: &#34;</span>, <span style="color:#a6e22e">GET</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;SET: &#34;</span>, <span style="color:#a6e22e">SET</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;DEL: &#34;</span>, <span style="color:#a6e22e">DEL</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;ALARM_LEVEL: &#34;</span>, <span style="color:#a6e22e">ALARM_LEVEL</span>)
+
+	<span style="color:#75715e">// Output
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// -------
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// GET:  2
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// SET:  3
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// DEL:  4
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// ALARM_LEVEL:  3
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>What’s going on here? Why are my constants offset? Turns out, what I glanced over and didn’t read properly was that iota is reset to zero every time the const keyword is used. A bit of an ‘ahhh’ moment. By inserting this new const I changed the absolute position of iota from the const keyword.</p>
+<h4 id="the-burn-down">The Burn Down</h4>
+<p>So, I think two approaches exist for future Dave to take note of:</p>
+<ul>
+<li>
+<p>Put my iota consts at the top of const declaration block</p>
+</li>
+<li>
+<p>Have two blocks of const.</p>
+</li>
+</ul>
+<p>I for one think the two block approach looks neater and no guess work for anyone else who hasn’t took note of this small but important iota useage note.</p>
+<p>Question to the audience: I haven’t found an issue with linters moaning or complaining about two const blocks. Is it likely to be an issue? Is this considered idiomatic? It’s certainly readable and removes any guess work.</p>
+<p>Here’s a visual of the two const block approach.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">// This block is just for the JSON-API
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> (
+	<span style="color:#a6e22e">GET</span> = <span style="color:#66d9ef">iota</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+	<span style="color:#a6e22e">SET</span>
+	<span style="color:#a6e22e">DEL</span>
+)
+
+<span style="color:#75715e">// This block is for other consts not relying on iota
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> (
+	<span style="color:#a6e22e">ALARM_LEVEL</span> = <span style="color:#ae81ff">3</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// Things check out as expected
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;GET: &#34;</span>, <span style="color:#a6e22e">GET</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;SET: &#34;</span>, <span style="color:#a6e22e">SET</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;DEL: &#34;</span>, <span style="color:#a6e22e">DEL</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;ALARM_LEVEL: &#34;</span>, <span style="color:#a6e22e">ALARM_LEVEL</span>)
+
+	<span style="color:#75715e">// Output
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// -------
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// GET:  1
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// SET:  2
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// DEL:  3
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// ALARM_LEVEL:  3
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+		Dave
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p>© David Gee and dave.dev, 2019.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sales on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/sales/</link>
+    <description>Recent content in Sales on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Jun 2016 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.dev/tags/sales/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Simplify Simplify Simplify In Sales</title>
+      <link>https://dave.dev/blog/2016/06/simplify-simplify-simplify-in-sales-2/</link>
+      <pubDate>Tue, 21 Jun 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2016/06/simplify-simplify-simplify-in-sales-2/</guid>
+      <description>It’s super important to understand and know your audience. Even when you think you’re not being technical, there are levels of un-technical you can drop to that make you cringe, but if your audience needs it, then it’s a great skill to learn.</description>
+    </item>
+    
+  </channel>
+</rss>

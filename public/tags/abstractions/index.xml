@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abstractions on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/abstractions/</link>
+    <description>Recent content in Abstractions on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Oct 2017 10:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dave.dev/tags/abstractions/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Some Thoughts on Leaky Abstractions</title>
+      <link>https://dave.dev/blog/2017/10/network-automation-leaky-abstractions/</link>
+      <pubDate>Mon, 16 Oct 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2017/10/network-automation-leaky-abstractions/</guid>
+      <description>I hear people talk about leaky abstractions all the time. I’m not sure that some of the people that use it have researched the term.</description>
+    </item>
+    
+  </channel>
+</rss>
