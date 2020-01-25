@@ -1,0 +1,115 @@
+baseURL = "https://dave.dev/"
+languageCode = "en-us"
+title = "Dave.dev | Personal site of David Gee. Previously ipengineer.net"
+theme = "navigator-hugo"
+summaryLength = 10
+
+# Build robots.txt file
+enableRobotsTXT = true
+# google analytics tracking id
+googleAnalytics = ""
+
+enableGitInfo = false
+# pygmentsCodefences = true
+# pygmentsCodefencesGuessSyntax = true
+# pygmentsStyle = "monokai"
+
+[markup] 
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xHTML = false
+  [markup.highlight]
+    codeFences = true
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+  [markup.tableOfContents]
+    endLevel = 6
+    startLevel = 2
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+
+# Multilangues setup
+# Renders the default content language in subdir, e.g. /en/. The root directory / will redirect to /en/
+defaultContentLanguageInSubdir = true
+DefaultContentLanguage = "en"
+
+    #############- Site en ENGLISH
+    [Languages.en]
+    weight = 2
+    title = "Welcome to dave.dev"
+    dateFormat = "January 2, 2006"
+
+    # home = "EN Home"
+    logo = "images/logo2.png"
+    menufixed = false
+
+    footerDescription = "mailto:me@dave.dev"
+    footerServiceTitle = "Social Links"
+    footerAboutTitle = "Email Me"
+
+    # Hero Area Section
+    [Languages.en.params.hero]
+        enable  = true
+        heading = "Welcome to dave.dev"
+        description1 = "I'm David Gee and this is my personal site."
+        description2 = "On this site, you can read both new and ported blogs from ipengineer.net and arsonistgopher.com." 
+        description3 = "Expect systems engineering, control systems, network engineering, network functions (NFC/SFC), software defined and service oriented networking and software development in Python, Go and Rust."
+        videoThumb = "images/slider/video-player-thumb.jpg"
+        videoURL   = "https://www.youtube.com/embed/wrvBumvi5_Y"
+
+    # Blog Section On Homepage
+    [Languages.en.params.blog]
+        enable  = true
+        title   = "Blog"
+        subtitle= "Latest posts from ipengineer.net, arsonistgopher.com and dave.dev"
+
+    # Contact Section
+    [Languages.en.params.contact]
+        enable  = false
+        twitter = "https://twitter.com/_ipengineer"
+        linkedin= "https://www.linkedin.com/in/lsp42/"
+        github1= "https://github.com/davidjohngee"
+        github2= "https://github.com/arsonistgopher"
+        github3= "https://github.com/davedotdev"
+
+# We Used Themefisher Icon font for Icon, for more details check this github repository - https://github.com/themefisher/themefisher-font
+
+# Site Menus
+[menu]
+    # Navbar Menus 
+    [[menu.nav]]
+        name    = "blog"
+        url     = "blog"
+        weight  = 2
+    [[menu.nav]]
+        name    = "portfolio"
+        url     = "portfolio"
+        weight  = 3
+    [[menu.nav]]
+        name    = "list"
+        url     = "list"
+        weight  = 4
+
+

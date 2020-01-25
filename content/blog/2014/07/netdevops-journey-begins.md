@@ -1,0 +1,21 @@
+---
+title: "NetDevOps – The Journey Begins"
+date: 2014-07-18T00:00:00+00:00
+image: images/blog/placeholder.jpg
+author: David Gee
+description: "NetDevOps – The Journey Begins"
+signoff: Dave
+---
+
+The cultural divide between delegation of network control such as in the case of Cisco ACI, or VMware’s NSX is a cause for questioning. These are off the shelf products designed to solve a problem that exists today but introduce new problems to the organisations that acquire them. Who controls the network and at what stratum(1)? In the case of automation and orchestration products, who creates the templates? Who is allowed to trigger automation and orchestration events and even more importantly, when is that person allowed to do it? As the virtual networks are virtual, does control belong with the virtualisation team? Hrmmm. Lots of questions. Many of these are dependent on the company, customer and situation and might not be solved with the most marketed product. A regimented set of answers doesn’t exist, nor do I think there will ever be out of hyper scale data centre environments.
+
+It has taken years for the DevOps community to understand how to handle the requirement of rapid and agile deployment. We’re not the first ones to go through this pain. Can you imagine a tightly controlled ITIL governed network suddenly being comfortable with partial or fully automated approach to network management? If you’re asking what learning curve, have a quick think about how server administrators went from controlling a handful of devices to tens of thousands. Do they do this manually? They use tools like Puppet, Chef, Ansible and Salt to achieve this. They’re not perfect tools, but they’re placed at the right straatum(1)After a cool conversation with Jeremy Schulman, I think the learning curve in the networking space is unavoidable. Maybe we’re trying to use DevOps tools that are wrong for the networking space, maybe we just do not fully appreciate the magnitude of the problem. It is how we move through this period of change that is important and not so much which product becomes the next big thing. Networking can be extremely complex at times and requires careful consideration. As we get bombarded by products and begin to think where they fit, ask the question “Do they actually fit?”. Henry Ford summed things up pretty well when he asked “If I’d of asked people what they really wanted, they would have said faster horses”. The auto-mobile revolutionised the world so let’s take the NetOps thought processes, mix them with DevOps and tip out the contents of the melting pot in a car shaped mould.
+
+These changes will not happen over night and the end goal consists of many little steps, not giant leaps forward. We have to become comfortable with modified ways of thinking and it’s much easier to present a constantly evolving set of thoughts than to change your core methodologies over night. Little changes harvest trust and backing for the next.
+
+To summarise this post and set the scene for the next, it’s worth highlighting the mishmash of political and technical influences. Some products consist of some recent technological developments, some products claim to be developments…blah blah. You shouldn’t be surprised that buying patterns have slowed down as companies try and figure out what the hell as changed and where things are going. A short list of thought ‘messeruperers’: VXLAN, NVGRE, STT, Geneve, OpFlex, SDN, NFV, SDDC, OpenFlow, OpenDayLight, ACI, NSX, OVS….some are part of each other, some are not, development at a protocol level is slow but use of it isn’t…so many questions and potential uses. Get the impression marketing is going mad? Products half finished being pushed because of investment returns? Sales teams pushing products that most techies can’t yet articulate the problem space for? Could this all implode?
+
+Thought process might become the omnipotent networking learning goal instead of a the CLI, which could naturally lead to an omniscient circle of cultural will power, automation tool sets, analysis, collaboration and sharing of all elements.
+
+*Note*
+(1) Stratum: I’ve coined this term as a descriptive measure of what ‘layer’ different things reside. As networking becomes more multidimensional, I don’t think the use of layer cuts it any more. So how about it? Stratum? Does it work?

@@ -1,0 +1,26 @@
+---
+title: "Formalisation of Automation: WIP"
+date: 2019-09-17T10:00:00+00:00
+image: images/blog/placeholder.jpg
+author: David Gee
+description: "Formalisation of Automation: WIP"
+signoff: Dave
+categories:
+- Automation
+tags:
+- Automation
+---
+
+![kettle](/images/blog/kettle.png#center)
+
+For the last five or six years, I’ve not really done any networking and have focussed on software, automation and the mechanisation of processes so that they may be manifested as network driving workflows. I try to keep up with networking technology and working for Juniper has really made me level up in this aspect. I’m lucky to be surrounded by an army of real experts and it’s humbling. What’s still a thorn in my side is the beginner expert community around automation, and I’m working to bring awareness to this through providing questions and insight with methodologies to bootstrap the journey. More on that another time. This paragraph is to position some emotions for what’s about to follow!
+
+To get to the crux of this post, now shift your view to your every day life. How many times a day does an app crash on your phone, laptop or tablet? When was the last time a feature wasn’t available on your TV because you didn’t upgrade to the latest version of software? Right at the beginning of my career, I worked in real time electronics. Machinery that should not die randomly, or just become obsolete because of the hardware swap out cycles. I carried this mentality forward into whatever path my career went. Now I’m in software full time, my brain reels at the fact that quality
+and fit-for-purpose state in so many cases is oh so low. The ever moving change frontier, architecture without end-state or just the socio need of ‘more features’ can be pointed at as a source of blame, but I believe these things are not the absolute root cause.
+
+Obsessed with complexity and the handling of it in software, I’ve added to my tech library significantly with books from Harlan Mills, Fred Brooks, Edsger Dijkstra and have followed characters like Joe Armstrong until he passed away sadly in April 2019. What we do isn’t new and history has a great many things to teach us. Living in a world where I see network engineers desperately trying
+to enhance their skills, I see disparity between the perceived end-goals and actual. Writing a Python “Hello World” is a great start to invoking the interpreter of the language and a print statement, but it teaches you nothing of semantics, data handling or the expression of logic. Ivan Pepelnjak wrote about the expert beginners a while ago and part of my current mission is to provide a framework to describe network automation requirements, a language to have conversations and methods of diagramming and visual expression. Ultimately, this is math based. These tasks should be expressed and solvable in an abstract way, the characteristics identified then lead you to the selection of tools and platforms. Today, I fear the popularity of tools like Ansible have lead us to an Ansible first world, where the ‘problem’ at hand is only truly understood once the tool has been pushed to it’s limits. Only at that point is the ‘problem’ understood and what follows is a set of requests to make Ansible do new things. As is often the way with software, something that is successful is pushed beyond recognition in the name of familiarity. To burn out the villain in this forest, I desire a ‘first principles’ approach instead of a solution based one. A solution is great once you truly know the problem. Plying off the shelf solutions to barely understood requirements leads personal and professional development of people and ultimately the success or failure for the people employing organisations.
+
+How about this? Give a person a fish, they will eat for a day. Teach them how to fish, they will eat regularly. The state of learning in my opinion is akin to what’s happening to the oceans. Teach a person to fish today and some of the catch will be plastic, inedible sea creatures and the odd fish. The act of teaching someone to fish needs an upgrade and the oceans need a ruddy good clean. Today if I was automating in operations instead of being a designer and architect, I’m not sure I could handle the anxiety given the blunderbuss approach. Maybe it’s the state of industry infancy in this discipline or the vendors themselves pushing narrowband solutions, a call for first principles in my simple view is required.
+
+Imagine a world where you can write a first principles automata formula on a whiteboard, then lay your automation requirements out in the same language. The design will naturally and methodically come together for your workflows through a formal design framework. Implementation becomes a case of transferring each identified requirement and laying it out over composable architecture like a workflow engine, configuration management tooling, graph databases and data analysis systems. Stay tuned if this is of interest!

@@ -1,0 +1,40 @@
+enable  : true
+topTitle: WORK
+title   : SHOWCASE.
+subtitle: This is a selection of stuff I've been involved!
+
+filtermenu :
+  - name      : Automation
+    category  : automation
+
+  - name      : Development
+    category  : development
+
+  - name      : Education
+    category  : education
+
+item   :
+  - title : IPSpace
+    image : images/portfolio/portfolio-1.jpg
+    category  : education, automation
+    description: "Training material, guest speaker and podcast!"
+
+  - title : Juniper
+    image : images/portfolio/portfolio-2.jpg
+    description: "Currently work here; webcasts, training and consultation"
+    category  : education, development, automation
+
+  - title : StackStorm
+    image : images/portfolio/portfolio-3.jpg
+    description: "Worked as a TME and developed packs"
+    category  : development, automation
+
+  - title : Brocade
+    image : images/portfolio/portfolio-4.jpg
+    description: "Worked here in automation consulting and netdev"
+    category  : education, development, automation
+
+  - title : iNOG
+    image : images/portfolio/portfolio-5.jpg
+    description: "Presented at iNOG10"
+    category  : education, automation

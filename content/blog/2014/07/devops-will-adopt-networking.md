@@ -1,0 +1,40 @@
+---
+title: "DevOps Will Adopt Networking"
+date: 2014-07-21T00:00:00+00:00
+image: images/blog/placeholder.jpg
+author: David Gee
+description: "DevOps Will Adopt Networking"
+signoff: Dave
+---
+
+Too many times the question has been asked “How do I adopt DevOps and will I need to become a programmer?”. My own beliefs are almost flipped upside down and my money is on DevOps adopting you; possibly without you even realising it. If you’re reading this, it’s a sign of it already happening or at least the thought process! The answers lead to the questions. There is no spoon.
+
+So what’s NetDevOps? Networking + DevOps. Simples. It’s a thought process and a movement. Not an intended starting point, but a natural end point. A natural and evolutionary extension to your skill set, not a new one.
+
+Instead of rushing towards a “golden bullet” product, it might prove a valid route to start thinking about the network as data derived from configuration schemas. Even if it’s a set of side line exercises from what you do day to day, thinking about the network in data or ‘code’ is a step towards what most magic products are aimed to obfuscate you against. Remember what it was like learning IOS back in the day? CatOS? Linux? First time you used a bash shell? This movement is no different.
+
+#### Why are products not the right fit? We’re only allowed to use off the shelf
+
+A common issue. The illusion that something off the shelf is install and play is inaccurate. Every product requires time to get familiar and every product requires configuration both locally and on remote devices to facilitate access. Tool sets like Ansible do not require you to be an open source genius or a programmer. It’s a product that is supportable, but it’s aimed at a different space and traditional networking tool users might initially get a little shakey before understanding the benefits. Expect much FUD.
+
+The original question with regards to products not being the right fit; networking software vendors that write traditional software based on SNMP are the purveyors of complexity. Whilst it’s been the way of life for so long, we’re trying to make things easier. A lot of these packages are bloated, slow, heavily licensed and totally dependent on the software house to extend or build additional functionality in due to the monolithic nature. How many times have you had to change your Java version? How many times has your browser not been supported? With a good framework or tool, if something doesn’t work, write a module yourself after following an easy example. It’s just like viewing a configuration for the first time on a device you don’t have experience with. The technology doesn’t change, it’s just the way it has been interpreted by the vendor.
+
+#### Do you have examples?
+
+If you work for an organisation like thousands out there that want to start looking at automation, SDN and NFV but don’t really know where to start, take the easy ground and get familiar with architecting communication systems that shore up a network in addition to the network itself.
+
+Let’s use a car analogy and call the engine, drive train and wheels a network. The rest of the car can be the things attached. Modern engines are just lumps of metal and plastic without the electronics. Engines that are 15–20 years old worked fine without the electronics, but remember the pain? When did you last flood your engine? Car engine’s didn’t get there over night, they took years to gain a bit of finesse here and there. How do we make our old engine morph to a new one? We add bits of finesse here and there and let the drivers get used to it. Just to note, engines like everything else are not the finished article. Research and development continues as new product revisions are released. Here are some suggestions:
+
+Introduce configuration management tools like [RANCID](http://www.shrubbery.net/rancid/). Whilst this seems trivial, the journey of building a Linux server, hardening it and deploying in a management network might be something a network team has never done before. Start the journey by learning the right way to do the simple things.
+
+I do not like using the term ‘programmer’ in the networking space. It makes people go bat poo crazy. However until someone finds a more elegant way of saying “the data plumberer togetherer person” we’re stuck with the term. The reality is however, we’re moving in to a world where everything has an API. The best way to get proficient is just play with a few. Just like IOS and Junos operational show commands, you can pull information from a device without making any changes using API functionality.
+
+If your employer (or company) provides hosted private (or even public) cloud, you could automate the provision of VLANs, IP addressing and routing to a cookie cut deployed network. For example, a typical pod might consist of two top of rack switches, and two racks of pizza box servers. This design is repeatable and takes little effort to replicate. Why waste time manually generating configuration? Even better if each pod is a multi-tenant capable one! Use a tool like Ansible with a template that you only have to generate once. To generate configuration, simply enter VLAN numbers and IP addresses. Let the tool do the rest. This doesn’t require ‘programmer’ skills, just an ability to understand a different kind of configuration. When you get more confident, you could create a network assets database and have the last part happen automatically, maybe driven by a slider and a button on a web page. Ansible Tower (a good UI for Ansible) also has a RESTful API, so nothing stopping another system being hooked in to drive the automation. Sound good? All well within reach. Google is your friend and approach the user communities for advice and guidance. As long as you don’t ask someone to write code for you, help is normally forthcoming.
+
+__Real world example:__ In a previous job for, I became frustrated with carrying out post maintenance checks, so bit by bit I started writing some TCL code which tested connectivity to every P and PE router in an MPLS network along with customer VRFs. I eventually went on to play with triggering these scripts (stored on Cisco routers) remotely from a Linux server and having the network devices post information to a web server via a naff PHP script. This was a baby step and whilst at the time it could be argued that the culture wasn’t ready for it, it saved me heaps of time personally. If you’re a Cisco bod, try it on GNS3 or VIRL. Have fun, but keep it simple to start with so you can see results as opposed to get frustrated with kludgy code. A simple starting point.
+
+Whilst DevOps adoption of networking is a good thing, it’s important to remember a network is more complex than the systems hanging from it. Whilst the tools speed some things up, it doesn’t mean they’re right. Watch this space unfold slowly and carefully.
+
+Take a look at this [excellent blog post](http://blog.ipspace.net/2014/06/infrastructure-as-code-actually-makes.html) that Ivan Pepelnjak wrote about the same time we planned to do a podcast. I don’t believe in coincidences…nor does Ivan.
+
+Last point, it’s worth sipping your coffee and considering this: Why are vendors releasing access to their devices via APIs and software development kits (SDKs)? They know a storm is coming and they’re covering bases to make sure products still have a place. We’re moving to a point slowly where the various vendor manufactured equipment becomes the wheels on our car analogy used earlier. In a general sense, we don’t really care what they look like, but as long as they’re round and fit in the arches, the car can move. When you use an API or SDK to access a network device element, a nice synonym would be that of an adaptor which allows wheels with different bolt holes to attach to your car. If the wheel needs changing, change the adaptor, not the car.
