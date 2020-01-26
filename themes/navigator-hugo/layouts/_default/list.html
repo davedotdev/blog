@@ -25,6 +25,14 @@
                                 <span>at</span>
                                 <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
                             </li>
+                            <li>
+                                <span>Tags:</span>
+                                <span>{{ with .Params.tags }}{{ delimit . ", " }}{{end}}</span>
+                            </li>
+                            <li>
+                                <span>Categories:</span>
+                                <span>{{ with .Params.categories }}{{ delimit . ", " }}{{end}}</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="post-content">

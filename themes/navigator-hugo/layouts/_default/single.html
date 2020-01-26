@@ -10,16 +10,26 @@
                     <ul class="list-inline">
                         <li class="list-inline-item">
                             <span>By</span>
-                            {{ .Params.author }}
+                            <font color=#ff813f>{{ .Params.author }}</font>
                         </li>
                         <li class="list-inline-item">
                             <span>at</span>
-                            <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
+                            <span><font color=#ff813f>{{ .Date.Format .Site.Params.dateFormat }}</font></span>
                         </li>
                     </ul>
                 </div>
                 {{ .Content }}
-		{{ .Params.signoff }}
+        {{ .Params.signoff }}
+        <ul class="list-inline">
+            <li>
+                <span>Tags:</span>
+                <span><font color=#ff813f>{{ with .Params.tags }}{{ delimit . ", " }}{{end}}</font></span>
+            </li>
+            <li>
+                <span>Categories:</span>
+                <span><font color=#ff813f>{{ with .Params.categories }}{{ delimit . ", " }}{{end}}</font></span>
+            </li>
+        </ul>
             </div>
         </div>
     </div>

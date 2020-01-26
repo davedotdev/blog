@@ -8,7 +8,7 @@ signoff: Dave
 categories:
 - Service Function Chaining
 tags:
-- Service Function Chaining 
+- Service Function Chaining
 ---
 
 ![WF](/images/blog/Data-Workflow-icon.png#center)

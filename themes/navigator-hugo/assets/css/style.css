@@ -214,7 +214,7 @@ a:focus, a:hover {
 }
 
 .section {
-  padding: 100px 0;
+  padding: 40px 0;
 }
 
 @media (max-width: 480px) {
@@ -574,7 +574,7 @@ a:focus, a:hover {
 
 .navigation .navbar-nav > li > a {
   color: #f0326b;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 26px;
   padding: 20px 15px !important;
   transition: .2s ease-in-out 0s;
@@ -669,7 +669,7 @@ a:focus, a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #1f2532;
+  background: #515151;
 }
 
 @media (max-width: 480px) {
@@ -695,7 +695,7 @@ a:focus, a:hover {
 }
 
 .hero-area .block p {
-  color: #707d8f;
+  color: #dedede;
   margin-bottom: 20px;
 }
 
@@ -981,8 +981,13 @@ a:focus, a:hover {
 .social-icon li a i {
   display: inline-block;
   font-size: 20px;
-  line-height: 50px;
+  line-height: 30px;
   margin: 0;
+}
+
+.social-icon ul {
+  margin: 0;
+  padding: 0px;
 }
 
 .error {
@@ -1795,7 +1800,7 @@ a:focus, a:hover {
 .top-footer {
   background-color: #222222;
   border-top: 1px solid #404040;
-  padding: 100px 0 80px;
+  padding: 20px 0 20px;
 }
 
 .top-footer h3 {
