@@ -1,4 +1,7 @@
 {{ "<!-- Fixed Navigation -->" | safeHTML }}
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
 <!-- <section class="top-bar animated-header"> emprunt depuis timer theme -->
 {{ if .Site.Params.menufixed }}
 <section class="header navigation top-bar animated-header">
@@ -47,6 +50,9 @@
                             </li>
                             {{ end }}
                             {{ end }}
+                            <li>
+                               <a href="https://dave.dev/index.xml"><img alt="RSS" src="https://dave.dev/images/rss.png" width="96" height="96"></a>
+                            </li>
                         </ul>
                     </div>
                 </nav>
