@@ -2,30 +2,41 @@
 {{ "<!-- Hero Area -->" | safeHTML }}
 <section class="hero-area">
     <div class="container">
+
         <div class="row">
-            <div class="col-md-6">
-                <div class="video-player">
-                    <img class="img-fluid rounded" src="{{ with .Site.Params.hero.videoThumb }}{{.| absURL }}{{ end }}" alt="video-thumb">
-                    <a class="play-icon" href="javascript:void(0)">
-                        <i class="tf-ion-play" data-video="{{ with .Site.Params.hero.videoURL }}{{.}}{{ end }}?autoplay=1"></i>
-                    </a>
+                <div class="col-lg-8 text-center mx-auto">
+                    <div class="position-relative">
+                        <input id="autocomplete" class="form-control" placeholder="{{ .Site.Params.banner.placeholder }}">
+        
+                        <!-- Javascript -->
+                        {{ $currentNode := . }}
+                        {{ $currentNode.Scratch.Set "pages" .Site.RegularPages }}
+                        {{ $pages := ($currentNode.Scratch.Get "pages") }}
+                        <script>
+                            $(function() {
+                            var projects = [
+                                {{ range $pages }}
+                                {
+                                    value: "{{ .Title }}",
+                                    label: "{{range.Params.Tags}}<p>{{.}}</p>{{end}}",
+                                    url:"{{ .Permalink }}"
+                                },
+                                {{ end }}
+                            ];
+                            $( "#autocomplete" ).autocomplete({
+                                source: projects
+                            })
+                            .data( "ui-autocomplete" )._renderItem = function( ul, item ) {
+                                return $( "<li>" )
+                                .append( "<a href=" + item.url + " + \" &quot;\" +  >" + item.value + "</a>" + item.label )
+                                .appendTo( ul );
+                            };
+                            });
+                        </script>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="block">
-                        <h2>Welcome to dave<font color=#ff813f>.</font>dev</h2>
-                    {{ with .Site.Params.hero.description1 }}
-                        <h5>{{ . }}</h5>
-                    {{ end }}
-                    {{ with .Site.Params.hero.description2 }}
-                        <p>{{ . }}</p>
-                    {{ end }}
-                    {{ with .Site.Params.hero.description3 }}
-                    <p>{{ . }}</p>
-                {{ end }}
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>
 {{ end }}

@@ -69,6 +69,9 @@ DefaultContentLanguage = "en"
     footerServiceTitle = "Social Links"
     footerAboutTitle = "Email Me"
 
+    [Languages.en.params.banner]
+        placeholder = "Enter Search Terms"
+
     # Hero Area Section
     [Languages.en.params.hero]
         enable  = true
