@@ -31,7 +31,7 @@ The dynamics of this car park can be as such:
 
 *The intention is to keep this post short and so, it lacks formal representation and analysis. Exercising that route will no doubt result in several iterations of the representation above, so please don’t get too wrapped up in what’s missing*
 
-Two main modes of car park operation exist; Natural, Automated and Orchestrated. 
+Three main modes of car park operation exist; Natural, Automated and Orchestrated. 
 
 __Natural__
 Car drivers traverse the car park by merit of their implicit algorithms. The car park has no control over this. People will solve the parking problem their own way. 
