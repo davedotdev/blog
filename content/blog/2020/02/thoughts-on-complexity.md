@@ -33,7 +33,7 @@ This is where we begin to fall apart. If one person understands something anothe
 
 Understanding something and making statements about it, make you wonder to the competency someone has around the something.  Complexity then becomes dependent on the competency of the something, but life experience when present will help the person not say something ignorant. One might argue, it reveals more about the person making the statement than it does the thing.
 
-![Four Stages Competency](/images/blog/four_stages_competency.png)
+![Four Stages Competency](/images/blog/four_stages_competency.png#center)
 
 All too often, one person may understand something deeply, then tell someone else ‘but it’s easy’. One person may read about it and think they understand. One person may think it’s all too easy to abstract it away, without realising the abstraction itself limits what you can do with the complex thing. Just because it’s abstracted, obfuscated or hidden, does not mean the complexity has been removed. 
 
