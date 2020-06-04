@@ -67,6 +67,14 @@
                             </a>
                         </li>
                         {{ end }}
+                        {{ with .Site.Params.contact.dockerhub }}
+                        <li class="list-inline-item">
+                            <a href="{{.}}">
+                                <i class="tf-ion-code-download"></i>
+                            </a>
+                        </li>
+                        {{ end }}
+
                     </ul>
                     </div>
                 </div>

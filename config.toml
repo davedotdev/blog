@@ -96,6 +96,7 @@ DefaultContentLanguage = "en"
         github1= "https://github.com/davidjohngee"
         github2= "https://github.com/arsonistgopher"
         github3= "https://github.com/davedotdev"
+        dockerhub = "https://hub.docker.com/u/davedotdev"
 
 # We Used Themefisher Icon font for Icon, for more details check this github repository - https://github.com/themefisher/themefisher-font
 
