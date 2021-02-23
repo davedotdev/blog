@@ -60,11 +60,13 @@ NANOG81: [Navigating Automata Without a Treasure Map](https://www.nanog.org/news
 *   Terminator Salvation 
     *   Glimpsed into the imagination of someone thinking about SkyNet. What I saw when the film hit the cinema excited me. Here are some screen shots.
   
-![image1](/images/blog/salvation_ui_01.png)
 
-![image2](/images/blog/salvation_ui_02.png)
 
-![image3](/images/blog/salvation_ui_03.png)
+{{< img src="salvation_ui_01.png" alt="skynet1" >}}
+
+{{< img src="salvation_ui_02.png" alt="skynet2" >}}
+
+{{< img src="salvation_ui_03.png" alt="skynet3" >}}
 
 *Images sourced from: http://mn8studio.com/project/terminator-salvation-skynet-ui*
 
