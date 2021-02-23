@@ -59,8 +59,6 @@ NANOG81: [Navigating Automata Without a Treasure Map](https://www.nanog.org/news
 
 *   Terminator Salvation 
     *   Glimpsed into the imagination of someone thinking about SkyNet. What I saw when the film hit the cinema excited me. Here are some screen shots.
-  
-
 
 {{< img src="salvation_ui_01.png" alt="skynet1" >}}
 
@@ -85,6 +83,14 @@ WIP
 ## Vendors
 
 WIP
+
+## Things Worth Listing (yet to experience)
+
+This is a project claiming to be a graph oriented knowledge base. Could be interesting! Might beat some of the hard work adding type functionality to Neo4J.
+[https://github.com/clems4ever/go-graphkb](https://github.com/clems4ever/go-graphkb)
+
+{{< img src="go-graphkb.png" alt="knowledge base graph" >}}
+
 
 ## Contributing
 
