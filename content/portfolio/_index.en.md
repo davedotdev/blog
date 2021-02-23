@@ -2,5 +2,5 @@
 title: "Portfolio"
 date: 2018-07-07T15:45:06+06:00
 draft: false
-description: "What I've worked on"
+description: "I'm David Gee, and you'll have seen me in such films as..."
 ---

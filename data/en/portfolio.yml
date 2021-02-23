@@ -17,7 +17,8 @@ item   :
   - title : IPSpace
     image : images/portfolio/portfolio-1.jpg
     category  : education, automation
-    description: "Training material, guest speaker and podcast!"
+    description: "Training material, guest speaker and podcasts!"
+
 
   - title : Juniper
     image : images/portfolio/portfolio-2.jpg
@@ -26,15 +27,25 @@ item   :
 
   - title : StackStorm
     image : images/portfolio/portfolio-3.jpg
-    description: "Worked as a TME and developed packs"
+    description: "Automation specialist, TME and developer"
     category  : development, automation
 
   - title : Brocade
     image : images/portfolio/portfolio-4.jpg
-    description: "Worked here in automation consulting and netdev"
+    description: "Automation for networking, SDN, consulting and NetDev"
     category  : education, development, automation
 
   - title : iNOG
-    image : images/portfolio/portfolio-5.jpg
-    description: "Presented at iNOG10"
+    image : images/portfolio/portfolio-5.png
+    description: "Presented at iNOG10 and iNOG14"
+    category  : education, automation
+
+  - title : NANOG
+    image : images/portfolio/portfolio-6.png
+    description: "Presented at NANOG81"
+    category  : education, automation
+
+  - title : MODEM
+    image : images/portfolio/portfolio-7.jpg
+    description: "An occasional presener on the Modulate Demodulate Podcast (MODEM)"
     category  : education, automation
