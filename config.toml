@@ -8,7 +8,6 @@ summaryLength = 10
 enableRobotsTXT = true
 # google analytics tracking id
 googleAnalytics = ""
-copyright = "© David Gee and dave.dev, 2021."
 
 enableGitInfo = false
 # pygmentsCodefences = true
@@ -69,6 +68,7 @@ DefaultContentLanguage = "en"
     footerDescription = "mailto:me@dave.dev"
     footerServiceTitle = "Social Links"
     footerAboutTitle = "Email Me"
+    copyright = "© David Gee and dave.dev, 2021."
 
     [Languages.en.params.banner]
         placeholder = "Enter Search Terms"
