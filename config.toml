@@ -8,6 +8,7 @@ summaryLength = 10
 enableRobotsTXT = true
 # google analytics tracking id
 googleAnalytics = ""
+copyright = "© David Gee and dave.dev, 2021."
 
 enableGitInfo = false
 # pygmentsCodefences = true
