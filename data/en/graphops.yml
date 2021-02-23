@@ -1,0 +1,12 @@
+enable  : true
+topTitle: GraphOps
+title   : Everthing GraphOps
+
+filtermenu :
+  - name      : GraphOps
+    category  : graphops
+
+item   :
+  - title : graphops
+    category  : GraphOps
+    description: "GraphOps related"

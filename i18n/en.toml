@@ -1,6 +1,11 @@
-[list]
-other = "Full List"
-[portfolio]
-other = "Portfolio"
 [blog]
 other = "Blog"
+[graphops]
+other = "GraphOps"
+[portfolio]
+other = "Portfolio"
+[list]
+other = "Full List"
+
+
+
