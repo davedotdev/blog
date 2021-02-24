@@ -35,14 +35,9 @@ NANOG81: [Navigating Automata Without a Treasure Map](https://www.nanog.org/news
 
 ## Inspiration
 
-*   Promise Theory
-    *   Read Mark Burgess and Jan A.Bergstra's book.
+*   Mark Burgess and Jan A.Bergstra - Promise Theory
 
-*   Cellular Automata
-
-*   Labelled Transition Systems
-
-*   Matroid Theory
+*   Jeff Sussna - Designing Delivery
 
 *   Harlan. D.Mills - Software Productivity
 
@@ -57,8 +52,14 @@ NANOG81: [Navigating Automata Without a Treasure Map](https://www.nanog.org/news
 
 *   Simon Wardley - Wardley Mapping
 
+*   Cellular Automata
+
+*   Labelled Transition Systems
+
+*   Matroid Theory
+
 *   Terminator Salvation 
-    *   Glimpsed into the imagination of someone thinking about SkyNet. What I saw when the film hit the cinema excited me. Here are some screen shots.
+    *   Glimpse into the imagination of someone thinking about SkyNet. What I saw when the film hit the cinema excited me. Here are some screen shots.
 
 {{< img src="salvation_ui_01.png" alt="skynet1" >}}
 
@@ -84,7 +85,7 @@ WIP
 
 WIP
 
-## Things Worth Listing (yet to experience)
+## Things Worth Listing (yet to investigate)
 
 This is a project claiming to be a graph oriented knowledge base. Could be interesting! Might beat some of the hard work adding type functionality to Neo4J.
 [https://github.com/clems4ever/go-graphkb](https://github.com/clems4ever/go-graphkb)
