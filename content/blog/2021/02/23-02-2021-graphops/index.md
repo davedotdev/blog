@@ -92,6 +92,14 @@ __Approaching Schemas__
 
 Operational schemas vs programmatic schemas are worth considering. For instance, dGraph and GraphQL will require some form of concrete schema. But what if you do not have one? You can for a taxonomy upon your project and create a transform function for data coming in and leaving your system, or you can keep things fluid and have 'operational schemas', i.e., a defined schema at the user level (post coding) and have this kind of schema style handled in code. The former is easier, the latter adds complexity to each programming operation. If you know however that whatever schema you are likely to create will adhere to rules, then it's not so bad. This is why I initially created dTree as a means of an interlingua middle ground to process data.
 
+__Native Graph Functionality vs Application Architecture__
+
+When discussing graphOps with engineers and designers, regularly the conversation jumps immediately to ArangoDB or Neo4J, instead of what the graphs represent, how they're mutated and consumed. This conversation is comparable to having a conversation around computer science, yet having one party discuss everything through the lens of say Python. Putting contstraints on a graphDB for something like relationship creation (permit/deny) is useful sure, but do you really want to move that logic to the DB or do you want to handle it in the code that talks to the DB? I love the notion of native graphOps, where people directly query the graph and search for information, however, I'm also old enough and ugly enough to know that people cannot be experts at all things. Pre-canned queries and pre-ordained opinions on usage goes along way to making your product or prototype work simpler for customers, even though it might be mind blowingly complex underneath.
+
+__Storing Live Data__
+
+One aspect I have put some thought into is storing live data on a graph. As network devices begin to emit more telemetry, it would be foolish to grab that data and update a graph in real time. However, having an ML layer that deals with windowed data (parameters for this are auto managed through some form of feedback from the computation process or user guidance), then storing the output of that onto the graph seems perfectly reasonable. It also comes down to context and data representation. Graph data is linked data and there isn't anything wrong with having a vertex that represents another data store your system can query for deeper state knowledge.
+
 ## Code Libraries, SDKs and Data Representation
 
 __JSON-LD__
@@ -127,6 +135,12 @@ __dGraph__
 A native GraphQL database written in Go. If you're doing web design and want an easy approach to providing a GraphQL back-end, check dGraph out.
 
 [https://dgraph.io/](https://dgraph.io/)
+
+__ArangoDB__
+
+ArangoDB is a popular database that provides for graph, document and search functionality. It's popular with developers and has a wide set of language support.
+
+[https://www.arangodb.com/](https://www.arangodb.com/)
 
 ## Blog Posts & White Papers
 
