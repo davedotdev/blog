@@ -108,7 +108,7 @@ DefaultContentLanguage = "en"
         name    = "blog"
         url     = "blog"
         weight  = 2
-[[menu.nav]]
+    [[menu.nav]]
         name    = "graphops"
         url     = "graphops"
         weight  = 3
@@ -120,5 +120,8 @@ DefaultContentLanguage = "en"
         name    = "list"
         url     = "list"
         weight  = 5
-
+    [[menu.nav]]
+        name    = "uijourney"
+        url     = "uijourney"
+        weight  = 6
 
