@@ -145,7 +145,10 @@ So far so good.
 
 Immediately I've hit a roadblock in so much as JavaScript. I do not know it. There is a course by Samer which looks to be reasonable: https://jscomplete.com/learn/complete-intro-modern-javascript 
 
-# Tuesday 18th May 2021
+#### Rest of week
 
-Coming tomorrow...
+I ran into a roadblock. I just don't know JavaScript enough to be any good at it. I can hack it around, but I can't fluidly type out my intent like I can with Go. 
+
+In a parallel track, I'm going to learn JavaScript as I go through React. Why this madness? Well, the React education is by example and by doing. I know enough to understand what I'm looking at, so figure I'll sharpen JavaScript skills in parallel.
+
 
