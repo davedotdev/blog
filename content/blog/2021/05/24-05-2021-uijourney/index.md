@@ -393,8 +393,7 @@ And here we have a very crappy React component. Happy days.
 
 ---
 
-<br/><br/>&nbsp;
-
+<br/>&nbsp;
 
 #### Wednesday issues
 
