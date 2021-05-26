@@ -11,6 +11,8 @@ categories:
 tags:
 - Software Development
 - UI
+scripts:
+- scripts/app.jsx
 ---
 
 # Monday 24th May 2021
@@ -331,7 +333,72 @@ The next lesson covers React's tree reconciliation capabilities! This will be Tu
 
 * A const doesn't seem to be a const the way I understand them elsewhere. It looks like a constant reference to an object (a pointer?): https://www.w3schools.com/js/js_const.asp 
 
+# Wednesday 26th May 2021
 
+I had the bright idea of integrating React with this blog. It's a modified Hugo theme and with little effort I managed to include some useful capabilities. Call me stupid. I like to learn the fun stuff.
+
+Here's what I did to get React working with JSX and Babel on Hugo.
+
+1.  Add CDN links for React required scripts in the header partial.
+```html
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+```
+
+2.  Install npm, npx and follow some simple rules.
+
+- This one was painful
+- I did this work on Windows 10 with WSL. I ran into major issues with `npm` on Ubuntu for WSL, so installed `node` on Windows instead, but used Hugo from WSL. Not at all confusing.
+- It was the standard Node installer for Windows 10, Nothing fancy.
+
+3.  Initialise npm in the blog directory.
+
+```bash
+npm init
+npm install -g @babel/cli @babel/core @babel/preset-env --save-dev
+```
+
+4.  Ensure that Babel is configured (for JSX) within Hugo and the contents lie in the `babel.config.js` file. This file resides in the root of the blog.
+
+```javascript
+module.exports = function (api) {
+  api.cache(true);
+  const presets = [
+    ["@babel/preset-react"]
+    ]
+  const plugins = [];
+  return {
+    presets,
+    plugins
+  };
+}
+```
+
+5.  Add frontmatter keys so the footer partial template can dynamically add React code, instead of the kitchen sink approach (i.e. include all the scripts). In this instance, I added a `scripts` key and iterate over the keys if scripts are present in the footer, which acts as a dynamic import. This step is solely focussed on Hugo and works really quite well. I wasn't sure it would work to be transparent, because of the internal Hugo pipeline ordering. Turns out, it not only works, it does so rather nicely.
+
+6.  Test by adding a DOM element and a simple script. You can find the `JSX` script here: https://dave.dev/app.js
+
+7.  Test by adding a DOM element that the script refers to.
+
+```html
+<div id="app42"></div>
+```
+
+And here we have a very crappy React component. Happy days.
+
+---
+
+<div id="app42"></div>
+
+---
+
+<br/><br/>&nbsp;
+
+
+
+
+#### Wednesday issues
 
 
 

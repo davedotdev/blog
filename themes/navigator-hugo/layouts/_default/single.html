@@ -5,6 +5,9 @@
 <script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
 {{ end }}
 
+{{ "<!-- React & JSX -->" | safeHTML }}
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 
 <section class="blog-single section">
     <div class="container">
@@ -25,6 +28,9 @@
                     </ul>
                 </div>
                 {{ .Content }}
+
+
+                
         <p><i><b>{{ .Params.signoff }}</b></i></p>
     
         <ul class="list-inline">

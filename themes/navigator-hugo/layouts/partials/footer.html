@@ -86,6 +86,17 @@
                     <h3>Copyright</h3>
                     <p><font color=#ff813f>{{ .Site.Params.copyright }}</font></p>
                 </div>
+
+                <!-- Script imports from front matter for React app modules -->
+                {{ .Params.scripts }}
+                {{ if isset .Params "scripts" }}
+                {{ range .Params.scripts }}
+                    {{ $app := resources.Get . | babel  }}
+                    <script src="{{ $app.RelPermalink }}"></script>
+                {{ end }}
+                {{ end }}
+                <!-- Script imports like React end-->
+
             </div>
         </div>
     </div>
