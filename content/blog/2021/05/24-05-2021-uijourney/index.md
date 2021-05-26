@@ -377,7 +377,7 @@ module.exports = function (api) {
 
 5.  Add frontmatter keys so the footer partial template can dynamically add React code, instead of the kitchen sink approach (i.e. include all the scripts). In this instance, I added a `scripts` key and iterate over the keys if scripts are present in the footer, which acts as a dynamic import. This step is solely focussed on Hugo and works really quite well. I wasn't sure it would work to be transparent, because of the internal Hugo pipeline ordering. Turns out, it not only works, it does so rather nicely.
 
-6.  Test by adding a DOM element and a simple script. You can find the `JSX` script here: https://dave.dev/app.js
+6.  Test by adding a DOM element and a simple script. You can find the `JSX` script here: https://dave.dev/scripts/app.js
 
 7.  Test by adding a DOM element that the script refers to.
 
@@ -396,9 +396,9 @@ And here we have a very crappy React component. Happy days.
 <br/><br/>&nbsp;
 
 
-
-
 #### Wednesday issues
 
-
+1. The build system on Netlify needed some tweaks. I bumped the Go version to 1.16.4, Node version to 14.17.0 and Hugo version to v0.83.1
+2. The package.json file needed some cleaning up, again creating issues on Netlfiy
+3. I ended up building out the Netlify environment on a fresh install to troubleshoot a pesky message surrounding Babel. It was a combination of issues, but as you can now see, it's working!
 
