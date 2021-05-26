@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Integration on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/integration/</link>
+    <description>Recent content in Integration on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Tue, 23 Oct 2018 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/categories/integration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>YANG, OpenAPI, Swagger and Code Generation</title>
+      <link>https://dave.dev/blog/2018/10/yang-openapi-swagger-code-generation/</link>
+      <pubDate>Tue, 23 Oct 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/10/yang-openapi-swagger-code-generation/</guid>
+      <description>Sometimes during exploration or projects, I want to take a YANG model and convert it along with related dependencies to a Swagger format (think OpenAPI if you’re not familiar with this) so I can create a REST or RESTConf API interface.</description>
+    </item>
+    
+  </channel>
+</rss>

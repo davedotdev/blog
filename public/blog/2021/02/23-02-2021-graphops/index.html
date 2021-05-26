@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="An article to centralise graph based operations">
+
+<meta name="generator" content="Hugo 0.83.1" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/jquery-1.12.4.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://dave.dev/plugins/jquery/jquery-ui.js"></script>
+
+<!-- match-height JS -->
+<script src="https://dave.dev/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/"><h2><font color=#ffffff>dave</font><font color=#ff813f>.</font>dev</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/graphops">GraphOps</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/uijourney">My UI Journey</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                               <a class="nav-link" href="https://dave.dev/index.xml"><img alt="RSS" src="https://dave.dev/images/rss.png" width="25" height="25"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="content">
+
+
+
+<script async src="https://unpkg.com/mermaid@8.2.3/dist/mermaid.min.js"></script>
+
+
+<!-- React & JSX -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/graphops_header.png" class="w-100 mb-3" alt="Post-Image">
+                <h2>Operationalising your Infrastructure With GraphOps</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            <font color=#ff813f>David Gee</font>
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span><font color=#ff813f>February 22, 2021</font></span>
+                        </li>
+                    </ul>
+                </div>
+                <p>This page contains information I&rsquo;ve been gathering in the name of an emerging branch of operations I&rsquo;m dubbing &ldquo;GraphOps&rdquo;. This isn&rsquo;t staring at XY scatter plots, but dealing with infrastructure as a richly connected graph of resources that either consume or provide services to and from users. They are <em>alive</em>, not quite like Johnny 5, but in the sense of continually reflecting state and relationships.</p>
+<p>Imagine a world where an unexpected issue triggers the generation of a blast radius linked tree, highlighting outcomes, failures and steps taken to recover. With a rich tapestry like a graph representation of your infrastructure, you have a foundation for self-driving and self-healing systems. It becomes possible to make a change and verify or validate the outcome and even provides percepts for machine-learning and artificial intelligence.</p>
+<p>I&rsquo;ve been lucky that different groups have humoured me with mad ramblings. I&rsquo;m firmly of the belief the way forward for operations is in this manner.</p>
+<p>Imagine knowing the what, where, why and how for your infrastructure and service delivering resources - always.</p>
+<p><em>David Gee, 2021</em></p>
+<h2 id="video-resources">Video Resources</h2>
+<p>IPSpace Autumn 2020: <a href="https://my.ipspace.net/bin/list?id=xNetAut204#EVOLUTION">Evolution of Network Automation</a></p>
+<p>iNOG14: <a href="https://www.youtube.com/watch?v=4PUyQ1CYxpA">Automata Without a Map</a></p>
+<p>NANOG81: <a href="https://www.nanog.org/news-stories/nanog-tv/nanog-81-webcast/navigating-automata/">Navigating Automata Without a Treasure Map</a></p>
+<h2 id="inspiration">Inspiration</h2>
+<ul>
+<li>
+<p>Mark Burgess and Jan A.Bergstra - Promise Theory</p>
+</li>
+<li>
+<p>Jeff Sussna - Designing Delivery</p>
+</li>
+<li>
+<p>Harlan. D.Mills - Software Productivity</p>
+</li>
+<li>
+<p>Edsger W.Dijkstra - A Discipline of Programming</p>
+</li>
+<li>
+<p>John Ousterhout - A Philosophy of Software Design</p>
+</li>
+<li>
+<p>Fred Brooks - No Silver Bullet</p>
+</li>
+<li>
+<p>Rachel Traylor&rsquo;s education on Graph Theory and Reliability (see IPSpace offerings)</p>
+<ul>
+<li>A fantastic mathematician and available for work (if you didn&rsquo;t know that!). She&rsquo;s software savvy and opened me up to levels of depths I didn&rsquo;t know existed.</li>
+</ul>
+</li>
+<li>
+<p>Simon Wardley - Wardley Mapping</p>
+</li>
+<li>
+<p>Cellular Automata</p>
+</li>
+<li>
+<p>Labelled Transition Systems</p>
+</li>
+<li>
+<p>Matroid Theory</p>
+</li>
+<li>
+<p>Terminator Salvation</p>
+<ul>
+<li>Glimpse into the imagination of someone thinking about SkyNet. What I saw when the film hit the cinema excited me. Here are some screen shots.</li>
+</ul>
+</li>
+</ul>
+<img 
+   src="salvation_ui_01.png"class="w-100 mb-3" alt="Post-Image" alt="skynet1">
+<img 
+   src="salvation_ui_02.png"class="w-100 mb-3" alt="Post-Image" alt="skynet2">
+<img 
+   src="salvation_ui_03.png"class="w-100 mb-3" alt="Post-Image" alt="skynet3">
+<p><em>Images sourced from: <a href="http://mn8studio.com/project/terminator-salvation-skynet-ui">http://mn8studio.com/project/terminator-salvation-skynet-ui</a></em></p>
+<h2 id="reading-resources">Reading Resources</h2>
+<p>Google have a system called MALT. The paper is an interesting read and there is lots of common sense shared with readers. MALT appears to be reasonably useful and more importantly, used!</p>
+<p>Usenix MALT video <a href="https://www.usenix.org/conference/nsdi20/presentation/mogul">link</a>
+Usenix MALT paper <a href="https://www.usenix.org/system/files/nsdi20-paper-mogul.pdf">link</a></p>
+<h2 id="some-notes-on-writing-code">Some Notes on Writing Code</h2>
+<p><strong>Arbitrary Approach vs Schema Drive</strong></p>
+<p>When building out the prototypes for exploring GraphOps, one of the biggest issues was writing code that dealt with arbitrary graph structures and relationships. To add to the fun I did it with a typed language! Another gotcha came in the form of preserving ordered data when transorming from a representation such as JSON or XML to a graph and back again. I solved some of these issues with meta-data tags, recursive algorithms and an interlingua I call <a href="https://github.com/davedotdev/dtree">dTree</a>.</p>
+<p>Providing codified schemas to code so that it can explore data trees in a meaningful manner (removing guess work) is a helpful approach. You can define permitted and expected kinds of relationships and provide patterns of anticipated data trees. If the data changes further down the line, change the schema and you are safe. You will find that the data structure may require pruning or reducing at times to mirror schema changes if you are removing Vs or Es (vertices and edges respectfully).</p>
+<p><strong>Idempotency and Validity</strong></p>
+<p>Sometimes you need to know the integrity of a sub-graph quickly and so I began to think about trees as hash graphs. One approach was to create a CSP system that monitored activity to and from the graph, but what about cold reboots? How would I get to a point of validity assurance? That came in the form of hashing subgraphs and at sensible periods of time, checking the hash for validitiy, or if part of the graph was changed, I&rsquo;d rehash that part of the graph and store it with a timestamp. You might be wondering why this kind of thing? Well, if you&rsquo;re going to have two-way processes with a graph that represents live infrastructure, you will quickly need to know if something was how it was prior to extracting state change data (like configuration inputs). You also will be building in idempotency mechanisms. The real world is heavily idempotent, yet computers don&rsquo;t by default behave this way.</p>
+<p><strong>Approaching Schemas</strong></p>
+<p>Operational schemas vs programmatic schemas are worth considering. For instance, dGraph and GraphQL will require some form of concrete schema. But what if you do not have one? You can for a taxonomy upon your project and create a transform function for data coming in and leaving your system, or you can keep things fluid and have &lsquo;operational schemas&rsquo;, i.e., a defined schema at the user level (post coding) and have this kind of schema style handled in code. The former is easier, the latter adds complexity to each programming operation. If you know however that whatever schema you are likely to create will adhere to rules, then it&rsquo;s not so bad. This is why I initially created dTree as a means of an interlingua middle ground to process data.</p>
+<p><strong>Native Graph Functionality vs Application Architecture</strong></p>
+<p>When discussing graphOps with engineers and designers, regularly the conversation jumps immediately to ArangoDB or Neo4J, instead of what the graphs represent, how they&rsquo;re mutated and consumed. This conversation is comparable to having a conversation around computer science, yet having one party discuss everything through the lens of say Python. Putting contstraints on a graphDB for something like relationship creation (permit/deny) is useful sure, but do you really want to move that logic to the DB or do you want to handle it in the code that talks to the DB? I love the notion of native graphOps, where people directly query the graph and search for information, however, I&rsquo;m also old enough and ugly enough to know that people cannot be experts at all things. Pre-canned queries and pre-ordained opinions on usage goes along way to making your product or prototype work simpler for customers, even though it might be mind blowingly complex underneath.</p>
+<p><strong>Storing Live Data</strong></p>
+<p>One aspect I have put some thought into is storing live data on a graph. As network devices begin to emit more telemetry, it would be foolish to grab that data and update a graph in real time. However, having an ML layer that deals with windowed data (parameters for this are auto managed through some form of feedback from the computation process or user guidance), then storing the output of that onto the graph seems perfectly reasonable. It also comes down to context and data representation. Graph data is linked data and there isn&rsquo;t anything wrong with having a vertex that represents another data store your system can query for deeper state knowledge.</p>
+<h2 id="code-libraries-sdks-and-data-representation">Code Libraries, SDKs and Data Representation</h2>
+<p><strong>JSON-LD</strong></p>
+<p>Is a style of JSON used for &lsquo;Linking Data&rsquo; hence the LD bit. It&rsquo;s use is for representing data that has a link to some other data and there is a working group with a drive to formally specify JSON-LD 1.1.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;@context&#34;</span>: <span style="color:#e6db74">&#34;https://json-ld.org/contexts/person.jsonld&#34;</span>,
+  <span style="color:#f92672">&#34;@id&#34;</span>: <span style="color:#e6db74">&#34;http://dbpedia.org/resource/John_Lennon&#34;</span>,
+  <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;John Lennon&#34;</span>,
+  <span style="color:#f92672">&#34;born&#34;</span>: <span style="color:#e6db74">&#34;1940-10-09&#34;</span>,
+  <span style="color:#f92672">&#34;spouse&#34;</span>: <span style="color:#e6db74">&#34;http://dbpedia.org/resource/Cynthia_Lennon&#34;</span>
+}
+</code></pre></div><p><a href="https://json-ld.org/">https://json-ld.org/</a></p>
+<p><strong>GraphQL</strong></p>
+<p>An API type that empowers you to ask for the data you need, instead of getting a boat load of data that you do not. It allows you to get related data using a query, for instance, the number of coffees that your vending machine served in corridor 12 on the top floor of a cruise ship. You could also take readings from all of the coffee machines on the top floor of the cruise ship. You will need a schema however and dealing with arbitrary data can be painful.</p>
+<p><a href="https://graphql.org/">https://graphql.org/</a></p>
+<p><strong>Neo4J</strong></p>
+<p>A graph database written in Java with reasonable performance, supporting some 3.4 billion nodes. This database uses a query language called Cypher. I&rsquo;ve used Neo4j a lot. It has support for many programming languages.</p>
+<p><a href="https://neo4j.com/">https://neo4j.com/</a></p>
+<p><strong>dGraph</strong></p>
+<p>A native GraphQL database written in Go. If you&rsquo;re doing web design and want an easy approach to providing a GraphQL back-end, check dGraph out.</p>
+<p><a href="https://dgraph.io/">https://dgraph.io/</a></p>
+<p><strong>ArangoDB</strong></p>
+<p>ArangoDB is a popular database that provides for graph, document and search functionality. It&rsquo;s popular with developers and has a wide set of language support.</p>
+<p><a href="https://www.arangodb.com/">https://www.arangodb.com/</a></p>
+<h2 id="blog-posts--white-papers">Blog Posts &amp; White Papers</h2>
+<p>WIP</p>
+<h2 id="vendors">Vendors</h2>
+<p><a href="https://forwardnetworks.com">Forward Networks</a> are one of the first to have appraoched network modelling in a graph modelled way. They offer an opinionated set of views and workflows for network engineers to get to grips with.</p>
+<h2 id="things-worth-listing-yet-to-investigate">Things Worth Listing (yet to investigate)</h2>
+<p>This is a project claiming to be a graph oriented knowledge base. Could be interesting! Might beat some of the hard work adding type functionality to Neo4J.
+<a href="https://github.com/clems4ever/go-graphkb">https://github.com/clems4ever/go-graphkb</a></p>
+<img 
+   src="go-graphkb.png"class="w-100 mb-3" alt="Post-Image" alt="knowledge base graph">
+<h2 id="contributing">Contributing</h2>
+<p><em>Warning-&gt;</em> This is not a marketing site. If you are a vendor looking for cheap insertion points, look no further. $1m and this page is yours. I jest. Please be transparent and honest with the information you wish to list. I&rsquo;ll accept pull requests from an up-to-date fork pending review.</p>
+
+
+
+                
+        <p><i><b>Dave</b></i></p>
+    
+        <ul class="list-inline">
+            <li>
+                <span>Tags:</span>
+                <span><font color=#ff813f>Software Skills, Operations, GraphOps</font></span>
+            </li>
+            <li>
+                <span>Categories:</span>
+                <span><font color=#ff813f>GraphOps</font></span>
+            </li>
+        </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <div class="social-icon">
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://hub.docker.com/u/davedotdev">
+                                <i class="tf-ion-code-download"></i>
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p><font color=#ff813f>© David Gee and dave.dev, 2021.</font></p>
+                </div>
+
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+
+</body>
+</html>

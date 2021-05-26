@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GraphOps on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/graphops/</link>
+    <description>Recent content in GraphOps on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Mon, 22 Feb 2021 02:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/tags/graphops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Operationalising your Infrastructure With GraphOps</title>
+      <link>https://dave.dev/blog/2021/02/23-02-2021-graphops/</link>
+      <pubDate>Mon, 22 Feb 2021 02:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2021/02/23-02-2021-graphops/</guid>
+      <description>This page contains information I&amp;rsquo;ve been gathering in the name of an emerging branch of operations I&amp;rsquo;m dubbing &amp;ldquo;GraphOps&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

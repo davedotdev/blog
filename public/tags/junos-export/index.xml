@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Junos Export on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/junos-export/</link>
+    <description>Recent content in Junos Export on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Mon, 20 Apr 2015 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/tags/junos-export/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Junos Export Policy Not Working?</title>
+      <link>https://dave.dev/blog/2015/04/junos-export-policy-not-working/</link>
+      <pubDate>Mon, 20 Apr 2015 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2015/04/junos-export-policy-not-working/</guid>
+      <description>During a project recently, I was promptly reminded about the construction of clean Junos route export (i.</description>
+    </item>
+    
+  </channel>
+</rss>

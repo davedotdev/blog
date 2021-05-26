@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSL on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/ssl/</link>
+    <description>Recent content in SSL on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Wed, 23 May 2018 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/categories/ssl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring SSL for gRPC on Junos</title>
+      <link>https://dave.dev/blog/2018/05/configuring-ssl-grpc-junos/</link>
+      <pubDate>Wed, 23 May 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/05/configuring-ssl-grpc-junos/</guid>
+      <description>This is a short article on creating a self-signed root certificate which can be used to self-sign certificates for the purposes of treating our telemetry and instrumentation exploration with the security love it deserves.</description>
+    </item>
+    
+  </channel>
+</rss>

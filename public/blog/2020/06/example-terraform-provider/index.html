@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="An example Terraform provider to test combinations of input variables.">
+
+<meta name="generator" content="Hugo 0.83.1" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/jquery-1.12.4.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://dave.dev/plugins/jquery/jquery-ui.js"></script>
+
+<!-- match-height JS -->
+<script src="https://dave.dev/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/"><h2><font color=#ffffff>dave</font><font color=#ff813f>.</font>dev</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/graphops">GraphOps</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/uijourney">My UI Journey</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                               <a class="nav-link" href="https://dave.dev/index.xml"><img alt="RSS" src="https://dave.dev/images/rss.png" width="25" height="25"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="content">
+
+
+
+<!-- React & JSX -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/terraform_go_header.png" class="w-100 mb-3" alt="Post-Image">
+                <h2>Terraform Example Provider</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            <font color=#ff813f>David Gee</font>
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span><font color=#ff813f>June 3, 2020</font></span>
+                        </li>
+                    </ul>
+                </div>
+                <p>A requirement came up to extract a schema from a Terraform provider in JSON, which Terraform offers as a native feature as of version 0.12.12. From that schema, the task is to then generate a ‘canonical example’ of a <code>x.json.tf</code> file for example usage. That meant creating a TF Schema JSON walker that in turn, creates a tree with arbitrary data that can be serialised in JSON. More on that in a different post.</p>
+<p>In order to create the walker and ensure it covers every type of value, I started looking at the more complex Terraform providers and started with AWS. After spending thirty minutes or so on this task, I decided using an existing provider was too much trouble and decided to write a skeleton provider that exercises every kind of of input value, which can be listed as:</p>
+<ul>
+<li>set</li>
+<li>map</li>
+<li>list</li>
+<li>string</li>
+<li>int</li>
+<li>float</li>
+</ul>
+<p>You can also nest these types and so, this becomes a tree recursion challenge due to unknown depths. This project helped me create my arbitrary JSON generator algorithm from the Terraform schemas and logic dictates, if this provider exercises every combination possible with multiple depths, it&rsquo;s proof that my algorithm works.</p>
+<p>Anyway, these schema types live in the Go code for the Provider schema itself. <a href="https://github.com/davedotdev/canonicaltfprovider/blob/master/resource_canonical.go#L52">Here is a link</a> to a code blob showing this.</p>
+<p>I figured a skeleton provider that doesn’t do anything, but exercises inputs is a great start to make sure my walker logic is sound! You can also create a <code>x.json.tf</code> file and feed it into the provider to validate your JSON config. Just to say it one more time, this provider doesn’t do anything other than demonstrate the kinds of input keys and values and combinations that are possible. A <code>terraform plan</code> therefore won’t work, but a <code>terraform validate</code> absolutely will.</p>
+<h4 id="programmatic-handling-with-terraform">Programmatic Handling with Terraform</h4>
+<p>Dealing with Terraform programmatically is possible via a couple of ways; one using the provider API mechanism (gRPC) directly and the other, interacting with the <code>terraform</code> binary and passing flags so that output data is JSONified. If you&rsquo;re interested in driving the providers directly without Terraform, <a href="https://github.com/hashicorp/terraform/tree/master/docs/plugin-protocol">here is a link</a> which may help you. This one is also useful perhaps for some projects where you do not want to reinvent the wheel. My use case also requires Terraform’s graphing capability, so interacting with the providers directly isn’t of value.</p>
+<p>My skeleton project includes the provider code (based on the old SDK, I need to update this) and an example input config file for the provider itself. I&rsquo;m sharing here because it might be useful for one other person on the planet.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Usage instructions</span>
+git clone https://github.com/davedotdev/canonicaltfprovider.git
+
+cd ./canonicaltfprovider
+
+go mod download
+
+source build.sh
+
+terraform validate
+</code></pre></div><p>The <code>build.sh</code> file also does the <code>terraform init</code> (if you thought it was odd it was missing). The <code>example.tf.json</code> file is then validated against the provider that was created from the <code>build.sh</code> script.</p>
+<p>Enjoy.</p>
+
+
+
+                
+        <p><i><b>Dave</b></i></p>
+    
+        <ul class="list-inline">
+            <li>
+                <span>Tags:</span>
+                <span><font color=#ff813f>Terraform, IaaC</font></span>
+            </li>
+            <li>
+                <span>Categories:</span>
+                <span><font color=#ff813f>Software Design, Terraform, IaaC</font></span>
+            </li>
+        </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <div class="social-icon">
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://hub.docker.com/u/davedotdev">
+                                <i class="tf-ion-code-download"></i>
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p><font color=#ff813f>© David Gee and dave.dev, 2021.</font></p>
+                </div>
+
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+
+</body>
+</html>

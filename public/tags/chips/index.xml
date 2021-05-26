@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chips on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/chips/</link>
+    <description>Recent content in Chips on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Tue, 07 Oct 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/tags/chips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>White Box Switching: Broadcom StrataXGS Tomahawk</title>
+      <link>https://dave.dev/blog/2014/10/white-box-switching-welcome-broadcom-strataxgs-tomahawk/</link>
+      <pubDate>Tue, 07 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2014/10/white-box-switching-welcome-broadcom-strataxgs-tomahawk/</guid>
+      <description>A previous post listed the excitement I felt when reading through the Cavium XPliant announcement.</description>
+    </item>
+    
+  </channel>
+</rss>

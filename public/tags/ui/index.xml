@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UI on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/ui/</link>
+    <description>Recent content in UI on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Mon, 24 May 2021 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/tags/ui/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My UI Skill Building Journey - Week Two (24-30 May 21)</title>
+      <link>https://dave.dev/blog/2021/05/24-05-2021-uijourney/</link>
+      <pubDate>Mon, 24 May 2021 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2021/05/24-05-2021-uijourney/</guid>
+      <description>Monday 24th May 2021 I decided to install Storybook so I can follow along on my local machine.</description>
+    </item>
+    
+    <item>
+      <title>My UI Skill Building Journey - Week One (17-21 May 21)</title>
+      <link>https://dave.dev/blog/2021/05/17-05-2021-uijourney/</link>
+      <pubDate>Mon, 17 May 2021 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2021/05/17-05-2021-uijourney/</guid>
+      <description>Initially I&amp;rsquo;ll commit 30 minutes per day to this. That should be long enough for new material to stick and short enough so that some new info doesn&amp;rsquo;t converyorbelt other new info through my brain and out the other side.</description>
+    </item>
+    
+    <item>
+      <title>My UI Skill Building Journey - Introduction</title>
+      <link>https://dave.dev/blog/2021/05/16-05-2021-uijourney/</link>
+      <pubDate>Sun, 16 May 2021 02:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2021/05/16-05-2021-uijourney/</guid>
+      <description>I&amp;rsquo;m terrible at UI. I can hack together HTML and CSS, smash together components from frameworks, but I do not generally build anything from scratch because it&amp;rsquo;s too hard.</description>
+    </item>
+    
+  </channel>
+</rss>

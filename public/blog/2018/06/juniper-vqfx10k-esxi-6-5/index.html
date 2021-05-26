@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Juniper vQFX10K on ESXi 6.5">
+
+<meta name="generator" content="Hugo 0.83.1" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/jquery-1.12.4.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://dave.dev/plugins/jquery/jquery-ui.js"></script>
+
+<!-- match-height JS -->
+<script src="https://dave.dev/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/"><h2><font color=#ffffff>dave</font><font color=#ff813f>.</font>dev</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/graphops">GraphOps</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/uijourney">My UI Journey</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                               <a class="nav-link" href="https://dave.dev/index.xml"><img alt="RSS" src="https://dave.dev/images/rss.png" width="25" height="25"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="content">
+
+
+
+<!-- React & JSX -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Juniper vQFX10K on ESXi 6.5</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            <font color=#ff813f>David Gee</font>
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span><font color=#ff813f>June 7, 2018</font></span>
+                        </li>
+                    </ul>
+                </div>
+                <p>A quick and dirty post on running the Juniper vQFX on VMWare ESXi.</p>
+<p>You might be wondering why ESXi seeing as we’re all cloudy types. ESXi is purely a case of laziness. Each server in my control has ESXi 6.5 installed. This becomes tin management at the most basic level.</p>
+<p>Part of my home network has a DMZ which has several public IP addresses and I expose systems and VNFs externally over the internet. More recently thanks to the IP fabric craze, part of what I’m exploring is easy integration and feature enhancement on Juniper vQFX instances. Two choices exist:</p>
+<ul>
+<li>Install vQFX on servers with KVM</li>
+<li>Install on ESXi</li>
+</ul>
+<p>I went for the easy ground (because why make it harder than it has to be?) Turns out, it wasn’t as straight forward as it should be, although not difficult. Just a niggle.</p>
+<h4 id="installation-process">Installation Process</h4>
+<p>Grab yourself the RE and PFE images from the Juniper download site:
+<a href="https://www.juniper.net/support/downloads/?p=vqfxeval">https://www.juniper.net/support/downloads/?p=vqfxeval</a> I Grabbed the 18.1 RE and the 17.4 PFE image.</p>
+<p>Next, extract the two <code>.vmdk</code> files from the .box files. You can use the trusty tar tool to extract the files required. Below are two files I downloaded from the Juniper site and renamed for clarity.</p>
+<p>Run the <code>tar -xzf &lt;file&gt;</code> in each directory. Your outcome will look like below:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">├── PFE
+│   ├── Vagrantfile
+│   ├── box.ovf
+│   ├── metadata.json
+│   ├── packer-virtualbox-ovf-1520879272-disk001.vmdk
+│   └── vqfx-pfe-virtualbox.box
+└── RE
+    ├── Vagrantfile
+    ├── box.ovf
+    ├── metadata.json
+    ├── packer-virtualbox-ovf-1524541301-disk001.vmdk
+    └── vqfx-re-virtualbox.box
+</code></pre></div><p>One requires step here is to run the <code>.vmdk</code> file through the <code>vmkfstools</code> tool on an EXI machine. Here’s the command I used for that. This tool converts the disk back to being thin provisioned.</p>
+<p><code>vmkfstools -i &lt;input_filename&gt; &lt;output_filename&gt; -d thin</code></p>
+<p>If you do not do this step, the VMs still boot, however I also saw some write errors to disk. I can’t comment any further beyond seeing some error messages due to time investigation time constraints.</p>
+<p>Next, to try and figure out what each VM needs and what operating system it runs on, take a sneaky peak inside each of the <code>box.ovf</code> files. By looking inside the RE OVF file we know it’s a FreeBSD Operating system with an IDE disk controller. Ok. We can also see what see the requirements for vCPU and RAM.</p>
+<p>Here’s the resulting data needed to build those VMs.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">RE:
+    CPU:        <span style="color:#ae81ff">1</span>
+    RAM:        <span style="color:#ae81ff">1024</span> MB
+    OS:         FreeBSD
+    DiskCtl:    IDE, Controller0 Master
+    NICs:       Management, Internal
+    Type:       VMvware 5.5 <span style="color:#f92672">(</span>type 11<span style="color:#f92672">)</span>
+PFE:
+    CPU:        <span style="color:#ae81ff">1</span>
+    RAM:        <span style="color:#ae81ff">2048</span>
+    OS:         Ubuntu x64
+    Diskctl:    IDE, Controller0 Master
+    NICs:       Management, Internal, Revenue<span style="color:#f92672">(</span>n<span style="color:#f92672">)</span>...
+    Type:       VMvware 5.5 <span style="color:#f92672">(</span>type 11<span style="color:#f92672">)</span>
+</code></pre></div><p>Now you can use the WebUI or vmtools CLI and build virtual machines. I had issues running these VMs as version 6.5, but I can confirm they work just fine as 5.5!</p>
+<p><img src="/images/blog/vm_build_1.png#center" alt="vm_build_1"></p>
+<p>Here’s another showing how to set up the disk controller, CPU and RAM.</p>
+<p><img src="/images/blog/vm_build_2.png#center" alt="vm_build_2"></p>
+<p><img src="/images/blog/vm_build_3.png#center" alt="vm_build_3"></p>
+<p><img src="/images/blog/vm_build_4.png#center" alt="vm_build_4"></p>
+<p>One final set of warnings. When launching the VMs, sometimes the NIC order changes. Ensure the ordering of NICs:</p>
+<ol>
+<li>Management NIC</li>
+<li>Internal NIC (on own vSwitch with 9000 byte MTU)</li>
+<li>For PFE port three onwards are revenue ports</li>
+</ol>
+<p>Also, the availability of the PFE for 18.1 isn’t there yet, so I used the 17.4 PFE. It is normal to have semantic version mismatches between the RE and PFE virtual machines, so don’t worry!</p>
+<p>Finally finally, this is a community supported project, so please do not moan at Juniper or your account manager!</p>
+<p>Enjoy.</p>
+<p><img src="/images/blog/vm_build_1.png#center" alt="vm_build_1"></p>
+
+
+
+                
+        <p><i><b>Dave</b></i></p>
+    
+        <ul class="list-inline">
+            <li>
+                <span>Tags:</span>
+                <span><font color=#ff813f>vQFX10k</font></span>
+            </li>
+            <li>
+                <span>Categories:</span>
+                <span><font color=#ff813f>vQFX10k</font></span>
+            </li>
+        </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <div class="social-icon">
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://hub.docker.com/u/davedotdev">
+                                <i class="tf-ion-code-download"></i>
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p><font color=#ff813f>© David Gee and dave.dev, 2021.</font></p>
+                </div>
+
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+
+</body>
+</html>

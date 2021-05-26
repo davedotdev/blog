@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/automation/</link>
+    <description>Recent content in Automation on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Fri, 20 Sep 2019 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/categories/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Opinionated Automation: Packaged, Extensible &amp; Closed Systems</title>
+      <link>https://dave.dev/blog/2019/09/opinionated-automation-packaged-extensible-closed-systems/</link>
+      <pubDate>Fri, 20 Sep 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/09/opinionated-automation-packaged-extensible-closed-systems/</guid>
+      <description>Network engineers for the last twenty years have created networks from composable logical constructs, which result in a network of some structure.</description>
+    </item>
+    
+    <item>
+      <title>Formalisation of Automation: WIP</title>
+      <link>https://dave.dev/blog/2019/09/formalisation-automation-wip/</link>
+      <pubDate>Tue, 17 Sep 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/09/formalisation-automation-wip/</guid>
+      <description>For the last five or six years, I’ve not really done any networking and have focussed on software, automation and the mechanisation of processes so that they may be manifested as network driving workflows.</description>
+    </item>
+    
+    <item>
+      <title>Automation Workflow Patterns</title>
+      <link>https://dave.dev/blog/2019/06/automation-workflow-patterns/</link>
+      <pubDate>Fri, 07 Jun 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/06/automation-workflow-patterns/</guid>
+      <description>Workflows vary from seriously simple to notoriously complex and as humans, we might not even consciously observe the subtleties of what a workflow comprises of.</description>
+    </item>
+    
+    <item>
+      <title>IaC – unit tests with jSNAPy and Ansible</title>
+      <link>https://dave.dev/blog/2019/04/iac-unit-tests-jsnapy-ansible/</link>
+      <pubDate>Wed, 24 Apr 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/04/iac-unit-tests-jsnapy-ansible/</guid>
+      <description>JSNAPY is an open source tool released by Juniper Networks circa 2015 that is the Python version of the Juniper Snapshot Administrator.</description>
+    </item>
+    
+    <item>
+      <title>To Code Or Not To Code: Expression &amp; Symbiosis</title>
+      <link>https://dave.dev/blog/2019/02/code-not-code-expression-symbiosis/</link>
+      <pubDate>Mon, 25 Feb 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/02/code-not-code-expression-symbiosis/</guid>
+      <description>There is still an ongoing debate over the need for network engineers to pick up some software skills.</description>
+    </item>
+    
+    <item>
+      <title>Automation: Tools vs Languages</title>
+      <link>https://dave.dev/blog/2019/02/automation-tools-vs-languages/</link>
+      <pubDate>Wed, 20 Feb 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/02/automation-tools-vs-languages/</guid>
+      <description>When it comes to expressing intent in automation workflows, there is validation in both using a task or workflow engine and also knocking it together using scripting in some language.</description>
+    </item>
+    
+    <item>
+      <title>Event-Driven Automation: The TL;DR No One Told You About</title>
+      <link>https://dave.dev/blog/2019/01/event-driven-automation-tldr-no-one-told/</link>
+      <pubDate>Thu, 31 Jan 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/01/event-driven-automation-tldr-no-one-told/</guid>
+      <description>Event-Driven automation is an umbrella term much like &amp;ldquo;coffee&amp;rdquo; (also see here, it turns out I’ve used coffee anecdotes way too much).</description>
+    </item>
+    
+    <item>
+      <title>NAE: Some Help Dealing with Brain Block</title>
+      <link>https://dave.dev/blog/2019/01/nae-help-dealing-brain-block/</link>
+      <pubDate>Thu, 17 Jan 2019 12:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/01/nae-help-dealing-brain-block/</guid>
+      <description>For years, thanks to the gift of misaligned perception, I’ve been mentally blocked.</description>
+    </item>
+    
+    <item>
+      <title>NAE: Automation and Time</title>
+      <link>https://dave.dev/blog/2019/01/nae-automation-time/</link>
+      <pubDate>Tue, 08 Jan 2019 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2019/01/nae-automation-time/</guid>
+      <description>Time is the enemy of everything in the field of IT.</description>
+    </item>
+    
+    <item>
+      <title>Automation: Flow Control &amp; Dimensionality</title>
+      <link>https://dave.dev/blog/2018/10/automation-flow-control-dimensionality/</link>
+      <pubDate>Fri, 19 Oct 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/10/automation-flow-control-dimensionality/</guid>
+      <description>Human beings as we are, struggle sometimes to think multi-dimensionally about tasks.</description>
+    </item>
+    
+    <item>
+      <title>Automation for Success</title>
+      <link>https://dave.dev/blog/2018/06/automation-for-success/</link>
+      <pubDate>Tue, 26 Jun 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/06/automation-for-success/</guid>
+      <description>Businesses with high growth, complex tasks and repetition, tend to rely on or require automation to fulfill business challenges.</description>
+    </item>
+    
+    <item>
+      <title>Automation for Reliability</title>
+      <link>https://dave.dev/blog/2018/06/automation-for-reliability/</link>
+      <pubDate>Thu, 14 Jun 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/06/automation-for-reliability/</guid>
+      <description>Statistics says, the more often you do something, the higher the chances of a negative event occurring when you do it.</description>
+    </item>
+    
+    <item>
+      <title>Describing Network Automation: Automate the Coffee</title>
+      <link>https://dave.dev/blog/2018/04/describing-network-automation-automate-coffee/</link>
+      <pubDate>Sun, 22 Apr 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/04/describing-network-automation-automate-coffee/</guid>
+      <description>How to Describe Automation Cisco Live, Milan, 2014, the place where everyone drinks a caffé!</description>
+    </item>
+    
+    <item>
+      <title>Declarative and Imperative Automation Thinking</title>
+      <link>https://dave.dev/blog/2017/09/declarative-and-imperative-automation-thinking/</link>
+      <pubDate>Mon, 11 Sep 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2017/09/declarative-and-imperative-automation-thinking/</guid>
+      <description>Event driven or workflow driven automation for the uninitiated can appear daunting.</description>
+    </item>
+    
+    <item>
+      <title>Automation and State</title>
+      <link>https://dave.dev/blog/2017/07/automation-and-state/</link>
+      <pubDate>Mon, 31 Jul 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2017/07/automation-and-state/</guid>
+      <description>To State or not to State  State State its purpose.</description>
+    </item>
+    
+    <item>
+      <title>Python: Real World Hacking on StackStorm (Network Engineer Focussed)</title>
+      <link>https://dave.dev/blog/2017/02/python-real-world-hacking-on-stackstorm-network-engineer-focussed/</link>
+      <pubDate>Mon, 27 Feb 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2017/02/python-real-world-hacking-on-stackstorm-network-engineer-focussed/</guid>
+      <description>It’s miserably cold, raining (the kind that gets you really wet) and a strange dark grey light covers the UK.</description>
+    </item>
+    
+    <item>
+      <title>Automation: Build or Consume?</title>
+      <link>https://dave.dev/blog/2017/02/automation-build-or-consume/</link>
+      <pubDate>Sat, 04 Feb 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2017/02/automation-build-or-consume/</guid>
+      <description>The question of “home grown vs. off the shelf” comes up a lot.</description>
+    </item>
+    
+    <item>
+      <title>Network Automation &amp; Controller Questionnaire</title>
+      <link>https://dave.dev/blog/2014/09/network-automation-controller-questionnaire/</link>
+      <pubDate>Tue, 30 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2014/09/network-automation-controller-questionnaire/</guid>
+      <description>With all of the current trends coming in to the industry around policy based network configuration, network automation and controller value add, do you understand why and where the trends are coming from?</description>
+    </item>
+    
+  </channel>
+</rss>

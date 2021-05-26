@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Complexity on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/complexity/</link>
+    <description>Recent content in Complexity on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Wed, 26 Feb 2020 23:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/tags/complexity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some Thoughts On Complexity</title>
+      <link>https://dave.dev/blog/2020/02/thoughts-on-complexity/</link>
+      <pubDate>Wed, 26 Feb 2020 23:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2020/02/thoughts-on-complexity/</guid>
+      <description>Brace yourself reader. Future me, you may disagree with what’s in here.</description>
+    </item>
+    
+  </channel>
+</rss>
