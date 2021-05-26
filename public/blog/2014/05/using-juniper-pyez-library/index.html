@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Using the Juniper PyEZ Python library">
+
+<meta name="generator" content="Hugo 0.83.1" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/jquery-1.12.4.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://dave.dev/plugins/jquery/jquery-ui.js"></script>
+
+<!-- match-height JS -->
+<script src="https://dave.dev/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/"><h2><font color=#ffffff>dave</font><font color=#ff813f>.</font>dev</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/graphops">GraphOps</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/uijourney">My UI Journey</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                               <a class="nav-link" href="https://dave.dev/index.xml"><img alt="RSS" src="https://dave.dev/images/rss.png" width="25" height="25"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="content">
+
+
+
+<!-- React & JSX -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Using the Juniper PyEZ Library [Beginner]</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            <font color=#ff813f>David Gee</font>
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span><font color=#ff813f>May 24, 2014</font></span>
+                        </li>
+                    </ul>
+                </div>
+                <p>This is a self contained guide on how to use <a href="https://techwiki.juniper.net/Automation_Scripting/Junos_OS_PyEZ">Juniper’s PyEZ library</a> to connect to a Junos device and interact with it by <a href="http://en.wikipedia.org/wiki/NETCONF">NETCONF</a>. As well as being a self contained guide, it’s also linked to from <a href="http://ipengineer.net/2014/05/from-cli-to-python-beginner/">this</a> article which provides an overview of Python programmability.</p>
+<p><img src="/images/blog/NetOS_DataConnectivity_NETCONF.png#center" alt="NetOS_DataConnectivity_NETCONF"></p>
+<p>In order to provide a disciplined approach to utilising the framework provided by Jeremy Schulman’s talented team, please find a set of hypothetical requirements below.</p>
+<p>It’s important to also establish some standards before writing code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">Methods = thisMethod()  
+Functions = thisFunction()  
+Variables  = this_is_a_value = x  
+Class   = ThisClass()  
+Fields = this_is_a_value = x  
+Private field = _private_field = x  
+Comment = # Comment blah blah stuff blah  
+</code></pre></div><h4 id="hypothetical-requirements-acme-industries--netops-requirements">Hypothetical Requirements: ACME Industries – NetOps requirements</h4>
+<p>ACME elevator music incorporated is seeing unprecedented growth for some unknown reason and have decided to do a health check on their network which currently consists of three devices, which includes a Juniper Firefly Perimeter (vSRX). You are to extract the information below and present it in a human readable format which can be entered in to a report. Please create re-usable code and scripts to add value to the network operations team.</p>
+<ol>
+<li>Hostname</li>
+<li>Model</li>
+<li>Uptime of each device</li>
+<li>Current software version</li>
+<li>Device serial number</li>
+<li>MAC address for each active Ethernet interface</li>
+</ol>
+<h4 id="lets-begin">Let’s begin</h4>
+<p>Let’s install PyEZ using the Python package manager called pip. Instructions on installation can be found on the PyEZ website.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install junos-eznc  
+</code></pre></div><p>Where do we go from here? Let’s just jump in knee deep and see if we can utilise the <code>junos-eznc</code> framework and connect to a device before we try anything else. A tenet of network engineering. Ping it before you break it. How would you know if it was working before you attempt to break it? I’ve fired up a Juniper Firefly VM (vSRX) on VMWare Fusion, it has an IP address of 172.16.49.136 and I’ve configured the username ‘dgee’ and password ‘Passw0rd’. Ensure that NETCONF is permitted inbound to the device with the config directly below. Look for the ‘netconf’ configuration statement. Also, ensure that firewall rules permit the traffic inbound on the interface that you’ll be accessing the Firefly instance on. In this case it’s ge–0/0/0.0, which is reachable via my Mac routing table.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-plaintext" data-lang="plaintext">dgee&gt; show configuration security zones security-zone trust   
+&lt;*snip*&gt;  
+interfaces {
+    ge-0/0/0.0 {
+        host-inbound-traffic {
+            system-services {
+                netconf;
+            }
+        }
+    }
+}  
+</code></pre></div><p>Now we’ve got the basics in place, let’s go right ahead and open the Python interpreter. Enter the code below. If you’re not totally familiar with the interpreter environment just yet, the ‘&raquo;&gt;’ is akin to a prompt. Enter lines of code when this is present. You’ll notice when it’s not present, output from something (a function, class, or in our case device) resides. <code>pprint</code> is similar to <code>print</code> but is a bit more ‘prettier’.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Python <span style="color:#ae81ff">2.7</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span> (default, Sep <span style="color:#ae81ff">12</span> <span style="color:#ae81ff">2013</span>, <span style="color:#ae81ff">21</span>:<span style="color:#ae81ff">33</span>:<span style="color:#ae81ff">34</span>) 
+[GCC <span style="color:#ae81ff">4.2</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span> Compatible Apple LLVM <span style="color:#ae81ff">5.0</span> (clang<span style="color:#f92672">-</span><span style="color:#ae81ff">500.0</span><span style="color:#f92672">.</span><span style="color:#ae81ff">68</span>)] on darwin
+Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information<span style="color:#f92672">.</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#75715e"># EXERCISE 1.0</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#75715e"># You do not have to type this or the comment above as they are comments</span>
+<span style="color:#f92672">&gt;&gt;&gt;</span> 
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+<span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">from</span> jnpr.junos <span style="color:#f92672">import</span> Device
+<span style="color:#f92672">&gt;&gt;&gt;</span> dev1 <span style="color:#f92672">=</span> Device(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;172.16.49.136&#39;</span>, user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dgee&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Passw0rd&#39;</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span> dev1<span style="color:#f92672">.</span>open()
+Device(<span style="color:#ae81ff">172.16</span><span style="color:#f92672">.</span><span style="color:#ae81ff">49.136</span>)
+<span style="color:#f92672">&gt;&gt;&gt;</span> pprint( dev1<span style="color:#f92672">.</span>facts )
+{<span style="color:#e6db74">&#39;2RE&#39;</span>: False,
+ <span style="color:#e6db74">&#39;HOME&#39;</span>: <span style="color:#e6db74">&#39;/cf/var/home/dgee&#39;</span>,
+ <span style="color:#e6db74">&#39;RE0&#39;</span>: {<span style="color:#e6db74">&#39;last_reboot_reason&#39;</span>: <span style="color:#e6db74">&#39;Router rebooted after a normal shutdown.&#39;</span>,
+         <span style="color:#e6db74">&#39;model&#39;</span>: <span style="color:#e6db74">&#39;JUNOSV-FIREFLY RE&#39;</span>,
+         <span style="color:#e6db74">&#39;status&#39;</span>: <span style="color:#e6db74">&#39;Testing&#39;</span>,
+         <span style="color:#e6db74">&#39;up_time&#39;</span>: <span style="color:#e6db74">&#39;18 minutes, 54 seconds&#39;</span>},
+ <span style="color:#e6db74">&#39;domain&#39;</span>: None,
+ <span style="color:#e6db74">&#39;fqdn&#39;</span>: <span style="color:#e6db74">&#39;Amnesiac&#39;</span>,
+ <span style="color:#e6db74">&#39;hostname&#39;</span>: <span style="color:#e6db74">&#39;Amnesiac&#39;</span>,
+ <span style="color:#e6db74">&#39;ifd_style&#39;</span>: <span style="color:#e6db74">&#39;CLASSIC&#39;</span>,
+ <span style="color:#e6db74">&#39;model&#39;</span>: <span style="color:#e6db74">&#39;JUNOSV-FIREFLY&#39;</span>,
+ <span style="color:#e6db74">&#39;personality&#39;</span>: <span style="color:#e6db74">&#39;SRX_BRANCH&#39;</span>,
+ <span style="color:#e6db74">&#39;serialnumber&#39;</span>: <span style="color:#e6db74">&#39;ee9e0c8e09cd&#39;</span>,
+ <span style="color:#e6db74">&#39;srx_cluster&#39;</span>: False,
+ <span style="color:#e6db74">&#39;switch_style&#39;</span>: <span style="color:#e6db74">&#39;VLAN&#39;</span>,
+ <span style="color:#e6db74">&#39;version&#39;</span>: <span style="color:#e6db74">&#39;12.1X44-D20.3&#39;</span>,
+ <span style="color:#e6db74">&#39;version_info&#39;</span>: junos<span style="color:#f92672">.</span>version_info(major<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">1</span>), type<span style="color:#f92672">=</span>X, minor<span style="color:#f92672">=</span>(<span style="color:#ae81ff">44</span>, <span style="color:#e6db74">&#39;D&#39;</span>, <span style="color:#ae81ff">20</span>), build<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>),
+ <span style="color:#e6db74">&#39;virtual&#39;</span>: True}
+<span style="color:#f92672">&gt;&gt;&gt;</span> dev1<span style="color:#f92672">.</span>close()
+</code></pre></div><p>First thoughts? If you didn’t get it right the first time either due to a typo or three, working so low down can become frustrating. How can we immediately move past this first new pain point? Before a solution is offered (and this is my solution, not necessarily correct for you), working this way is in parallel to working with the traditional CLI without the trusty question mark. Try entering the question mark and see what happens.</p>
+<p>To ease the pain of repetitively typing all of our code and debugging any typos, let’s take change gear and enter our code in to a <code>.py</code> file and execute it via Python. We’ll also add some additional code which will allow us to interact with our environment interactively once all of the code has been executed. Below shows the additional code which achieves this. Comments have a # prepended in front of them. <strong>Important</strong>, for this exercise, although the comment instructs you to close the connection to the device and exit Python, please do NOT! The comments are there as good practise. We need the connection to be open for the remainder of our exercise up until writing production code!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># EXERCISE 1.1</span>
+<span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+<span style="color:#f92672">from</span> jnpr.junos <span style="color:#f92672">import</span> Device
+<span style="color:#f92672">import</span> code
+
+dev1 <span style="color:#f92672">=</span> Device(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;172.16.49.136&#39;</span>, user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dgee&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Passw0rd&#39;</span>)
+dev1<span style="color:#f92672">.</span>open()
+
+pprint( dev1<span style="color:#f92672">.</span>facts )
+
+<span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Welcome to the interactive shell&#34;</span>
+code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals())
+
+<span style="color:#75715e"># Remember to close the connection before exiting from the interactive Python shell</span>
+
+<span style="color:#75715e"># Execute the below:</span>
+<span style="color:#75715e"># dev1.close()</span>
+<span style="color:#75715e"># exit()</span>
+</code></pre></div><p>All of the information we require barring that related to interfaces is in our output from the Firefly VM. Try entering:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dir(dev1)  
+</code></pre></div><p>See what happens? We get a list of the functions that object <code>dev1</code> has available. This is simple introspection, where we ask Python to look at itself and tell us what it sees in the object. Pretty neat huh?</p>
+<p>Next, let’s extract the Ethernet MAC address information using the code below.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># EXERCISE 1.2</span>
+<span style="color:#f92672">from</span> jnpr.junos.op.ethport <span style="color:#f92672">import</span> EthPortTable 
+eths <span style="color:#f92672">=</span> EthPortTable(dev)
+eths<span style="color:#f92672">.</span>get()
+
+x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#66d9ef">while</span> x <span style="color:#f92672">&lt;</span> len(eths):
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Interface: &#34;</span> <span style="color:#f92672">+</span> eths<span style="color:#f92672">.</span>keys()[x] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; Information&#34;</span>
+    <span style="color:#66d9ef">print</span> eths[x]<span style="color:#f92672">.</span>items()
+    x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</code></pre></div><p>For now, let’s not get too concerned with formatting the data. With any engineering, we want to make sure we have the right size nuts and bolts before we get the spanners out. Here’s a complete listing up to now of what we’ve covered with comments.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># EXCERCISE 1.3</span>
+<span style="color:#75715e"># Code for &#39;CLI to Py&#39; blog post by @davidjohngee</span>
+<span style="color:#75715e"># Please adhere to Juniper&#39;s license terms and Jeremy&#39;s teams good will!</span>
+
+<span style="color:#75715e"># This code imports required classes from PyEZ, pprint and our interactive code shell requirement so we can tinker.</span>
+<span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+<span style="color:#f92672">from</span> jnpr.junos <span style="color:#f92672">import</span> Device
+<span style="color:#f92672">from</span> jnpr.junos.op.ethport <span style="color:#f92672">import</span> EthPortTable 
+
+<span style="color:#f92672">import</span> code
+
+<span style="color:#75715e"># This is where we declare our run time global variables.</span>
+
+x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+<span style="color:#75715e"># This is our &#39;main&#39; code and entry point. We do this so code is reusable.</span>
+<span style="color:#75715e"># For example, if we want to import any class or function we&#39;ve defined in this file, but not execute</span>
+<span style="color:#75715e"># any code that does something, then this facilitates that (if that makes sense?)</span>
+<span style="color:#75715e"># Our __main__ code is executed if this file is executed first.</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+
+    <span style="color:#75715e"># Create our device object and assign the hostname or IP address, username and password</span>
+    dev1 <span style="color:#f92672">=</span> Device(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;172.16.49.136&#39;</span>, user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dgee&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Passw0rd&#39;</span>)
+    
+    <span style="color:#75715e"># Open a connection to the device. Please note, we&#39;re doing some very simple exception handling!</span>
+    <span style="color:#66d9ef">try</span>:
+        dev1<span style="color:#f92672">.</span>open()
+    <span style="color:#66d9ef">except</span>:
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Error Will Robinson, error&#34;</span>
+    
+    <span style="color:#75715e"># Print the element information    </span>
+    pprint( dev1<span style="color:#f92672">.</span>facts )
+
+    <span style="color:#75715e"># Next up, let&#39;s create an object to store information pertaining to our Ethernet ports</span>
+    eth_ports <span style="color:#f92672">=</span> EthPortTable(dev1)
+    
+    <span style="color:#75715e"># and obtain the information</span>
+    eth_ports<span style="color:#f92672">.</span>get()
+
+    <span style="color:#75715e"># Loop through the information using x as an index and print to stdout</span>
+    <span style="color:#66d9ef">while</span> x <span style="color:#f92672">&lt;</span> len(eth_ports):
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Interface: &#34;</span> <span style="color:#f92672">+</span> eth_ports<span style="color:#f92672">.</span>keys()[x] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; Information&#34;</span>
+        <span style="color:#66d9ef">print</span> eth_ports[x]<span style="color:#f92672">.</span>items()
+        x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+
+    <span style="color:#75715e"># Now dump in to the interactive shell</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Welcome to the interactive shell&#34;</span>
+    code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals())
+
+    <span style="color:#75715e"># Remember to close the connection before exiting from the interactive Python shell</span>
+
+    <span style="color:#75715e"># Execute the below:</span>
+    <span style="color:#75715e"># dev1.close()</span>
+    <span style="color:#75715e"># exit()</span>
+</code></pre></div><p>At this point, it will prove wise to assess what we’ve achieved and what we need to do in order to meet our requirements. As you’re no doubt experiencing, it’s easy to get lost in the actual code. The best way to stay focussed and on track is to…</p>
+<h4 id="create-a-plan">Create a plan!</h4>
+<p>Here’s sanitised list of tasks that we need to achieve in order to meet our requirements:</p>
+<ol>
+<li>Create a client side data object to store our network element data in and provide functionality.</li>
+<li>Obtain the data via PyEZ.</li>
+<li>Normalise and store the data in our client side data object.</li>
+<li>Pretty print the data to complete and meet our original set of requirements.</li>
+</ol>
+<p>So far we’ve done the fun bit, but that’s it. Good to play but not very useful.</p>
+<p>Once we have the list, we can architect the requirements. We know that there will be data to store and we also know that some text manipulation will be required, which we can build in to a function. Let’s hit the list.</p>
+<p>As is said, a picture says a thousand words. Here’s an image of our desired data object that we would like to use to store the network element data. A Python object can be used to store data, but it can also be used to house functions. A function typically does something to the data held within. In our case, we need a function to pretty print.</p>
+<p><img src="/images/blog/PyEZ_Object_3.png#center" alt="PyEZ_Object_3"></p>
+<p>We also need to decide on a method of loading the data in to our object. We can do it at creation time via the class constructor, or we can create ‘setters’ to do it. I’m a fan of keeping things simple, so I’ve opted to populate the class via the constructor.</p>
+<p>This class is simple, it loads the data and the <code>__str__</code> function returns a pretty version when called. Obtaining the data was the hardest part. In order to access interface information, we need to create an EthPortTable object. We could create that in the <code>__main__</code> section of our code, but that would mean an object accessing something in the global object space. To keep this tidy, let’s create the table within the class! The class constructor has the device class passed to it so the class constructor method can can call the EthPortTable.get() method, which in populates it. Notice that in the <code>__str__</code> method, we index in to the EthPortTable via <code>[x]</code> and the <code>['macaddr']</code> index values. Check the output from exercise 1.3 to see where <code>['macaddr']</code> appears. This might seem a lot to take in. Look carefully how the code has developed from the ‘scratch pad’ version to a much tidier example at the bottom of the post. Check the PyEZ documentation for more info if you want more clarity on tables.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># EXERCISE 1.4</span>
+<span style="color:#75715e"># Here a class is defined, which matches our requirements.</span>
+<span style="color:#75715e"># 1.  Uptime of each device</span>
+<span style="color:#75715e"># 2.  Current software version</span>
+<span style="color:#75715e"># 3.  Device serial number</span>
+<span style="color:#75715e"># 4.  MAC address for each Ethernet interface</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NetworkRequirements</span>(object):
+    _hostname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _model <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _uptime <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#39;&#39;</span>
+    _version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _serial <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _interfaces <span style="color:#f92672">=</span> []
+    
+    <span style="color:#66d9ef">def</span> __init__(self, uptime, version, serial, hostname, model, device):
+        <span style="color:#75715e"># This is our constructor. Populate each variable.</span>
+        self<span style="color:#f92672">.</span>_up_time <span style="color:#f92672">=</span> uptime
+        self<span style="color:#f92672">.</span>_version <span style="color:#f92672">=</span> version
+        self<span style="color:#f92672">.</span>_serial <span style="color:#f92672">=</span> serial
+        self<span style="color:#f92672">.</span>_hostname <span style="color:#f92672">=</span> hostname
+        self<span style="color:#f92672">.</span>_model <span style="color:#f92672">=</span> model
+        self<span style="color:#f92672">.</span>_interfaces <span style="color:#f92672">=</span> EthPortTable(device)
+        self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>get()
+    
+    <span style="color:#66d9ef">def</span> __str__(self):
+        <span style="color:#75715e"># This is our special print function which returns a string (text) version of the object.</span>
+        <span style="color:#75715e"># We need to build our text up and structure it. We do this by appending the required text to a variable</span>
+        <span style="color:#75715e"># which we&#39;ve called &#39;return_string&#39;.</span>
+        <span style="color:#75715e"># n is a special sequence to insert a new line and t (can you guess?) is a tab.</span>
+        <span style="color:#75715e"># Once our string is complete, we &#39;return&#39; it to the caller.</span>
+        
+        x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        return_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">16</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Element Report&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Hostname: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_hostname
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Model: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_model
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Uptime: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_up_time
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Version: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_version
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Serial: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_serial
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        
+        <span style="color:#66d9ef">while</span> x <span style="color:#f92672">&lt;</span> len(self<span style="color:#f92672">.</span>_interfaces):
+            return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Interface &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>keys()[x] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;tMAC Address: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_interfaces[x][<span style="color:#e6db74">&#39;macaddr&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;n&#34;</span>
+            x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">21</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;End of Element Report&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        
+        <span style="color:#66d9ef">return</span> return_string
+</code></pre></div><p>Directly below is the output that meets our requirements. At the bottom of the post you will find two versions of code that provides the required output. Note that the code that allows you to enter interactive mode is still there. This allows you to play around and check objects etc after your code has executed. Handy for testing more functionality prior to building it! Finally, note that the interface list is built dynamically. We don’t know how many interfaces are present when we designed and built our class.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">================================================================</span>
+                    Element Report
+<span style="color:#f92672">================================================================</span>
+Hostname:           Amnesiac
+Model:              JUNOSV-FIREFLY
+Uptime:             <span style="color:#ae81ff">10</span> hours, <span style="color:#ae81ff">41</span> minutes, <span style="color:#ae81ff">35</span> seconds
+Version:            12.1X44-D20.3
+Serial:             ee9e0c8e09cd
+Interface ge-0/0/0  MAC Address: 00:0c:29:8e:09:cd
+Interface ge-0/0/1  MAC Address: 00:0c:29:8e:09:d7
+
+<span style="color:#f92672">================================================================</span>
+                     End of Element Report
+<span style="color:#f92672">================================================================</span>
+
+
+Welcome to the interactive shell
+Python 2.7.5 <span style="color:#f92672">(</span>default, Sep <span style="color:#ae81ff">12</span> 2013, 21:33:34<span style="color:#f92672">)</span> 
+<span style="color:#f92672">[</span>GCC 4.2.1 Compatible Apple LLVM 5.0 <span style="color:#f92672">(</span>clang-500.0.68<span style="color:#f92672">)]</span> on darwin
+Type <span style="color:#e6db74">&#34;help&#34;</span>, <span style="color:#e6db74">&#34;copyright&#34;</span>, <span style="color:#e6db74">&#34;credits&#34;</span> or <span style="color:#e6db74">&#34;license&#34;</span> <span style="color:#66d9ef">for</span> more information.
+<span style="color:#f92672">(</span>InteractiveConsole<span style="color:#f92672">)</span>
+&gt;&gt;&gt;
+</code></pre></div><p>Here is version one of the code that uses all of the code from the exercises above.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Code for &#39;CLI to Py&#39; blog post by @davidjohngee</span>
+<span style="color:#75715e"># Please adhere to Juniper&#39;s license terms and Jeremy&#39;s teams good will!</span>
+
+<span style="color:#75715e"># This code imports required classes from PyEZ, pprint and our interactive code shell requirement so we can tinker.</span>
+<span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+<span style="color:#f92672">from</span> jnpr.junos <span style="color:#f92672">import</span> Device
+<span style="color:#f92672">from</span> jnpr.junos.op.ethport <span style="color:#f92672">import</span> EthPortTable 
+
+<span style="color:#f92672">import</span> code
+
+<span style="color:#75715e"># Here a class is defined, which matches our requirements.</span>
+<span style="color:#75715e"># 1.  Uptime of each device</span>
+<span style="color:#75715e"># 2.  Current software version</span>
+<span style="color:#75715e"># 3.  Device serial number</span>
+<span style="color:#75715e"># 4.  MAC address for each Ethernet interface</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NetworkRequirements</span>(object):
+    _hostname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _model <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _uptime <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#39;&#39;</span>
+    _version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _serial <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _interfaces <span style="color:#f92672">=</span> []
+    
+    <span style="color:#66d9ef">def</span> __init__(self, uptime, version, serial, hostname, model, device):
+        <span style="color:#75715e"># This is our constructor. Populate each variable.</span>
+        self<span style="color:#f92672">.</span>_up_time <span style="color:#f92672">=</span> uptime
+        self<span style="color:#f92672">.</span>_version <span style="color:#f92672">=</span> version
+        self<span style="color:#f92672">.</span>_serial <span style="color:#f92672">=</span> serial
+        self<span style="color:#f92672">.</span>_hostname <span style="color:#f92672">=</span> hostname
+        self<span style="color:#f92672">.</span>_model <span style="color:#f92672">=</span> model
+        self<span style="color:#f92672">.</span>_interfaces <span style="color:#f92672">=</span> EthPortTable(device)
+        self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>get()
+    
+    <span style="color:#66d9ef">def</span> __str__(self):
+        <span style="color:#75715e"># This is our special print function which returns a string (text) version of the object.</span>
+        <span style="color:#75715e"># We need to build our text up and structure it. We do this by appending the required text to a variable</span>
+        <span style="color:#75715e"># which we&#39;ve called &#39;return_string&#39;.</span>
+        <span style="color:#75715e"># n is a special sequence to insert a new line and t (can you guess?) is a tab.</span>
+        <span style="color:#75715e"># Once our string is complete, we &#39;return&#39; it to the caller.</span>
+        
+        x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        return_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">16</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Element Report&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Hostname: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_hostname
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Model: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_model
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Uptime:  &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_up_time
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Version: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_version
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Serial: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_serial
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        
+        <span style="color:#66d9ef">while</span> x <span style="color:#f92672">&lt;</span> len(self<span style="color:#f92672">.</span>_interfaces):
+            return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Interface &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_interfaces<span style="color:#f92672">.</span>keys()[x] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;tMAC Address: &#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_interfaces[x][<span style="color:#e6db74">&#39;macaddr&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;n&#34;</span>
+            x <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">21</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;End of Element Report&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        
+        <span style="color:#66d9ef">return</span> return_string
+        
+
+<span style="color:#75715e"># This is our &#39;main&#39; code and entry point. We do this so code is reusable.</span>
+<span style="color:#75715e"># For example, if we want to import any class or function we&#39;ve defined in this file, but not execute</span>
+<span style="color:#75715e"># any code that does something, then this facilitates that (if that makes sense?)</span>
+<span style="color:#75715e"># Our __main__ code is executed if this file is executed first.</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+
+    <span style="color:#75715e"># Create our device object and assign the hostname or IP address, username and password</span>
+    dev1 <span style="color:#f92672">=</span> Device(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;172.16.49.136&#39;</span>, user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dgee&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Passw0rd&#39;</span>)
+    
+    <span style="color:#75715e"># Open a connection to the device. Please note, we&#39;re doing some very simple exception handling!</span>
+    <span style="color:#66d9ef">try</span>:
+        dev1<span style="color:#f92672">.</span>open()
+    <span style="color:#66d9ef">except</span>:
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Error Will Robinson, error&#34;</span>
+
+    <span style="color:#75715e"># Let&#39;s create our object and initialise it</span>
+        
+    vSRX01 <span style="color:#f92672">=</span> NetworkRequirements(dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;RE0&#39;</span>][<span style="color:#e6db74">&#39;up_time&#39;</span>], dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;version&#39;</span>], dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;serialnumber&#39;</span>], dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;hostname&#39;</span>], dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;model&#39;</span>],  dev1)
+    
+    <span style="color:#75715e"># Now let&#39;s see if our class works and print out the data! Once we call this special class function, the string is returned as expected.</span>
+    
+    <span style="color:#66d9ef">print</span> vSRX01
+    
+    <span style="color:#75715e"># Now dump in to the interactive shell</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;nnWelcome to the interactive shell&#34;</span>
+    code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals())
+
+
+    <span style="color:#75715e"># Remember to close the connection before exiting from the interactive Python shell</span>
+
+    <span style="color:#75715e"># Execute the below:</span>
+    <span style="color:#75715e"># dev1.close()</span>
+    <span style="color:#75715e"># exit()</span>
+</code></pre></div><p>This next version of the code provides an alternate method of structuring our class. As this article was written and reviewed, it was deemed that a more efficient method of iterating through the data in the EthPortTable exists. Whilst the value could be argued of placing both versions of code in this post, it clearly demonstrates a development and review cycle that exists in every project. There are always different and more efficient ways of writing something. The version below binds the <code>EthPortTable</code> to the <code>dev1</code> object. This means that the dev1 device object can be passed around to different parts of the program. Every time a new table or set of data is bound to the device, it moves with it. Execute the code below and once you’re in the interactive Python shell, run <code>dir(dev1)</code> and notice how <code>eth_ports</code> is bound to our device object. Cool right?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Code for &#39;CLI to Py&#39; blog post by @davidjohngee</span>
+<span style="color:#75715e"># Please adhere to Juniper&#39;s license terms and Jeremy&#39;s teams good will!</span>
+
+<span style="color:#75715e"># This code imports required classes from PyEZ, pprint and our interactive code shell requirement so we can tinker.</span>
+<span style="color:#f92672">from</span> pprint <span style="color:#f92672">import</span> pprint
+<span style="color:#f92672">from</span> jnpr.junos <span style="color:#f92672">import</span> Device
+<span style="color:#f92672">from</span> jnpr.junos.op.ethport <span style="color:#f92672">import</span> EthPortTable 
+
+<span style="color:#f92672">import</span> code
+
+<span style="color:#75715e"># Here a class is defined, which matches our requirements.</span>
+<span style="color:#75715e"># 1.  Uptime of each device</span>
+<span style="color:#75715e"># 2.  Current software version</span>
+<span style="color:#75715e"># 3.  Device serial number</span>
+<span style="color:#75715e"># 4.  MAC address for each active Ethernet interface</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NetworkRequirements</span>(object):
+    _hostname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _model <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _uptime <span style="color:#f92672">=</span>  <span style="color:#e6db74">&#39;&#39;</span>
+    _version <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _serial <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+    _interfaces <span style="color:#f92672">=</span> []
+    _device <span style="color:#f92672">=</span> []
+    
+    <span style="color:#66d9ef">def</span> __init__(self, uptime, version, serial, hostname, model, device):
+        <span style="color:#75715e"># This is our constructor. Populate each variable.</span>
+        self<span style="color:#f92672">.</span>_up_time <span style="color:#f92672">=</span> uptime
+        self<span style="color:#f92672">.</span>_version <span style="color:#f92672">=</span> version
+        self<span style="color:#f92672">.</span>_serial <span style="color:#f92672">=</span> serial
+        self<span style="color:#f92672">.</span>_hostname <span style="color:#f92672">=</span> hostname
+        self<span style="color:#f92672">.</span>_model <span style="color:#f92672">=</span> model
+        self<span style="color:#f92672">.</span>_device <span style="color:#f92672">=</span> device
+        
+        <span style="color:#75715e"># Here we bind an EthPortTable called &#39;eth_ports&#39; to our device object field within the class.</span>
+        self<span style="color:#f92672">.</span>_device<span style="color:#f92672">.</span>bind(eth_ports <span style="color:#f92672">=</span> EthPortTable)   
+        <span style="color:#75715e"># Then we call &#39;.get()&#39; to populate the table.</span>
+        self<span style="color:#f92672">.</span>_device<span style="color:#f92672">.</span>eth_ports<span style="color:#f92672">.</span>get()
+        
+        <span style="color:#75715e"># The beauty of this now, is that we have bound a table to the dev1 itself and we can pass </span>
+        <span style="color:#75715e"># the same device to another function or class to do something else.</span>
+    
+    <span style="color:#66d9ef">def</span> __str__(self):
+        <span style="color:#75715e"># This is our special print function which returns a string (text) version of the object.</span>
+        <span style="color:#75715e"># We need to build our text up and structure it. We do this by appending the required text to a variable</span>
+        <span style="color:#75715e"># which we&#39;ve called &#39;return_string&#39;.</span>
+        <span style="color:#75715e"># n is a special sequence to insert a new line and t (can you guess?) is a tab.</span>
+        <span style="color:#75715e"># Once our string is complete, we &#39;return&#39; it to the caller.</span>
+        
+        x <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        return_string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">16</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;Element Report&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Hostname:tt&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_hostname
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Model:ttt&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_model
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Uptime:ttt&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_up_time
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Version:tt&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_version
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Serial:ttt&#34;</span> <span style="color:#f92672">+</span> self<span style="color:#f92672">.</span>_serial
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        
+        <span style="color:#75715e"># As tables in PyEZ are iterable and since we&#39;ve bound our table to our device, we can now do this.</span>
+        
+        <span style="color:#66d9ef">for</span> port <span style="color:#f92672">in</span> self<span style="color:#f92672">.</span>_device<span style="color:#f92672">.</span>eth_ports:
+            return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;Interface &#34;</span> <span style="color:#f92672">+</span> port<span style="color:#f92672">.</span>name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;tMAC Address: &#34;</span> <span style="color:#f92672">+</span> port<span style="color:#f92672">.</span>macaddr <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;n&#34;</span> <span style="color:#75715e"># or you can do it like this: + port[&#39;macaddr&#39;] + &#34;n&#34;</span>
+        
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">21</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;End of Element Report&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;n&#34;</span>
+        return_string <span style="color:#f92672">+=</span> <span style="color:#ae81ff">64</span><span style="color:#f92672">*</span><span style="color:#e6db74">&#34;=&#34;</span>
+        
+        <span style="color:#66d9ef">return</span> return_string
+        
+
+<span style="color:#75715e"># This is our &#39;pyez_main&#39; code and entry point. We do this so code is reusable.</span>
+<span style="color:#75715e"># For example, if we want to import any class or function we&#39;ve defined in this file, but not execute</span>
+<span style="color:#75715e"># any code that does something, then this facilitates that (if that makes sense?)</span>
+<span style="color:#75715e"># Our __main__ code is executed if this file is executed first.</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+
+    <span style="color:#75715e"># Create our device object and assign the hostname or IP address, username and password</span>
+    dev1 <span style="color:#f92672">=</span> Device(host<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;172.16.49.136&#39;</span>, user<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;dgee&#39;</span>, password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Passw0rd&#39;</span>)
+    
+    <span style="color:#75715e"># Open a connection to the device. Please note, we&#39;re doing some very simple exception handling!</span>
+    <span style="color:#66d9ef">try</span>:
+        dev1<span style="color:#f92672">.</span>open()
+    <span style="color:#66d9ef">except</span>:
+        <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;Error Will Robinson, error&#34;</span>
+
+    <span style="color:#75715e"># Let&#39;s create our object and initialise it</span>
+        
+    vSRX01 <span style="color:#f92672">=</span> NetworkRequirements(dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;RE0&#39;</span>][<span style="color:#e6db74">&#39;up_time&#39;</span>], dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;version&#39;</span>], dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;serialnumber&#39;</span>], dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;hostname&#39;</span>], dev1<span style="color:#f92672">.</span>facts[<span style="color:#e6db74">&#39;model&#39;</span>],  dev1)
+    
+    <span style="color:#75715e"># Now let&#39;s see if our class works and print out the data! Once we call this special class function, the string is returned as expected.</span>
+    
+    <span style="color:#66d9ef">print</span> vSRX01
+    
+    <span style="color:#75715e"># Now dump in to the interactive shell</span>
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;nnWelcome to the interactive shell&#34;</span>
+    code<span style="color:#f92672">.</span>interact(local<span style="color:#f92672">=</span>locals())
+
+
+    <span style="color:#75715e"># Remember to close the connection before exiting from the interactive Python shell</span>
+
+    <span style="color:#75715e"># Execute the below:</span>
+    <span style="color:#75715e"># dev1.close()</span>
+    <span style="color:#75715e"># exit()</span>
+</code></pre></div><p>I hope this has been informative and fun as it was to write. A special thank you shout out to Jeremy Schulman from Juniper Networks, who’s guidance is always invaluable.</p>
+<p>Please feel free to comment whether it be positive or negative. All feedback is gratefully received and helps to improve the quality of future posts.</p>
+
+
+
+                
+        <p><i><b>Dave</b></i></p>
+    
+        <ul class="list-inline">
+            <li>
+                <span>Tags:</span>
+                <span><font color=#ff813f></font></span>
+            </li>
+            <li>
+                <span>Categories:</span>
+                <span><font color=#ff813f></font></span>
+            </li>
+        </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <div class="social-icon">
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://hub.docker.com/u/davedotdev">
+                                <i class="tf-ion-code-download"></i>
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p><font color=#ff813f>© David Gee and dave.dev, 2021.</font></p>
+                </div>
+
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+
+</body>
+</html>

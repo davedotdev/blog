@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python NETCONF RPC Tooling on Welcome to dave.dev</title>
+    <link>https://dave.dev/tags/python-netconf-rpc-tooling/</link>
+    <description>Recent content in Python NETCONF RPC Tooling on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Tue, 18 Nov 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/tags/python-netconf-rpc-tooling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python: Building a simple NETCONF RPC Tool</title>
+      <link>https://dave.dev/blog/2014/11/python-building-simple-netconf-rpc-tool/</link>
+      <pubDate>Tue, 18 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2014/11/python-building-simple-netconf-rpc-tool/</guid>
+      <description>For a while now I’ve been playing with NETCONF primarily with Cisco Nexus devices.</description>
+    </item>
+    
+  </channel>
+</rss>

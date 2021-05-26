@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Easy Button on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/easy-button/</link>
+    <description>Recent content in Easy Button on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Tue, 20 Feb 2018 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/categories/easy-button/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automation: Easy Button vs Sentient Voodoo Magic Button</title>
+      <link>https://dave.dev/blog/2018/02/automation-easy-button-vs-sentient-voodoo-magic-button/</link>
+      <pubDate>Tue, 20 Feb 2018 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2018/02/automation-easy-button-vs-sentient-voodoo-magic-button/</guid>
+      <description>Automation has become this “all-encompassing thingy” much like SDN. It’s a software industry problem and it’s critical more now than ever that we do not slip backwards by trying to drag a broken idea forwards.</description>
+    </item>
+    
+  </channel>
+</rss>

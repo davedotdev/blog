@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="VXLAN MTU vs IP MTU Consideration">
+
+<meta name="generator" content="Hugo 0.83.1" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/jquery-1.12.4.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://dave.dev/plugins/jquery/jquery-ui.js"></script>
+
+<!-- match-height JS -->
+<script src="https://dave.dev/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/"><h2><font color=#ffffff>dave</font><font color=#ff813f>.</font>dev</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/graphops">GraphOps</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/uijourney">My UI Journey</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                               <a class="nav-link" href="https://dave.dev/index.xml"><img alt="RSS" src="https://dave.dev/images/rss.png" width="25" height="25"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="content">
+
+
+
+<!-- React & JSX -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>VXLAN MTU vs IP MTU Consideration</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            <font color=#ff813f>David Gee</font>
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span><font color=#ff813f>June 22, 2014</font></span>
+                        </li>
+                    </ul>
+                </div>
+                <h4 id="audience">Audience</h4>
+<p>This post is for anyone who’s thought about deploying VXLAN on their network and who like me thinks deeply about stuff, to the point of utter confusion, which hit me on a very hot sunny afternoon. The good news with confusion is, once you’ve cracked the issue (normally one’s correct understanding), the clouds clear and the birds sing.</p>
+<h4 id="vxlan">VXLAN</h4>
+<p>Virtual Extensible Local Area Network functionality is beginning to hit a wide range of vendor devices. VXLAN provides 16 million (and then some) segments for Layer 2 networks. Some organisations, especially those providing cloud infrastructure currently have or will have problems with the number of VLANs available in 12 bits, which is 4096. In that 4096 number, some are not usable either are reserved for certain things like token-ring and platform specific internal communication.</p>
+<p><img src="/images/blog/i_vnet_vxlan_multiple_tunnels.png#center" alt="i_vnet_vxlan_multiple_tunnels"></p>
+<p>VXLAN is a simple encapsulation method or a tunnel. It encapsulates the original payload in to UDP packets for transit across an IP network and adds another 50 bytes on to the header tax. At a very high level, VXLAN can be deployed in multicast mode and with unicast. Virtual Network IDs (VNIDs) represent VXLAN segment identifiers. In order to gain connectivity, a network construct like a VLAN or an Ethernet ‘port’ is bound to a VXLAN segment. Broadcasts, Unknowns and Multicasts are also encapsulated in to VXLAN, so there really isn’t much of a difference from what you’re used to with VLANs. Virtual Tunnel End Points (VTEPs) is what we call end points that do the encapsulation and decapsulation. Not much more to it than that! Maybe one word about VXLAN routing; do not get this mixed up with the routing of VXLAN encapsulated payloads. VXLAN routing is the concept of routing between concepts, similar to routing between VLANs.</p>
+<h4 id="so-why-the-post-if-its-so-easy">So why the post if it’s so easy?</h4>
+<p>So, here’s the thing. If you need to understand why things are and just don’t accept them, you might run in to this issue from time to time. Looking back now it was quite funny, but at the time I was utterly confused and sought guidance from Ivan Pepeljnak.</p>
+<h4 id="enter-the-mtu-cue-cowboy-wild-west-whistling">Enter the MTU (cue: Cowboy Wild West whistling)</h4>
+<p>If you want to deploy VXLAN, it’s recommended in order to support 1500 byte payloads to increase the MTU to 1550. Fine. So what about IP MTU? Referring to  <a href="https://blog.ipspace.net/2007/10/tale-of-three-mtus.html">Ivan’s post here</a> (for those who haven’t considered this), the three MTUs that most people worry about are:</p>
+<ul>
+<li>Physical MTU (also known as chassis or system MTU)</li>
+<li>IP MTU</li>
+<li>MPLS MTU</li>
+</ul>
+<p>Physical MTU being the highest maximum transmittable unit (frame) that an interface can accept without fragmentation. IP MTU being the maximum transmittable unit (packet) of the payload and the IP header. MPLS MTU being that of the payload and MPLS headers, normally 1508, giving 2x MPLS labels worth of header bspace, which is enough for Layer 3 VPN deployments.</p>
+<p>Cisco as we all know do things their own way. However, they’re often the first ones out of the stable doors, so you can’t really complain if you want the features. Cisco include by <em>magic</em> the MTU for Ethernet headers on the system MTU for IOS, NX-OS and IOS-XE. If you set 1500, what really gets pushed to the Ethernet controller hardware is 1524 (or 1522 for XE). This allows a 1500 byte payload and up to an additional 24 bytes of Ethernet headers and trailers. Juniper do things slightly differently and assume you know what you’re doing so allow you total control. What you configure is what you get.</p>
+<p>So what about Cisco IP MTU? IP MTU includes the payload and the IP header. A setting of 1500 therefore varies for the actual payload. In the case of ICMP, the biggest payload of a 1500 byte IP MTU setting would be 1472, which is the IP header of 20 bytes, plus the ICMP header of 8 bytes, deducted from the IP MTU! No magic here.</p>
+<p>Suppose then you read ‘VXLAN requires 50 bytes of additional header space’. My initial thought is how it looks at the wire. Is this IP MTU or physical MTU? Logic dictates that the physical MTU would be more like 1574 for VXLAN and the IP MTU would be 1550 (at least on a Cisco device anyway).</p>
+<p>Ok, some clarity is required. Let’s check out the Nexus 9000 data sheet which references VXLAN!
+<img src="http://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/white-paper-c11-729383.html" alt="http://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/white-paper-c11-729383.html"></p>
+<p><img src="/images/blog/cisco_vxlan.png#center" alt="Cisco VXLAN"></p>
+<p>First thoughts? If the outer Ethernet header is taken care of by Cisco, then here’s our calculation:</p>
+<ul>
+<li>1500 byte payload</li>
+<li>8 byte VXLAN header</li>
+<li>8 byte UDP header</li>
+<li>20 byte IP header</li>
+</ul>
+<p>= 1536 bytes. Not 1550? Does this make sense? Surely? Right? Mrrmmm…Ivan…can you help?</p>
+<p>Here’s a brief list of events just after reaching the point of criticality:</p>
+<ol>
+<li>Wrote email to Ivan with content of “Does this make sense? I should read the specs, but I’m confused”.</li>
+<li>As soon as I hit send on the email, I read the VXLAN draft then realised I should have done so immediately.</li>
+<li>Acknowledged I had gone completely down a rabbit hole and instantly felt foolish.</li>
+</ol>
+<h4 id="so-what-did-we-learn-at-school-today-when-faced-with-confusion-go-back-to-the-basics">So what did we learn at school today? When faced with confusion, go back to the basics</h4>
+<p>Well, needless to say, a combination of a long commute, hot day and working intensively lead me to this crazy number. The actual VXLAN draft says this:</p>
+<ul>
+<li>1500 byte payload which includes the original IP header/s.</li>
+<li>14 byte inner Ethernet header</li>
+<li>8 byte VXLAN header</li>
+<li>8 byte UDP header</li>
+<li>20 byte IP header</li>
+</ul>
+<p>= 1550. Darn it.</p>
+<p>The diagram was as clear as mud and I bought it. The outer Ethernet header is magically taken care of if we set both the system and IP MTU at 1550 if we run IOS, NX-OS or IOS-XE, so we don’t need to include it. Thanks Cisco!</p>
+<p>Why am I admitting this faux par? Well, it’s good to be reminded I’m human and like most humans can become so focussed on trying to understand one thing, that base logic goes out of the window. Anyone who’s studied for the CCIE lab will recognise this trait and it can burn serious amounts of time. My normal work flow is to consume the draft first then vendor documentation second. Post spending a day reading Cisco docs, I took the easy option and clicked on a link instead of following the proven die hard method.</p>
+<p>Will I do this again? Of course. Am I pleased this happened? Yes. Thanks Ivan for being kind.</p>
+
+
+
+                
+        <p><i><b>Dave</b></i></p>
+    
+        <ul class="list-inline">
+            <li>
+                <span>Tags:</span>
+                <span><font color=#ff813f></font></span>
+            </li>
+            <li>
+                <span>Categories:</span>
+                <span><font color=#ff813f></font></span>
+            </li>
+        </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <div class="social-icon">
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://hub.docker.com/u/davedotdev">
+                                <i class="tf-ion-code-download"></i>
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p><font color=#ff813f>© David Gee and dave.dev, 2021.</font></p>
+                </div>
+
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+
+</body>
+</html>

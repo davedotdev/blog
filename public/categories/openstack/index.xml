@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenStack on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/openstack/</link>
+    <description>Recent content in OpenStack on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Thu, 03 Nov 2016 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/categories/openstack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenStack Summit Barcelona 2016: Current State</title>
+      <link>https://dave.dev/blog/2016/11/openstack-summit-barcelona-2016-current-state/</link>
+      <pubDate>Thu, 03 Nov 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2016/11/openstack-summit-barcelona-2016-current-state/</guid>
+      <description>It’s October in the UK and blimey charlie, it’s a bit chilly.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Summit, Tokyo 2015, Thursday 29th – Show Notes</title>
+      <link>https://dave.dev/blog/2015/11/openstack-summit-tokyo-2015-thursday-29th-show-notes/</link>
+      <pubDate>Tue, 03 Nov 2015 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2015/11/openstack-summit-tokyo-2015-thursday-29th-show-notes/</guid>
+      <description>It’s Thursday, it’s 9am and…straight in to sessions. No keynote today, which is no bad thing considering these days are long!</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Summit, Tokyo 2015, Wednesday 28th – Show Notes</title>
+      <link>https://dave.dev/blog/2015/11/openstack-summit-tokyo-2015-wednesday-28th-show-notes/</link>
+      <pubDate>Mon, 02 Nov 2015 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2015/11/openstack-summit-tokyo-2015-wednesday-28th-show-notes/</guid>
+      <description>It’s Tuesday, it’s 9am and most people have hangovers from the numerous evening events going on in and around Takanawa.</description>
+    </item>
+    
+    <item>
+      <title>OpenStack Summit, Tokyo 2015, Tuesday 27th – Show Notes</title>
+      <link>https://dave.dev/blog/2015/10/openstack-summit-tokyo-2015-tuesday-27th-show-notes/</link>
+      <pubDate>Tue, 27 Oct 2015 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2015/10/openstack-summit-tokyo-2015-tuesday-27th-show-notes/</guid>
+      <description>It’s Tuesday morning, it’s 9am and the keynote started off in a blaze of glory.</description>
+    </item>
+    
+  </channel>
+</rss>

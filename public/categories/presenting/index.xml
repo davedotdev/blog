@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Presenting on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/presenting/</link>
+    <description>Recent content in Presenting on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Wed, 16 Dec 2015 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/categories/presenting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to not present to the Swiss</title>
+      <link>https://dave.dev/blog/2015/12/how-to-not-present-to-the-swiss-3/</link>
+      <pubDate>Wed, 16 Dec 2015 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2015/12/how-to-not-present-to-the-swiss-3/</guid>
+      <description>Being English and being constantly exposed to bad language practice (not the curse word type), during a recent trip to Switzerland, I totally failed in keeping my English plain and vanilla.</description>
+    </item>
+    
+  </channel>
+</rss>

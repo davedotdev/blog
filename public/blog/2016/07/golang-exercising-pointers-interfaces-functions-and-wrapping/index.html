@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us"><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Golang: Exercising pointers, interfaces, functions and wrapping">
+
+<meta name="generator" content="Hugo 0.83.1" />
+
+<title>Welcome to dave.dev</title>
+
+<!-- Mobile Specific Meta -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="https://dave.dev/images/favicon.ico" />
+
+<!-- Stylesheets -->
+<!-- Themefisher Icon font -->
+<link rel="stylesheet" href="https://dave.dev/plugins/themefisher-font/style.css">
+<!-- bootstrap.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/bootstrap/dist/css/bootstrap.min.css">
+<!-- Lightbox.min css -->
+<link rel="stylesheet" href="https://dave.dev/plugins/lightbox2/dist/css/lightbox.min.css">
+<!-- Slick Carousel -->
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick.css">
+<link rel="stylesheet" href="https://dave.dev/plugins/slick-carousel/slick/slick-theme.css">
+<!-- Main Stylesheet -->
+
+
+<link rel="stylesheet" href="https://dave.dev/css/style.min.css" integrity="" media="screen">
+
+<!-- Essential Scripts -->
+
+<!-- jQuery -->
+<script src="https://dave.dev/plugins/jquery/jquery-1.12.4.js"></script>
+<!-- Bootstrap -->
+<script src="https://dave.dev/plugins/bootstrap/dist/js/popper.min.js"></script>
+<script src="https://dave.dev/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Parallax -->
+<script src="https://dave.dev/plugins/parallax/jquery.parallax-1.1.3.js"></script>
+<!-- lightbox -->
+<script src="https://dave.dev/plugins/lightbox2/dist/js/lightbox.min.js"></script>
+<!-- Slick Carousel -->
+<script src="https://dave.dev/plugins/slick-carousel/slick/slick.min.js"></script>
+<!-- Portfolio Filtering -->
+<script src="https://dave.dev/plugins/filterzr/jquery.filterizr.min.js"></script>
+<!-- Smooth Scroll js -->
+<script src="https://dave.dev/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+<!-- Main Script -->
+
+<script src="https://dave.dev/js/script.min.js"></script>
+
+<!-- jquery ui -->
+<script src="https://dave.dev/plugins/jquery/jquery-ui.js"></script>
+
+<!-- match-height JS -->
+<script src="https://dave.dev/plugins/match-height/jquery.matchHeight-min.js"></script>
+
+</head>
+<body id="body">
+        <!-- Start Preloader -->
+<div id="preloader">
+    <div class="preloader">
+        <div class="sk-circle1 sk-child"></div>
+        <div class="sk-circle2 sk-child"></div>
+        <div class="sk-circle3 sk-child"></div>
+        <div class="sk-circle4 sk-child"></div>
+        <div class="sk-circle5 sk-child"></div>
+        <div class="sk-circle6 sk-child"></div>
+        <div class="sk-circle7 sk-child"></div>
+        <div class="sk-circle8 sk-child"></div>
+        <div class="sk-circle9 sk-child"></div>
+        <div class="sk-circle10 sk-child"></div>
+        <div class="sk-circle11 sk-child"></div>
+        <div class="sk-circle12 sk-child"></div>
+    </div>
+</div>
+<!-- End Preloader --><!-- Fixed Navigation -->
+
+
+<section class="header navigation">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-md">
+                    <a class="navbar-brand" href="https://dave.dev/"><h2><font color=#ffffff>dave</font><font color=#ff813f>.</font>dev</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                        aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="tf-ion-android-menu"></span>
+                    </button>
+                    
+                    <div id="drapeaux">
+                        
+                        
+                    </div>
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="https://dave.dev/"></a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/blog">Blog</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/graphops">GraphOps</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/portfolio">Portfolio</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/list">Full List</a>
+                            </li>
+                            
+                            
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://dave.dev/uijourney">My UI Journey</a>
+                            </li>
+                            
+                            
+                            <li class="nav-item">
+                               <a class="nav-link" href="https://dave.dev/index.xml"><img alt="RSS" src="https://dave.dev/images/rss.png" width="25" height="25"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="content">
+
+
+
+<!-- React & JSX -->
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+
+<section class="blog-single section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <img src="https://dave.dev/images/blog/placeholder.jpg" class="w-100 mb-3" alt="Post-Image">
+                <h2>Golang: Exercising pointers, interfaces, functions and wrapping</h2>
+                <div class="post-meta mb-5">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">
+                            <span>By</span>
+                            <font color=#ff813f>David Gee</font>
+                        </li>
+                        <li class="list-inline-item">
+                            <span>at</span>
+                            <span><font color=#ff813f>July 3, 2016</font></span>
+                        </li>
+                    </ul>
+                </div>
+                <p><img src="/images/blog/gophercloud.png#center" alt="gophercloud"></p>
+<p>This article is inspired by my somewhat confused learning experience with interfaces, methods and wrapping functions in Golang. Needless to say, there was some serious learning to do here given first of all I was a C junkie then moved swiftly to Python for ease and speed in the networking world. Lots to learn.</p>
+<h4 id="golang">Golang</h4>
+<p>The reason for concentration on Golang? It’s simple, powerful, quick to compile and massively supported with a vibrant community. A little like the film ‘Lock Stock and Two Smoking Barrels’, I take the tenet of ‘guns for show, knives for a pro’ approach with Python and Golang; roughly translating to Python for proof-of-concepts, speed and simple apps, Golang for performance and services. Therefore knowing how interfaces, pointers, types and methods based on types are critical knowledge components!</p>
+<h4 id="show-me-the-code">Show me the code</h4>
+<p>The code below is an exercise of interfaces, function wrapping, pointers and mixing usage of them all. It does not cover why you might want to do it, so go and learn that yourself. Pointers are great for highly optimised applications and can also save memory if used correctly. With Golang’s garbage collection, worrying about freeing memory is not an issue. Exercise 6 will not compile when you uncomment and try to. Creating a pointer to an interface doesn’t work due to what an interface is, a two word object.</p>
+<p><img src="/images/blog/golang_pointers.png#center" alt="golang_pointers"></p>
+<p>Try it, read the error then read the links at the bottom of this article to help it make more sense. The code by the way converts the text to the decimal ASCII representation of the text and then it returns the length of the text along with an error which is <nil>, so do not be alarmed when you see blocks of data.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">/*
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">Copyright David Gee 2016
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">License
+</span><span style="color:#75715e">View license here https://creativecommons.org/licenses/by/4.0/
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">This code exercises creating types, methods on those types and wrapping functions, also pointers.
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">*/</span>
+
+<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;io&#34;</span>
+	<span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#75715e">// Types
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">WriteFunc</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">p</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">interfaceWrite</span> <span style="color:#66d9ef">interface</span> {
+	<span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">p</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>)
+}
+
+<span style="color:#75715e">// Funcs
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">wf</span> <span style="color:#a6e22e">WriteFunc</span>) <span style="color:#a6e22e">Write</span>(<span style="color:#a6e22e">p</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">wf</span>(<span style="color:#a6e22e">p</span>)
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">myWrite</span>(<span style="color:#a6e22e">p</span> []<span style="color:#66d9ef">byte</span>) (<span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">err</span> <span style="color:#66d9ef">error</span>) {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Byte array = %v, String = %v\n&#34;</span>, <span style="color:#a6e22e">p</span>, string(<span style="color:#a6e22e">p</span>))
+	<span style="color:#75715e">// returns length of p (n int) and the err of type error, which is nil
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">return</span> len(<span style="color:#a6e22e">p</span>), <span style="color:#66d9ef">nil</span>
+}
+
+<span style="color:#75715e">// Main entry()
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#75715e">// This example uses io.Copy and the Write() invocation
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [1] ==== Variable invocation of WriteFunc(myWrite)&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Copy</span>(<span style="color:#a6e22e">WriteFunc</span>(<span style="color:#a6e22e">myWrite</span>), <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">NewReader</span>(<span style="color:#e6db74">&#34;Hello&#34;</span>)))
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [1] ==== END \n\n&#34;</span>)
+
+	<span style="color:#75715e">// Create a variable based on the type WriteFunc
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// and fill it with custom function myWrite()
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">WriteFunc</span>
+	<span style="color:#a6e22e">a</span> = <span style="color:#a6e22e">myWrite</span>
+
+	<span style="color:#75715e">// next, we call the Write method on the type WriteFunc, which happens to point at myWrite
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [2] ==== Write method invocation on the var a which is of type WriteFunc, containing myWrite&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">Write</span>([]byte(<span style="color:#e6db74">&#34;Hello&#34;</span>)))
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [2] ==== END \n\n&#34;</span>)
+
+	<span style="color:#75715e">// Here we invoke Write directly on the type, wrapping myWrite as we do it
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [3] ==== Write method invocation on the WriteFunc type, being passed the func myWrite directly&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">WriteFunc</span>(<span style="color:#a6e22e">myWrite</span>).<span style="color:#a6e22e">Write</span>([]byte(<span style="color:#e6db74">&#34;Hello&#34;</span>)))
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [3] ==== END \n\n&#34;</span>)
+
+	<span style="color:#75715e">// Let&#39;s create an interface var. Note, you can do this as a pointer using new()
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#a6e22e">interfaceWrite</span>
+	<span style="color:#a6e22e">b</span> = <span style="color:#a6e22e">WriteFunc</span>(<span style="color:#a6e22e">myWrite</span>)
+
+	<span style="color:#75715e">// We point it at WriteFunc with the myWrite custom func wrapped
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [4] ==== Write method invocation on the interface typed variable of b&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">Write</span>([]byte(<span style="color:#e6db74">&#34;Hello&#34;</span>)))
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [4] ==== END \n\n&#34;</span>)
+
+	<span style="color:#75715e">// Now let&#39;s do this with a pointer
+</span><span style="color:#75715e"></span>
+	<span style="color:#75715e">// Create pointer using new to WriteFunc type
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">WriteFunc</span>)
+	<span style="color:#75715e">// Point contents of c type WriteFunc to myWrite func
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span><span style="color:#a6e22e">c</span> = <span style="color:#a6e22e">myWrite</span>
+	<span style="color:#75715e">// Invoke Write method on c
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [5] ==== Pointer based Write method invocation on the WriteFunc type, pointed at the myWrite func&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">Write</span>([]byte(<span style="color:#e6db74">&#34;Hello&#34;</span>)))
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [5] ==== END \n\n&#34;</span>)
+
+	<span style="color:#75715e">/*
+</span><span style="color:#75715e">		DO THIS BIT LAST - Interesting outcome
+</span><span style="color:#75715e">		Let&#39;s do a pointer to an interface, and point that at the WriteFunc type passing the function myWrite
+</span><span style="color:#75715e">		When you&#39;ve got the above working, uncomment below and run it.
+</span><span style="color:#75715e">	*/</span>
+
+	<span style="color:#75715e">// d := new(interfaceWrite)
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// *d = WriteFunc(myWrite)
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// fmt.Println(&#34;Exercise [6] ==== Pointer based Write method invocation on the interfaceWriter interface, pointed at the wrapped myWrite func&#34;)
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// fmt.Println(d.Write([]byte(&#34;Hello&#34;)))
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">//	fmt.Println(&#34;Exercise [6] ==== END \n&#34;)
+</span><span style="color:#75715e"></span>
+	<span style="color:#75715e">/*
+</span><span style="color:#75715e">		I knew this wouldn&#39;t work because I did some homework!
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">		Interface values are represented as a two-word pair giving a pointer to information
+</span><span style="color:#75715e">		about the type stored in the interface and a pointer to the associated data.
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">		Not sure if it&#39;s possible to separate these pointers? Not sure why you would want to either.
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">	*/</span>
+
+	<span style="color:#75715e">// Next, let&#39;s set up a pointer as exercise 5 and create an interface to that pointer
+</span><span style="color:#75715e"></span>
+	<span style="color:#75715e">// Create pointer using new to WriteFunc type
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">e</span> <span style="color:#f92672">:=</span> new(<span style="color:#a6e22e">WriteFunc</span>)
+	<span style="color:#75715e">// Point contents of c type WriteFunc to myWrite func
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">*</span><span style="color:#a6e22e">e</span> = <span style="color:#a6e22e">myWrite</span>
+
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ei</span> <span style="color:#a6e22e">interfaceWrite</span>
+
+	<span style="color:#a6e22e">ei</span> = <span style="color:#a6e22e">e</span>
+	<span style="color:#75715e">// Invoke Write method on c
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [7] ==== Interface based method invocation on a pointer to the wrapped myWrite func via WriteFunc&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">ei</span>.<span style="color:#a6e22e">Write</span>([]byte(<span style="color:#e6db74">&#34;Hello&#34;</span>)))
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Exercise [7] ==== END \n\n&#34;</span>)
+
+}
+</code></pre></div><p><strong>Halt! This is on GitHub, do this the easy way</strong></p>
+<p>The code is on GitHub, so download it the easy way to play.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">go get http://github.com/davidjohngee/go-iface-ptr-meth-wrap-func
+cd $GOPATH/src/github.com/davidjohngee/go-iface-ptr-meth-wrap-func
+go build
+./go-iface-ptr-meth-wrap-func
+</code></pre></div><p><strong>Golang: Remember!</strong></p>
+<p>Golang is fast, efficient for computers
+Golang is fun, fast for humans</p>
+<p>Programs compile to machine code. There’s no VM
+Control over memory layout, fewer indirections</p>
+<p>Simple, concise syntax
+Statically linked binaries
+Function values and lexical closures
+Built-in strings (UTF-8)
+Built-in generic maps and arrays/slices
+Built-in concurrency
+No classes
+No inheritance
+No constructors
+No final
+No exceptions
+No annotations
+No user-defined generics</p>
+<p><strong>Other reading and sources of data</strong></p>
+<p>Links below refer to articles that provide explanations of certain concepts</p>
+<p>Look at answer 81</p>
+<p><a href="http://stackoverflow.com/questions/13511203/why-cant-i-assign-a-struct-to-an-interface">http://stackoverflow.com/questions/13511203/why-cant-i-assign-a-struct-to-an-interface</a></p>
+<p>Look at answer 22</p>
+<p><a href="http://stackoverflow.com/questions/13255907/in-go-http-handlers-why-is-the-responsewriter-a-value-but-the-request-a-pointer">http://stackoverflow.com/questions/13255907/in-go-http-handlers-why-is-the-responsewriter-a-value-but-the-request-a-pointer</a></p>
+<p>A good bed time read!</p>
+<p><a href="http://research.swtch.com/interfaces">http://research.swtch.com/interfaces</a></p>
+<p>This article is what triggered my curiosity around wrapping functions</p>
+<p><a href="http://stackoverflow.com/questions/20728965/golang-function-pointer-as-a-part-of-a-struct">http://stackoverflow.com/questions/20728965/golang-function-pointer-as-a-part-of-a-struct</a></p>
+
+
+
+                
+        <p><i><b>Dave</b></i></p>
+    
+        <ul class="list-inline">
+            <li>
+                <span>Tags:</span>
+                <span><font color=#ff813f>Golang</font></span>
+            </li>
+            <li>
+                <span>Categories:</span>
+                <span><font color=#ff813f>Golang</font></span>
+            </li>
+        </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        </div><!-- Footer Start -->
+<footer id="footer" class="bg-one">
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+		    <h3>Email Me</h3>
+		    <a href="mailto:me@dave.dev">me@dave.dev</a>
+		</div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Social Links</h3>
+                    <div class="social-icon">
+                    <ul class="list-inline social-icon">
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/_ipengineer">
+                                <i class="tf-ion-social-twitter"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/lsp42/">
+                                <i class="tf-ion-social-linkedin"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davidjohngee">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/arsonistgopher">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://github.com/davedotdev">
+                                <i class="tf-ion-social-github"></i>
+                            </a>
+                        </li>
+                        
+                        
+                        <li class="list-inline-item">
+                            <a href="https://hub.docker.com/u/davedotdev">
+                                <i class="tf-ion-code-download"></i>
+                            </a>
+                        </li>
+                        
+
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Treat the Author</h3>
+		        <a href="https://www.buymeacoffee.com/ipengineer"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h3>Copyright</h3>
+                    <p><font color=#ff813f>© David Gee and dave.dev, 2021.</font></p>
+                </div>
+
+                
+                
+                
+                
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+
+
+
+</body>
+</html>

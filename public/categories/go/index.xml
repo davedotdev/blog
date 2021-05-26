@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Welcome to dave.dev</title>
+    <link>https://dave.dev/categories/go/</link>
+    <description>Recent content in Go on Welcome to dave.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© David Gee and dave.dev, 2021.</copyright>
+    <lastBuildDate>Sat, 03 Jun 2017 10:00:00 +0000</lastBuildDate><atom:link href="https://dave.dev/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ultimate Go, Ardanlabs, Training Course Writeup</title>
+      <link>https://dave.dev/blog/2017/06/ultimate-go-ardanlabs-training-course-writeup/</link>
+      <pubDate>Sat, 03 Jun 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2017/06/ultimate-go-ardanlabs-training-course-writeup/</guid>
+      <description>After being in the IT industry for a while, courses generally don’t impress or engage you for very long.</description>
+    </item>
+    
+    <item>
+      <title>Linux Systemd &amp; Golang Services using Kardianos Service</title>
+      <link>https://dave.dev/blog/2017/03/linux-systemd-golang-services-using-kardianos-service/</link>
+      <pubDate>Wed, 15 Mar 2017 10:00:00 +0000</pubDate>
+      
+      <guid>https://dave.dev/blog/2017/03/linux-systemd-golang-services-using-kardianos-service/</guid>
+      <description>This week I have done something new, but I found myself dealing with a ‘zero knowledge’ situation or something I like to call ZKS.</description>
+    </item>
+    
+  </channel>
+</rss>
