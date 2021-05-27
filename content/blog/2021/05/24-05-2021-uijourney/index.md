@@ -415,7 +415,7 @@ module.exports = function (api) {
 
 6.  Test by adding a DOM element and a simple script. You can find the post Babel script here: https://dave.dev/scripts/ui_journey_app_1.js
 
-The original script isn't on the blog because it's been processed by Babel, but you can find it here: https://github.com/davedotdev/blog/blob/master/assets/scripts/ui_journey_app_1.js
+The original script isn't on the blog because it's been processed by Babel, but you can find it here: https://github.com/davedotdev/blog/blob/master/assets/scripts/ui_journey_app_1.jsx
 
 The script is stupid and only operate a display function through a push button. It does however cement some of the javascript like behaviours together in my brain.
 
@@ -554,7 +554,7 @@ Ok, the tree reconciliation bit is especially interesting. For my next trick, I'
 
 This is interesting, because React will only update the DOM when there is a reason to update it, like the state changing from events, timers and underlying APIs. The page can remain stable and thus we build a mental feeling of how one page apps work.
 
-The script for the Unix timer is here: https://github.com/davedotdev/blog/blob/master/assets/scripts/ui_journey_app_2.js
+The script for the Unix timer is here: https://github.com/davedotdev/blog/blob/master/assets/scripts/ui_journey_app_2.jsx
 
 #### Thursday Issues
 
