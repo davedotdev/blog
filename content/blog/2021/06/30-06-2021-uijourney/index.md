@@ -1,6 +1,6 @@
 ---
 title: "My UI Skill Building Journey - Week Six (End June 21)"
-date: 2021-06-31T10:00:00+00:00
+date: 2021-06-30T10:00:00+00:00
 image: images/blog/uijourney_header.png
 author: David Gee
 description: "My UI dev skills journey...and getting them"
