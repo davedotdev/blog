@@ -11,7 +11,7 @@ categories:
 tags:
 - Software Development
 - UI
-
+draft: true
 ---
 
 Initially I'll commit 30 minutes per day to this. That should be long enough for new material to stick and short enough so that some new info doesn't converyorbelt other new info through my brain and out the other side. 

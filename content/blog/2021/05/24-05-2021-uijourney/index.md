@@ -14,6 +14,7 @@ tags:
 scripts:
 - scripts/ui_journey_app_1.jsx
 - scripts/ui_journey_app_2.jsx
+draft: true
 ---
 
 # Monday 24th May 2021
