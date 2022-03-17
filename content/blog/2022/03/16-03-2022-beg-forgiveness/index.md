@@ -43,6 +43,19 @@ If the account has a low number of users, then the number of serverless DB inter
 
 __*Total Dips: 3*__
 
+Now you're going to be wondering, how do you get the value if you just bumped it up? DynamoDB offers a nice little function as part of an update, in which the value is bumped and you can return the pre or post update value. This embodies the beg forgiveness pattern. Update a value regardless of said value and return it to your code. That way, if your branching logic is to proeed, you've already done the update and if not, disregard it and exit as quickly as possible.
+
+This is an extract of doing just this in Go with AWS DynamoDB.
+
+```go
+	UpdateExpr := "ADD #currentUsage :inc"
+	input.UpdateExpression = &UpdateExpr
+	input.ExpressionAttributeNames = map[string]string{"#currentUsage": "CurrentUsage"}
+	input.ExpressionAttributeValues = map[string]types.AttributeValue{}
+	input.ExpressionAttributeValues[":inc"] = &types.AttributeValueMemberN{Value: "1"}
+	input.ReturnValues = types.ReturnValueUpdatedNew // Tell DDB we want the new value
+```
+
 ### Summary 
 
 I like this pattern. It feels like an easy win and if applied in broadstrokes, can result in some cash savings! The serverless version of beg forgiveness for offerings like DynamoDB, MongoDB and PlanetScale (and other serverless).
