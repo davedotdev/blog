@@ -68,7 +68,7 @@ DefaultContentLanguage = "en"
     footerDescription = "mailto:me@dave.dev"
     footerServiceTitle = "Social Links"
     footerAboutTitle = "Email Me"
-    copyright = "© David Gee and dave.dev, 2021."
+    copyright = "© David Gee and dave.dev, 2022."
 
     [Languages.en.params.banner]
         placeholder = "Enter Search Terms"
@@ -92,8 +92,8 @@ DefaultContentLanguage = "en"
     # Contact Section
     [Languages.en.params.contact]
         enable  = false
-        twitter = "https://twitter.com/_ipengineer"
-        linkedin= "https://www.linkedin.com/in/lsp42/"
+        twitter = "https://twitter.com/davedotdev"
+        linkedin= "https://www.linkedin.com/in/davedotdev/"
         github1= "https://github.com/davidjohngee"
         github2= "https://github.com/arsonistgopher"
         github3= "https://github.com/davedotdev"

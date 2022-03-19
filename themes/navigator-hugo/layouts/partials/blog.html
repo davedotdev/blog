@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="row">
-            {{ range first 9 .Site.RegularPages}}
+            {{ range (.Paginator 9).Pages }}
             {{ "<!-- single blog post -->" | safeHTML }}
             <article class="col-12 col-md-4">
                 <div class="post-item">
@@ -44,6 +44,9 @@
             </article>
             {{ "<!-- /single blog post -->" | safeHTML }}
             {{ end }}
+            <div class="col-12 text-center">
+                {{ template "_internal/pagination.html" . }}
+            </div>
         </div>
     </div>
 </section>
