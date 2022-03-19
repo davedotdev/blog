@@ -5,11 +5,11 @@
 {{ "<!-- React & JSX -->" | safeHTML }}
 <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
-
 <section class="blog-single section">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
+                {{ partial "gohome.html" . }}
                 <img src="{{ with .Params.image }}{{ . | absURL }}{{ end }}" class="w-100 mb-3" alt="Post-Image">
                 <h2>{{ .Title }}</h2>
                 <div class="post-meta">
