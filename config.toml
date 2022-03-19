@@ -105,23 +105,19 @@ DefaultContentLanguage = "en"
 [menu]
     # Navbar Menus 
     [[menu.nav]]
-        name    = "blog"
-        url     = "blog"
-        weight  = 2
-    [[menu.nav]]
         name    = "graphops"
         url     = "graphops"
         weight  = 3
     [[menu.nav]]
         name    = "portfolio"
         url     = "portfolio"
-        weight  = 4
+        weight  = 1
     [[menu.nav]]
         name    = "list"
         url     = "list"
-        weight  = 5
+        weight  = 2
     [[menu.nav]]
         name    = "uijourney"
         url     = "uijourney"
-        weight  = 6
+        weight  = 4
 

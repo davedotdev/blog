@@ -17,7 +17,7 @@
     {{ end }}
 {{ end }}
 
-    {{range first 9 .Site.RegularPages}}
+    {{range .Site.RegularPages}}
         {{ if and (in .Params.categories "GraphOps")}}
         {{ "<!-- Blog Section Start -->" | safeHTML }}
         <section class="blog section" id="blog">
