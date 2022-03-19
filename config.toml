@@ -7,7 +7,7 @@ summaryLength = 10
 # Build robots.txt file
 enableRobotsTXT = true
 # google analytics tracking id
-googleAnalytics = ""
+googleAnalytics = "G-MN4BXYH390"
 
 enableGitInfo = false
 # pygmentsCodefences = true
@@ -38,7 +38,7 @@ enableGitInfo = false
     lineNoStart = 1
     lineNos = false
     lineNumbersInTable = true
-    noClasses = true
+    noClasses = false
     style = "monokai"
     tabWidth = 4
   [markup.tableOfContents]
