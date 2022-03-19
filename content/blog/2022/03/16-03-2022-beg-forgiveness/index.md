@@ -48,12 +48,12 @@ Now you're going to be wondering, how do you get the value if you just bumped it
 This is an extract of doing just this in Go with AWS DynamoDB.
 
 ```go
-	UpdateExpr := "ADD #currentUsage :inc"
-	input.UpdateExpression = &UpdateExpr
-	input.ExpressionAttributeNames = map[string]string{"#currentUsage": "CurrentUsage"}
-	input.ExpressionAttributeValues = map[string]types.AttributeValue{}
-	input.ExpressionAttributeValues[":inc"] = &types.AttributeValueMemberN{Value: "1"}
-	input.ReturnValues = types.ReturnValueUpdatedNew // Tell DDB we want the new value
+UpdateExpr := "ADD #currentUsage :inc"
+input.UpdateExpression = &UpdateExpr
+input.ExpressionAttributeNames = map[string]string{"#currentUsage": "CurrentUsage"}
+input.ExpressionAttributeValues = map[string]types.AttributeValue{}
+input.ExpressionAttributeValues[":inc"] = &types.AttributeValueMemberN{Value: "1"}
+input.ReturnValues = types.ReturnValueUpdatedNew // Tell DDB we want the new value
 ```
 
 ### Summary 
