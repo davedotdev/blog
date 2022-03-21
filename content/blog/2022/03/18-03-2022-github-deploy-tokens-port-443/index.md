@@ -63,8 +63,10 @@ $ ssh -T -p 443 git@ssh.github.com-alias-1
 
 5.  Now the bit you've been waiting for. If you've created deployment keys for `alias-1` and `alias-2` as an example, you can then try doing a git clone for each repo using their specific deployment keys. This is how to do a git clone for private repositories over port 443 on a limited system (because security told you no!).
 
-`git clone ssh://git@ssh.github.com-alias-1:443/YOURACCOUNT/YOURREPO-1.git`
-`git clone ssh://git@ssh.github.com-alias-1:443/YOURACCOUNT/YOURREPO-2.git`
+```bash
+git clone ssh://git@ssh.github.com-alias-1:443/YOURACCOUNT/YOURREPO-1.git
+git clone ssh://git@ssh.github.com-alias-1:443/YOURACCOUNT/YOURREPO-2.git
+```
 
 #### Summary
 
