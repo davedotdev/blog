@@ -2070,6 +2070,10 @@ a:focus, a:hover {
   box-shadow: none;
 }
 
+.attribution {
+  font-size: x-small;
+}
+
 /* Syntax Highlighting */
 
 /* Background */ .chroma { color: #e2e2e2; background-color: #272822; font-size: 12px; }
