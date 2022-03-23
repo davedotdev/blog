@@ -58,4 +58,4 @@ input.ReturnValues = types.ReturnValueUpdatedNew // Tell DDB we want the new val
 
 ### Summary 
 
-I like this pattern. It feels like an easy win and if applied in broadstrokes, can result in some cash savings! The serverless version of beg forgiveness for offerings like DynamoDB, MongoDB and PlanetScale (and other serverless).
+I like this pattern. It feels like an easy win and if applied in broadstrokes, can result in some cash savings! 
