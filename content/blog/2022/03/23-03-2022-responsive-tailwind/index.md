@@ -34,22 +34,32 @@ A nice way to visualise this is content is like water!
 
 #### TailwindCSS
 
-In TailwindCSS I had a tiny challenge in so much I wanted a footer to be spread over two lines and centred when the media breakpoint was small (`sm`) and over one line when the media breakpoint was medium (`md`). I had to play with the tags a little, but here's what worked.
+In TailwindCSS I had a tiny challenge in so much I wanted a footer to be spread over two lines and centred when the media breakpoint was small (`sm`), covering widths lower than small (or 640px wide).
 
-The top element is hidden on all breakpoints at `sm`. The bottom element is hidden until `sm`. Simple right? It's a flip-flop type affair with the change happening on the same media breakpoint.
+So what's going on with the HTML and classes below?
 
 ```html
 <div class="bg-gray-300 hidden sm:flex">
-  <h1>only md</h1>
+  <h1>only >= md</h1>
 </div>
-<div class="bg-gray-400 sm:hidden sm:flex">
-  <h1>only sm</h1>
+<div class="bg-gray-400 sm:hidden flex">
+  <h1>only <= sm</h1>
 </div>
 ```
 
+The top `div` says, hide the element, but the `sm:flex`, overrides hidden for the breakpoint above small. 
+
+The second div, flips the logic and says hide for everything above small.
+
+Both divs use the flex layout.
+
+The result is `only >= md` shows for above small and `only <= sm` shows for and below small.
+
+There is an issue I've found with applying class selectors, in so much as you there needs to be a hierarchy or order, like a wide catch and a class selector. One class selector will need to another not being used at all. It's important to test out your classes! Read this [StackOverflow post](https://stackoverflow.com/a/69853639).
+
 Below is a screen shot of the TailwindCSS playground. You can click on the image, and it will take you to the playground gist.
 
-<a href="https://play.tailwindcss.com/aedhQFFpuS">{{< img src="tailwindplayground.png" alt="Tailwind Playground" >}}</a>
+<a href="https://play.tailwindcss.com/sID346zUF8">{{< img src="tailwindplayground.png" alt="Tailwind Playground" >}}</a>
 
 Hope this was useful!
 
