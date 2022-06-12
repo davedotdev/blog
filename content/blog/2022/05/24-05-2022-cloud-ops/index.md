@@ -95,3 +95,5 @@ If you're considering how to automate all of this, the server side can be handle
 
 <br/><br/>
 My ops dashboard is simple and useful and I can investigate weird spikes and can cast my eyes over the graphs for patterns. I don't use ML (not enough data) and alerting will be setup soon for catastrophic issues or API errors. I will stick with Grafana Cloud and will convert to a paying customer to gain longer data retention, support and ML for when I have enough data to train a model. Their customer support isn't off to a great start, but their offer meets my current needs and Grafana is one of my comfort blankets. Even the smallest long-lived projects need operations dealt with. It doesn’t have to be ground breaking or hard. Grafana Cloud meets my fundamental expectations today and I'm hoping as the industry continues to embrace FaaS and serverless, Grafana Labs meets it head on.
+
+You can sign up for 14 days free and if you feel like doing just that, here's my referral link: https://grafana.com/auth/sign-up?refCode=gr8e78y9g3EEyPa 
