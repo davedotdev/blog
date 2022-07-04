@@ -2165,3 +2165,7 @@ a:focus, a:hover {
   background-color: #f0326b;
   color: White
 }
+
+.marginright25px {
+  margin-right: 25px;
+}
