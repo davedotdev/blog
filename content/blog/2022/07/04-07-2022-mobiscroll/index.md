@@ -7,9 +7,11 @@ description: "The Challenges of UI Calendars"
 signoff: Dave
 mermaid: false
 categories: 
-- DynamoDB
+- Mobiscroll
+- React
 tags:
-- DynamoDB
+- Mobiscroll
+- React
 ---
 
 If you spend enough time building things, you will invariably get to a point where speed, support and *not my pain* is important. If the area of pain is one that isn’t your primary skill set, this becomes especially true. For me, JavaScript and React is that pain area. From mid-2020, I’ve taken time to learn React and can build reasonable looking user interfaces that are stable. That doesn’t mean I can build nice components like calendars, agendas, or time-pickers. UI and UX is a whole career’s worth of skill I just do not have. I can wire up UI components, but not build them.
