@@ -57,9 +57,12 @@ In your React app, these components are straight forward to use.
 
 Here is a codesandbox example for Pluralise!: [https://codesandbox.io/s/pluralise-test-harness-v0lj3j](https://codesandbox.io/s/pluralise-test-harness-v0lj3j)
 
-{{< img src="candytext_codesandbox.gif" alt="candytext_codesandbox" >}}
-<br/>
-<br/>
+<iframe src="https://codesandbox.io/embed/react-fiddle-forked-v0lj3j?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="Pluralise Test Harness"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
 ## TL;DR
 
