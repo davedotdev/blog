@@ -2169,3 +2169,8 @@ a:focus, a:hover {
 .marginright25px {
   margin-right: 25px;
 }
+
+.w-50 {
+  width: 50%;
+  margin-bottom: 10px;
+}
