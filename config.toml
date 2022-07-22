@@ -116,8 +116,4 @@ DefaultContentLanguage = "en"
         name    = "list"
         url     = "list"
         weight  = 2
-    [[menu.nav]]
-        name    = "uijourney"
-        url     = "uijourney"
-        weight  = 4
 
