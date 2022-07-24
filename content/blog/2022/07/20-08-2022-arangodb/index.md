@@ -392,7 +392,7 @@ FOR airport in airports
   RETURN p
 ```
 
-Fundamentally the same as the below. This syntax is the hardest bit I've come across so far, but once you spend five minutes reading the docs, it becomes grockable.
+Fundamentally the same as the below. This syntax is the hardest bit I've come across so far, but once you spend five minutes reading the docs, it becomes grokkable.
 
 ```bash
 FOR v, e, p IN 1..1 OUTBOUND 'airports/SFO'
