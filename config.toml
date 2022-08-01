@@ -116,4 +116,8 @@ DefaultContentLanguage = "en"
         name    = "list"
         url     = "list"
         weight  = 2
+    [[menu.nav]]
+        name    = "builtfm"
+        url     = "builtfm"
+        weight  = 4
 

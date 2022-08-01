@@ -1,0 +1,12 @@
+enable  : true
+topTitle: Built.fm
+title   : For digital product builders!
+
+filtermenu :
+  - name      : Built.fm
+    category  : builtfm
+
+item   :
+  - title : builtfm
+    category  : Built.fm
+    description: "Built.fm podcast"
