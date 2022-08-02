@@ -2174,3 +2174,8 @@ a:focus, a:hover {
   width: 50%;
   margin-bottom: 10px;
 }
+
+.centercontent {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,11 @@
+<div class="centercontent">
+    <img 
+    class="w-50" {{ with .Get "src" }} 
+    src="{{.}}"  
+    alt="Post-Image"{{end}} 
+    {{ with .Get "alt" }} 
+        alt="{{.}}"
+        {{ else }}
+            alt=""
+    {{ end }}>
+</div>
