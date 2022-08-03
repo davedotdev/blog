@@ -25,7 +25,7 @@ Google has broken humanity and we're constantly Googling our way through life. N
 
 ### Building Sharpens The Skill
 
-I'm passionately trying to learn React, NextJS and JavaScript on my front-end adventure and figured this would be a nice quick project, which it was. I've fell in love with UI and UX and whilst I'm way off from building custom components without JSX or HTML to rely on, I can feel my understanding blossoming and my outputs improving slowly.
+I've fell in love with UI and UX and whilst I'm way off from building custom components without JSX or HTML to rely on, I can feel my understanding blossoming and my outputs slowly improving. Building `ResetGit.com` flexed some new skills and I discovered a new library called Code-Blocks along the way which is pretty cool.
 
 [ResetGit.com](https://resetgit.com) is built with:
 
@@ -35,13 +35,13 @@ I'm passionately trying to learn React, NextJS and JavaScript on my front-end ad
 - [React Bootstrap Alert](https://react-bootstrap.github.io/components/alerts/)
 - [Alliance1](https://www.myfonts.com/products/1-light-alliance-458502) Font from MyFonts
 
-The Alliance1 font is just gorgeous and figured it would be lovely as a header. 
+The Alliance1 font is just gorgeous and figured it would be lovely as the header font. 
 
 {{< img50center src="alliance1_light_sc.png" alt="reset git screen grab" >}}
 
 
 ### Wrap
 
-In somewhat of a twisted version of the 100 days of code, every week I try and build something lightweight to learn something new or deepen understanding. This was this week's thing and you never know, it might be useful on your travels. It took no more than a couple of hours to build and I spent more time messing around generating the head and favourite icons than the code itself. Enjoy!
+In somewhat of a twisted version of the 100 days of code, every week I try and build something lightweight to learn something new or deepen a previous lesson. ResetGit.com was this week's thing and you never know, it might be useful on your travels. It took no more than a couple of hours to build and I spent more time messing around generating the header and favourite icons than the code itself. Enjoy!
 
 
