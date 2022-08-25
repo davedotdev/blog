@@ -5,7 +5,11 @@
 {{ with .Site.Params.author }} <meta name="author" content="{{ . }}">{{ end }}
 {{ hugo.Generator }}
 
-<title>{{ .Site.Title }}</title>
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ if .Page.Title }}dave.dev - {{ .Page.Title }}{{ end }}{{ end }}</title>
+<meta property='og:title' content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}dave.dev - {{ if .Page.Title }}{{ .Page.Title }}{{ end }}{{ end }}"/>
+<meta property='og:image' content="{{ if .Page.Params.image }}{{ .Page.Params.image | absURL }}{{ end }}"/>
+<meta property='og:description' content="{{ if .Page.Params.description }}{{ .Page.Params.description }}{{ else }}The dave.dev blog{{ end }}"/>
+<meta property='og:url' content="{{ .Page.Permalink }}"/>
 
 {{ "<!-- Mobile Specific Meta -->" | safeHTML }}
 <meta name="viewport" content="width=device-width, initial-scale=1">
