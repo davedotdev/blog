@@ -1,17 +1,19 @@
 ---
-title: "AWS DynamoDB Local with Go v2 SDK and NoSQL Workbench"
+title: "AWS DynamoDB Local with AWS Go v2 SDK"
 date: 2021-07-14T10:00:00+00:00
 image: images/blog/cloud_header.png
 author: David Gee
-description: "AWS DynamoDB, Go v2 SDK, NoSQL Workbench and getting it working!"
+description: "AWS DynamoDB local, AWS Go v2 SDK, NoSQL Workbench and getting it working!"
 signoff: Dave
 mermaid: true
 categories: 
 - cloud
+- dynamodb
 tags:
 - software development
 - cloud
 - headache
+- dynamodb
 ---
 
 # A Penny Drops 
@@ -27,7 +29,7 @@ I spent some time looking at alternatives including dropping servers in a friend
 I did say I needed relational data and I'm also happy that DynamoDB can do what I need in a single table no less. Saying No to a SQL style relational DB is a cost shackle removed and I'm more than prepared to be free, despite feeling like I'm letting go of an old friend. But, I've seen enough to be convinced. I now view NoSQL as conditional relativitiy. 
 
 {{<youtube KYy8X8t4MB8>}}
-
+<br/>
 After watching this video: by [Rick Houlian](https://twitter.com/houlihan_rick?lang=en), DynamoDB seemed like the appropriate way to go and Rick left me utterly convinced, especially after watching him with the [NoSQL Workbench tool](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.settingup.html) and trying to follow his thought process. I admit to watching the video about three times. In addition to fiddling around a bit, I've also started the AWS DynamoDB Developer training, which is a little cringeworthy at times (I'm British and find the overt politeness a little overbearing) but otherwise excellent. I found the code examples to be more than enough to get the basic concepts but be warned, the v2 of the Go SDK doesn't have much blog coverage yet.
 
 Back to my wife's in development app, the dev code so far is based on Postgres and [`jinzhu\gorm`](https://github.com/go-gorm/gorm) (the back-end is in Go) and so my plan is to flatten the data structures to a large Go struct so I can use a single table and keep the number of types to a minimum. I plan to tag the struct fields to match the secondary indexes if I go down that route (I'll come back to that in another post). There is a local version of DynamoDB you can use prior to switching to AWS proper and it makes perfect sense given the churn I'm no doubt going to create whilst I ~~fuck around~~ scientifically go about making a single table NoSQL database fit.
@@ -38,18 +40,24 @@ Prior to writing production code, I write throw away samples and always have don
 
 For my dev process, I'll be using the AWS NoSQL Workbench tool to build out the model and access patterns, I'll be using a local DynamoDB running on Docker and want to use the Go v2 SDK to target local as well as AWS DynamoDB. Simple right? Turns out I hit a laughable brick wall (looking back).
 
+You can find the AWS page on running DynamoDB here: [https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.DownloadingAndRunning.html)
+
+```bash
+docker run -d -p 8000:8000 amazon/dynamodb-local
+```
+
 We all know what it's like when writing code. We get in a state of being laser focussed and miss the obvious sometimes. Already twice this week, I've helped people by asking the simplest of questions and when you're locked onto a goal, it's all too easy to mess-up, which is exactly what happened.
 
 I posted this [GitHub Gist](https://gist.github.com/davedotdev/0a4a2361b0e04f63dcda91645db1de83) and shouted for help on Twitter. Two heroes came to my aid; [Kirk Kirkconnell](https://twitter.com/nosqlknowhow?lang=en) and [Tom Bailey](https://twitter.com/tombailey?lang=en). Both work at AWS and I've had the privilege of working with Tom in the past. I remain so very grateful for their help. After seeing a code example posted as a response on the Gist, my head met my hand and immediately realised that I'd not completed the SigningRegion field in the EndPoint struct. In the original Gist I had a line under the client config below, which didn't seem to make a difference, so I commented it out.
 
 ```go
-		o.Region = "localhost"
+o.Region = "localhost"
 ```
 
 To make the annoyance worse, under the config code, I also had this line which also never made a damn bit of difference. Having tried every permutation I could think of, I just gave up and asked for help.
 
 ```go
-		config.WithRegion("localhost"),
+config.WithRegion("localhost"),
 ```
 
 __What were you doing Dave?__

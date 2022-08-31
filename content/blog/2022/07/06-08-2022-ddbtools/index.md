@@ -1,5 +1,5 @@
 ---
-title: "DDBTools: DynamoDB UpateItem with Go the easy way"
+title: "DDBTools: DynamoDB UpdateItem with Go the easy way"
 date: 2022-07-08T10:00:00+00:00
 image: images/blog/serverless_header.png
 author: David Gee
