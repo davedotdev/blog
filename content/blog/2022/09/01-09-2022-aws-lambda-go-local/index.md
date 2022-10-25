@@ -26,7 +26,7 @@ Serverless is game changing. Nuff said. For the sake of argument, serverless is 
 
 ## Workflows
 
-I used to be a technical product manager and technical marketing engineer for an automation platform known as [StackStorm](https://stackstorm.com/2019/10/07/stackstorm-joins-the-linux-foundation/), which is a rich tapestry of workflow engines and integrations, some of which were built in, some were plugin based. I could hook StackStorm into Slack, emails and network points of control and I could drive it programmatically using REST. StackStorm offered a model of [event driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture), in which processing was highly asynchronous and de-coupled. What that meant was each function would execute in its own memory space, isolated from its calling code. Each function’s outputs become available as the next functions input. To word it a different way, imagine having a flow chart of logic, with each square being a function of code and each decision point being glue logic. Events flow between each block in the flow chart, with input and output information from previous blocks. An event being nothing more than a blob of information with fields like a UUID, calling reason, timestamp and maybe outputs from other functions.
+I used to be a technical product manager and technical marketing engineer for an automation platform known as [StackStorm](https://stackstorm.com/2019/10/07/stackstorm-joins-the-linux-foundation/), which is a rich tapestry of workflow engines and integrations, some of which were built in, some were plugin based. You can hook StackStorm into Slack, emails and network points of control and drive it programmatically using REST. StackStorm offered a model of [event driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture), in which processing was highly asynchronous and de-coupled. What that meant was each function would execute in its own memory space, isolated from its calling code. Each function’s outputs become available as the next functions input. To word it a different way, imagine having a flow chart of logic, with each square being a function of code and each decision point being glue logic. Events flow between each block in the flow chart, with input and output information from previous blocks. An event being nothing more than a blob of information with fields like a UUID, calling reason, timestamp and maybe outputs from other functions.
 
 Each function is separately invokable with StackStorm and is stitched together via a workflow engine, which is the flow chart aspect. Changing the language to AWS from StackStorm, we have different semantics and a kit form of StackStorm ready for assembly.
 
@@ -202,7 +202,7 @@ REPORT RequestId: 3c999a79-6ea7-4e87-b934-22a1995f9dd1	Init Duration: 0.96 ms	Du
 {"statusCode":200,"headers":null,"multiValueHeaders":null,"body":"Hello, xxx.xxx.xxx.xxx\n"}
 ```
 
-Great, it worked! Just like that we created a Go Lambda and ran it on Docker on your machine.
+Great, it worked! Just like that we created a Go Lambda and ran it on Docker on your machine. You can now hack around with the Go code because the build process is more of the same. From here, you can use SAM to deploy this Lambda to your AWS account if you so wished.
 
 ## Digging in
 
