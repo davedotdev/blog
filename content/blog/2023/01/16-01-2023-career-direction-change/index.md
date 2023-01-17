@@ -43,7 +43,7 @@ Then comes the challenge for software developers and engineers needing to move f
 
 Everything above is a terse high-level set of thoughts I have around modern communication system engineering. I haven’t touched on anything research based or sci-fi, like entanglement or quantum $stuff, but the thoughts have burrowed their way in. Networking at L2/L3/L4 is needed to underpin cloud, the internet, service provider and utility networks, but I’ve been struggling with the real value proposition of communication systems for a while in terms of where I want to spend my life’s limited available energy. It’s time for me to go higher up the stack and concentrate on system wide communication instead of just the packets, as important as moving them around is. It's not that I’ve fell out of love with networking, it’s that the love building communication systems has moved up the stack.
 
-{{<img75centerlink href="https://synadia.com" src="synadia.jpeg" alt="Synadia">}} 
+{{<img75centerlink href="https://synadia.com" src="synadia.png" alt="Synadia">}} 
 <br/>
 {{<img75centerlink href="https://nats.io" src="nats.png" alt="NATS.io">}}
 
@@ -64,7 +64,7 @@ NATS can offer a wide range of capabilities from simple to more complex:
 
 The magic of NATS is that it can be used to build connective substrates for almost infinite use cases. I would have loved to drop NATS on to an operating system like Junos and create a fleet management and data collection overlay. Imagine being able to check the entire state of your network through one command, have distributed and independently acting state machines and even use it as a config store for locally ran workflows, not to mention there’s the whole data management aspect and empowering telemetry. NATS can be used as an off-the-shelf control-plane substrate and it can enable the much-needed management plane for network wide observability and assurance.
 
-TL;DR, NATS is a drop in connective substrate that can be used from everything like building routing protocols, management-planes, telemetry substrates and more. Out of networking, the use-case potential is almost unbound and its future in Micro-Servces, FaaS, IoT, Intelligent Cities and Smart Vehicles excites me.
+TL;DR, NATS is a drop in connective substrate that can be used from everything like building routing protocols, management-planes, telemetry substrates and more. Out of networking, the use-case potential is almost unbound and its future in Micro-Services, FaaS, IoT, Intelligent Cities and Smart Vehicles excites me.
 
 If you want to know more about NATS, here are some resources:
 
