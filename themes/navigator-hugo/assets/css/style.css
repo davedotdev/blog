@@ -2162,8 +2162,12 @@ a:focus, a:hover {
 
 .circle-ads {
   padding: 5px;
-  background-color: #f0326b;
-  color: White
+  background-color: white;
+  color: White;
+  border: 1px;
+  border-color: lightgrey;
+  border-style: solid;
+  border-radius: 15px;
 }
 
 .marginright25px {
