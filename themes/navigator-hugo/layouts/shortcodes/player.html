@@ -1,0 +1,32 @@
+<div class="p-25">
+    <iframe {{ with .Get "src" }} src="{{.}}" {{ end }} width="400px" height="150px" frameborder="0" scrolling="yes"></iframe>
+</div>
+
+<script>
+
+    $(document).ready(function() {
+    /* Make Spotify fit initial layout */
+    respondify();
+});
+
+
+$(window).resize(function() {
+    /* Make Spotify fit layout on resize */
+    respondify();
+});
+
+
+function respondify() {
+    $('body').find('iframe[src*="spotify.com/"]').each(function() {
+        var w = $(this).parent(1).width();
+        $(this).css('width', w + 'px');
+
+    var h = $(window).height();
+    $(this).css('height', 120 + 'px');
+
+        $(this).attr('src',$(this).attr('src'));
+    });
+
+}
+</script>
+

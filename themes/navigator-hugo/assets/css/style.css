@@ -667,6 +667,15 @@ a:focus, a:hover {
   padding-top: 20px;
 }
 
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.p-25 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 .pt-50 {
   padding-top: 50px;
 }
