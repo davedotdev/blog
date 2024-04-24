@@ -1,6 +1,8 @@
 enable  : true
 topTitle: GraphOps
 title   : Everthing GraphOps
+description : Everything is connected, so why don't we operate it that way?
+
 
 filtermenu :
   - name      : GraphOps
@@ -8,5 +10,6 @@ filtermenu :
 
 item   :
   - title : graphops
+    description : Everything is connected, so why don't we operate it that way?
     category  : GraphOps
     description: "GraphOps related"

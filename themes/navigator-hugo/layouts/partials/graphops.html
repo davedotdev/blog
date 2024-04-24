@@ -1,23 +1,25 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 {{ with $data.graphops }}
-    {{ if .enable }}
-    {{ "<!-- Start GraphOps Section -->" | safeHTML }}
-    <section class="graphops section" id="graphops">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col">
-                    <div class="title text-center">
-                        {{ with .title }}
-                            <h2>{{ . }}</h2>
-                            <span class="border"></span>
-                        {{ end }}
-                    </div>
+{{ if .enable }}
+{{ "<!-- Start GraphOps Section -->" | safeHTML }}
+<section class="graphops section" id="graphops">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="title text-center">
+                    {{ with .title }}
+                    <h2>{{ . }}</h2>                    
+                    <span class="border"></span>                
+                    {{ end }}
+                    <p>GraphOps is the practice of managing and operationalizing graph data.</p>
                 </div>
             </div>
-    {{ end }}
-{{ end }}
+        </div>
+        {{ end }}
+        {{ end }}
 
-    {{range .Site.RegularPages}}
+
+        {{range .Site.RegularPages}}
         {{ if and (in .Params.categories "GraphOps")}}
         {{ "<!-- Blog Section Start -->" | safeHTML }}
         <section class="blog section" id="blog">
@@ -27,7 +29,8 @@
                     <article class="col-12 col-md-4">
                         <div class="post-item">
                             <div class="post-thumb">
-                                <img class="img-fluid shadow rounded" src="{{ .Params.image | absURL }}" alt="Generic placeholder image">
+                                <img class="img-fluid shadow rounded" src="{{ .Params.image | absURL }}"
+                                    alt="Generic placeholder image">
                             </div>
                             <div class="post-title">
                                 <h3 class="mt-0">
@@ -51,17 +54,17 @@
                             </div>
                             <a class="btn btn-main" href="{{ .Permalink }}">Read more</a>
                         </div>
-                    </article> 
+                    </article>
                     {{ "<!-- /single blog post -->" | safeHTML }}
                 </div>
             </div>
         </section>
         {{ "<!-- Blog Section End -->" | safeHTML }}
         {{end}}
-    {{ end}}
+        {{ end}}
 
-</div>
-<!-- end row -->
+
+    </div>
+    <!-- end row -->
 </section>
 {{ "<!-- End section -->" | safeHTML }}
-

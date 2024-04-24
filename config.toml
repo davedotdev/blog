@@ -68,7 +68,7 @@ DefaultContentLanguage = "en"
     footerDescription = "mailto:me@dave.dev"
     footerServiceTitle = "Social Links"
     footerAboutTitle = "Email Me"
-    copyright = "© David Gee and dave.dev, 2022."
+    copyright = "© David Gee and dave.dev, 2024."
 
     [Languages.en.params.banner]
         placeholder = "Enter Search Terms"
@@ -86,8 +86,8 @@ DefaultContentLanguage = "en"
     # Blog Section On Homepage
     [Languages.en.params.blog]
         enable  = true
-        title   = "Blog"
-        subtitle= "Latest posts from ipengineer.net, arsonistgopher.com and dave.dev"
+        title   = "Content"
+        subtitle= "Latest posts & podcasts from built.fm, dave.dev & historic content from ipengineer.net & arsonistgopher.com"
 
     # Contact Section
     [Languages.en.params.contact]
@@ -109,15 +109,15 @@ DefaultContentLanguage = "en"
         url     = "graphops"
         weight  = 3
     [[menu.nav]]
-        name    = "portfolio"
-        url     = "portfolio"
+        name    = "home"
+        url     = ""
         weight  = 1
     [[menu.nav]]
         name    = "list"
         url     = "list"
-        weight  = 2
+        weight  = 4
     [[menu.nav]]
         name    = "builtfm"
         url     = "builtfm"
-        weight  = 4
+        weight  = 2
 

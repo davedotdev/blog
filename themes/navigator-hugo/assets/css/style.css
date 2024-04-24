@@ -267,8 +267,8 @@ body {
 
 p {
   font-family: "Titillium Web", sans-serif;
-  color: ##212529;
-  font-size: 15px;
+  color: #212529;
+  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -592,6 +592,21 @@ a:focus, a:hover {
   text-align: center;
 }
 
+.podcasttitle {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.podcasttitle .border {
+  border: none;
+  display: inline-block;
+  border-radius: 3px;
+  height: 6px;
+  position: relative;
+  width: 90px;
+  margin-bottom: 10px;
+}
+
 .title h2 {
   font-size: 35px;
   color: #232323;
@@ -609,7 +624,7 @@ a:focus, a:hover {
 }
 
 .title p {
-  color: #848484;
+  color: #646464;
   width: 50%;
   margin: 0 auto;
 }
@@ -648,7 +663,39 @@ a:focus, a:hover {
   box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
 }
 
-.gradient, .title .border, .service-2 .service-item i {
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.blogheader .border {
+  border: none;
+  display: inline-block;
+  border-radius: 3px;
+  height: 6px;
+  position: relative;
+  width: 90px;
+  margin-bottom: 10px;
+}
+
+.rounded {
+  border-radius: 15px !important;
+}
+
+.blogheader .border {
+  background-image: linear-gradient(100deg, #f9643d, #fe2a77);
+}
+
+.blogheader .ital {
+  font-style: italic;
+  font-size: 18px;
+}
+
+
+.gradient, .title .border, .podcasttitle .border, .service-2 .service-item i {
   background-image: linear-gradient(100deg, #f9643d, #fe2a77);
 }
 
@@ -2177,9 +2224,67 @@ a:focus, a:hover {
 .w-50 {
   width: 50%;
   margin-bottom: 10px;
+  display: block;
+  align-items: center;
 }
 
 .centercontent {
   display: flex;
   justify-content: center;
+}
+
+/* import podcast header icons */
+.siskin-subscribe-list {
+  margin: 2rem 0 2rem;
+  justify-content: center;
+}
+
+.featured-area .siskin-subscribe-list {
+  margin: 3.5rem 0 0 0;
+}
+
+.siskin-subscribe-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.siskin-subscribe-list li {
+  margin: 0 3rem 0 0;
+  padding: 0;
+}
+
+.siskin-subscribe-list__icon {
+  height: 32px;
+  margin-right: 1rem;
+}
+
+.siskin-subscribe-list__icon svg {
+  height: 32px;
+  width: 32px;
+}
+
+.siskin-subscribe-list .siskin-subscribe-list__link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 5px;
+  height: 32px;
+  padding: 0;
+  transition: color .15s ease-in-out;
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+.siskin-subscribe-list .siskin-subscribe-list__link:hover {
+  color: var(--ghost-accent-color);
+}
+
+.siskin-subscribe-list__name {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1;
 }

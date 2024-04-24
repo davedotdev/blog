@@ -9,9 +9,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
+                <!--
                 <div class="circle-ads">
                     <a href="https://thoughtzen.com?utm_source=davedev&utm_medium=web&utm_campaign=bloggers&utm_content=dave_banner"><img src="/images/blog/tz_banner.gif" class="w-100" alt="CircleAds"></a>
                 </div>
+            -->
                 <br/>
                 <!--
                 <img src="{{ with .Params.image }}{{ . | absURL }}{{ end }}" class="w-100 mb-3" alt="Post-Image">
@@ -34,9 +36,17 @@
                 {{ .Content }}
 
 
-                
-        <p><i><b>{{ .Params.signoff }}</b></i></p>
-        <p><a href="https://buymeacoffee.com/davedotdev">Say thanks and buy me a coffee!</a></p>
+
+        <div class="pt-20">
+            <div class="blogheader">                                
+                <div class="pt-20"></div>
+                <p><i><b>// {{ .Params.signoff }}</b></i></p>
+                <span class="border"></span>
+                <p><a href="https://buymeacoffee.com/davedotdev">Say thanks and buy me a coffee!</a></p>                        
+            </div>
+        </div>                
+
+
     
         <ul class="list-inline">
             <li>
