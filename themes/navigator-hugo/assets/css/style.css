@@ -2308,3 +2308,15 @@ img.gbc {
   height: 120px;
   border-radius: 15px;
 }
+
+.clr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.clr {
+  margin-top: 20px;
+  height: 75px;
+  border-radius: 10px;
+}
