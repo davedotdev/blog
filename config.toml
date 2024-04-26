@@ -55,26 +55,27 @@ enableGitInfo = false
 defaultContentLanguageInSubdir = true
 DefaultContentLanguage = "en"
 
+[languages]
     #############- Site en ENGLISH
-    [Languages.en]
-    weight = 2
-    title = "Welcome to dave.dev"
-    dateFormat = "January 2, 2006"
+    [languages.en]
+        weight = 2
+        title = "Welcome to dave.dev"
+        
 
-    # home = "EN Home"
-    logo = "images/logo2.png"
-    menufixed = false
+    [languages.en.params]
+        logo = "images/logo2.png"
+        dateFormat = "January 2, 2006"
+        menufixed = false
+        footerDescription = "mailto:me@dave.dev"
+        footerServiceTitle = "Social Links"
+        footerAboutTitle = "Email Me"
+        copyright = "© David Gee and dave.dev, 2024."
 
-    footerDescription = "mailto:me@dave.dev"
-    footerServiceTitle = "Social Links"
-    footerAboutTitle = "Email Me"
-    copyright = "© David Gee and dave.dev, 2024."
-
-    [Languages.en.params.banner]
+    [languages.en.params.banner]
         placeholder = "Enter Search Terms"
 
     # Hero Area Section
-    [Languages.en.params.hero]
+    [languages.en.params.hero]
         enable  = true
         heading = "Welcome to dave.dev"
         description1 = "I'm David Gee and this is my personal site."
@@ -84,13 +85,13 @@ DefaultContentLanguage = "en"
         videoURL   = "https://www.youtube.com/embed/wrvBumvi5_Y"
 
     # Blog Section On Homepage
-    [Languages.en.params.blog]
+    [languages.en.params.blog]
         enable  = true
         title   = "Content"
         subtitle= "Latest posts & podcasts from built.fm, dave.dev & historic content from ipengineer.net & arsonistgopher.com"
 
     # Contact Section
-    [Languages.en.params.contact]
+    [languages.en.params.contact]
         enable  = false
         twitter = "https://twitter.com/davedotdev"
         linkedin= "https://www.linkedin.com/in/davedotdev/"
@@ -105,17 +106,17 @@ DefaultContentLanguage = "en"
 [menu]
     # Navbar Menus 
     [[menu.nav]]
+        name    = "aboutme"
+        url     = "aboutme"
+        weight  = 3
+    [[menu.nav]]
         name    = "graphops"
         url     = "graphops"
-        weight  = 3
+        weight  = 4
     [[menu.nav]]
         name    = "home"
         url     = ""
         weight  = 1
-    [[menu.nav]]
-        name    = "list"
-        url     = "list"
-        weight  = 4
     [[menu.nav]]
         name    = "builtfm"
         url     = "builtfm"

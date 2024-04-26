@@ -2297,3 +2297,14 @@ a:focus, a:hover {
   font-size: 16px;
   line-height: 1;
 }
+
+.gbc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img.gbc {
+  height: 120px;
+  border-radius: 15px;
+}

@@ -1,0 +1,12 @@
+enable  : true
+topTitle: About Me
+title   : About Me
+
+filtermenu :
+  - name      : About Me
+    category  : aboutme
+
+item   :
+  - title : About me
+    category  : aboutmne
+    description: "About dave.dev"

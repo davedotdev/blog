@@ -1,0 +1,48 @@
+{{ $data := index .Site.Data .Site.Language.Lang }}
+{{ with $data.aboutme }}
+{{ if .enable }}
+{{ "<!-- Blog Section Start -->" | safeHTML }}
+<section class="graphops section" id="graphops">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col">
+                <div class="podcasttitle text-center">
+                    {{ with .title }}
+                    <h2>{{ . }}</h2>
+                    <span class="border"></span>
+                    {{ end }}
+                    <p>Who am I? What do I do?</p>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+        <section class="blog pb-20" id="blog">
+            <div class="container">
+                Hi there. My name is David Gee. I'm a product leader, software & electronics engineer, blogger, software developer, international speaker and a technologist, residing in England, UK. You can read more
+                about my background on <a href="https://linkedin.com/in/davedotdev">LinkedIn.</a> I have been fortunate enough to enjoy a varied career and have spent over two decades in communications, computer networking and software, at an advanced level.
+            </div>
+            <div class="container pt-20">
+                <h4>Products and Projects</h4>
+                <div>
+                    I operate in the UK in my spare time in the communication space (computer networking), distributed
+                    systems engineering and I write software, mainly things like Micro-SaaS systems. One of my curret
+                    projects (2024) is <a href="https://clientrecordcards.com">ClientRecordCards</a>, which is a CRM
+                    system for the Hair and Beauty industry. I also support local councils and government with the
+                    computer networking, CCTV and security systems, because I believe in making the area better that I
+                    and my family live.
+                </div>
+
+                <div class="pt-20">
+                    <h4>Ethics and Business</h4>
+                    <div class="pb-20">
+                        I charge for software or engineering work and ensure that I charge fair prices, pay my taxes and pay suppliers promptly. As such, I'm a member of the <a href="https://goodbusinesscharter.com/">Good Business Chater</a>, a worthwhile organisation that promotes ethics in business, setup by Julian Rich, the very same person who setup Richer Sounds!
+                    </div>
+                    <div class="gbc">
+                        <a href="https://goodbusinesscharter.com/"><img class="gbc" src="/images/about/gbc.png"></img></a>
+                    </div>
+
+                </div>
+        </section>
+        {{ "<!-- Blog Section End -->" | safeHTML }}

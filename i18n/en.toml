@@ -6,6 +6,8 @@ other = "Portfolio"
 other = "Full List"
 [builtfm]
 other = "Built.fm"
+[aboutme]
+other = "About Me"
 [home]
 other = "Home"
 
