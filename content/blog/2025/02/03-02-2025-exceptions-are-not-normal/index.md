@@ -18,7 +18,7 @@ The word <span style="color:red; font-weight: bold">Exception</span> conjures fe
 
 {{<img75centerlink href="" src="exception.png" alt="Definition of exception">}}<br/>
 
-When I see exception appear in a system, it means _excluded from the general system_ and is not a normal state. It's not part of the rules of the service or product. If software has an exception, the developer might joke about it being a suprirse feature, but joking aside, it's not a normal operational state.
+When I see exception appear in a system, it means _excluded from the general system_ and is not a normal state. It's not part of the rules of the service or product. If software has an exception, the developer might joke about it being a suprirse feature, but joking aside, it's not a normal operational state. Exceptions in software sometimes cause a crash, due to an unhandled or unexpected state. An Exception in the case of my order would have been maybe a vehicle crash? Would that count? It's outside of the modelled service, but if it happens, not a total surprise.
 
 The table below is from a delivery service. I ordered a new printer _(paper, not 3d)_ and expected it on a next day delivery. Turns out, an Exception happened. It would seem to me, that missing a delivery deadline is a normal part of a delivery service's outcome no? Why would this be an exception I wonder?
 
