@@ -2218,12 +2218,16 @@ a:focus, a:hover {
 
 .circle-ads {
   padding: 5px;
-  background-color: white;
-  color: White;
   border: 1px;
-  border-color: lightgrey;
   border-style: solid;
   border-radius: 15px;
+  background-color: white;
+  color: White;
+  border-color: lightgrey;
+}
+
+.bgmill {
+  background-color: #75767a !important;
 }
 
 .marginright25px {

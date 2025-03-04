@@ -72,7 +72,3 @@ It is _**NOT**_ turning your back on the design when it crosses out of your real
 
 # Summary
 It might not be sexy, but dealing with the basics is of critical importance. An exception that occurs as part of normal business is not an exception. Being exceptional is what sets mediocrity from greatness. Make that extra 10% investment and get ahead by digging in deep to what you're involved in.
-
-
-
-
