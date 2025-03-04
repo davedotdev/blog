@@ -1,6 +1,6 @@
 ---
 title: "Design; the value & perceived value"
-date: 2025-03-04T10:00:00+00:00
+date: 2025-03-04T12:00:00+00:00
 image: images/blog/diary_entry_header.png
 author: David Gee
 description: "Design and the value of it has always been contentious. In the era of AI, this is about to get a whole lot worse."
@@ -84,4 +84,4 @@ I can boil this whole article down to a few things:
 - Understand that your value is different to the value of others
 - A design should align with your end goals, encode tribal knowledge and serve a purpose, not an ego
 
-Then comes the final amusing truth. After all the stress of what goes into a design for a system or product, working across teams, arguing and fighting for what's right and working through those horrendous self-doubting moments; if your design works, then no one will thank you for it. It's your job and on to the next thing. People only seem to remember what goes wrong. Did you ever wonder why engineers and consultants like putting fires out? It's because they're only ever asked to get involved when there's a fire. There's little fun and no thanks in preventing a fire being lit.
+Then comes the final amusing truth. After all the stress of what goes into a design for a system or product, working across teams, arguing and fighting for what's right and working through those horrendous self-doubting moments; if your design works, then no one will thank you for it. It's your job and on to the next thing. People only seem to remember what goes wrong. Did you ever wonder why engineers and consultants like putting fires out? It's because they're only ever asked to get involved when there's a fire. It's re-inforcing behaviour. There's little fun and no thanks in preventing a fire being lit.
