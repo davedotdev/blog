@@ -1,6 +1,6 @@
 ---
 title: "Design; the value & perceived value"
-date: 2025-03-04T18:00:00+00:00
+date: 2025-03-04T10:00:00+00:00
 image: images/blog/diary_entry_header.png
 author: David Gee
 description: "Design and the value of it has always been contentious. In the era of AI, this is about to get a whole lot worse."
@@ -57,6 +57,8 @@ Academic design is great for unchartered territory or extremely complex systems 
 
 Every time information leaks inadvertently between domains, it takes incredible effort to encode and decode it. It becomes fragile information at best and easy to get wrong.
 
+It's common to see however, when a design encompasses tricky technology, as the details grow, so will the reference to it being academic. Some things just cannot be hacked together. Network engineers spent hours labbing out topologies and exercising technologies. Those big dollar bucks paid out to a consultant? Many hours spent actually building, deploying and running what you're about to get in production. 
+
 ### Goldilocks Design
 
 It's not easy to define this. A goldilocks design has that __Ahhhh, perfect__ smell to it. That might be WHAT it is, HOW it should work and WHAT the value is to the end customer. It will have guide rails to avoid coding into a corner and will have expected and quantifiable milestones. Rarely is saying it's done ever good enough. Proving it's done is what it's all about.
@@ -77,11 +79,11 @@ _Note, I have not gone into anything around product market fit and justification
 All of this is hard. Articulation is hard. Moving between levels of skill in any business is hard. Subject matter experts can feel intimidating to talk to, but without using them, then you're opening yourself up to pain. It's hard. Dealing with a strong visionary leader is hard, because unless you can extract their brain and understand it properly, you're always going to miss the mark and forever be a disappointment. 
 
 I can boil this whole article down to a few things:
-- Ask questions. As many questions as you can. Learn to love asking questions
-- Learn to articulate your thoughts, cleanly without being overly succinct but without doing mental buffer overflow attacks
+- Ask questions. As many questions as you can. Learn to love asking questions. Get told off for asking questions
+- Learn to articulate your thoughts in a balanced way. That means without being overly succinct but without doing mental buffer overflow attacks
 - When talking, learn to breathe in. A slow gasp for oxygen or vent of carbon dioxide gives people time to think and organise their brains
 - Project your concerns and state what you know to be true. No point saying anything when all hell breaks loose, knowing that it would
-- Understand that your value is different to the value of others
+- Understand that your value is different to the value of others and academic to one is abc to another. If there is a disconect, ask questions
 - A design should align with your end goals, encode tribal knowledge and serve a purpose, not an ego
 
 Then comes the final amusing truth. After all the stress of what goes into a design for a system or product, working across teams, arguing and fighting for what's right and working through those horrendous self-doubting moments; if your design works, then no one will thank you for it. It's your job and on to the next thing. People only seem to remember what goes wrong. Did you ever wonder why engineers and consultants like putting fires out? It's because they're only ever asked to get involved when there's a fire. It's re-inforcing behaviour. There's little fun and no thanks in preventing a fire being lit.
