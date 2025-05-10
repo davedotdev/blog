@@ -1,0 +1,15 @@
+<div class="centercontent">
+    {{ with .Get "href" }}
+    <a href="{{.}}" class="centercontent">
+        {{end}}
+        <img 
+        class="w-100 rounded" {{ with .Get "src" }} 
+        src="{{.}}"  
+        alt="Post-Image"{{end}} 
+        {{ with .Get "alt" }} 
+            alt="{{.}}"
+            {{ else }}
+                alt=""
+        {{ end }}>
+    </a>
+</div>
