@@ -2,11 +2,12 @@
 title: "Ghostbuster Trap(ish) 2025"
 date: 2025-03-10T10:00:00+00:00
 image: images/blog/ghostbuster_header.png
+og_image: images/og-default.png
 author: David Gee
 description: "I did a thing and created a Ghostbuster trap! Well, kinda. It resembles one!"
 signoff: Dave
 mermaid: false
-categories: 
+categories:
 - creations
 tags:
 - electronics

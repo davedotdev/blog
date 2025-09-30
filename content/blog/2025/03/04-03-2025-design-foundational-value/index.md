@@ -2,11 +2,12 @@
 title: "Design; the value & perceived value"
 date: 2025-03-04T10:00:00+00:00
 image: images/blog/diary_entry_header.png
+og_image: images/og-default.png
 author: David Gee
 description: "Design and the value of it has always been contentious. In the era of AI, this is about to get a whole lot worse."
 signoff: Dave
 mermaid: false
-categories: 
+categories:
 - blog
 tags:
 - rant

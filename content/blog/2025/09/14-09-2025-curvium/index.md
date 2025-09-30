@@ -2,11 +2,12 @@
 title: "The next chapter"
 date: 2025-09-14T10:00:00+00:00
 image: images/blog/curvium_header.png
+og_image: images/og-default.png
 author: David Gee
 description: "Curvium.com - the next phase"
 signoff: Dave
 mermaid: false
-categories: 
+categories:
 - creations
 tags:
 - business

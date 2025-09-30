@@ -2,11 +2,12 @@
 title: "Exceptions are not normal"
 date: 2025-02-02T10:00:00+00:00
 image: images/blog/diary_entry_header.png
+og_image: images/og-default.png
 author: David Gee
 description: "Exceptions are not normal, so quit trying to make them normal."
 signoff: Dave
 mermaid: false
-categories: 
+categories:
 - blog
 tags:
 - microsaas
