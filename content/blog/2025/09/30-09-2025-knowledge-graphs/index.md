@@ -1,6 +1,6 @@
 ---
 title: "Knowledge graphs for networking"
-date: 2025-09-30T10:00:00+00:00
+date: 2025-10-03T10:00:00+00:00
 image: images/blog/graphops_header.png
 author: David Gee
 description: "Now is the time for knowledge graphs for networking!"
