@@ -11,44 +11,31 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row blog-grid">
             {{ range (.Paginator 9).Pages }}
             {{ "<!-- single blog post -->" | safeHTML }}
             <article class="col-12 col-md-4">
-                <div class="post-item">
-                    <div class="post-thumb">
-                        <img class="img-fluid shadow rounded" src="{{ .Params.image | absURL }}" alt="Generic placeholder image">
+                <a href="{{ .Permalink }}" class="post-card">
+                    <div class="post-card-image">
+                        <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" loading="lazy">
                     </div>
-                    <div class="post-title">
-                        <h3 class="mt-0">
-                            <a href="{{ .Permalink }}">{{ .Title }}</a>
-                        </h3>
+                    <div class="post-card-content">
+                        <h3 class="post-card-title">{{ .Title }}</h3>
+                        <div class="post-card-meta">
+                            <span class="meta-author">{{ .Params.author }}</span>
+                            <span class="meta-separator">·</span>
+                            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format .Site.Params.dateFormat }}</time>
+                            <span class="meta-separator">·</span>
+                            <span class="meta-reading-time">{{ .ReadingTime }} min read</span>
+                        </div>
+                        <p class="post-card-excerpt">{{ .Summary }}</p>
+                        <span class="post-card-link">Read more →</span>
                     </div>
-                    <div class="post-meta">
-                        <ul class="list-inline">
-                            <li class="list-inline-item">
-                                <span>By</span>
-                                {{ .Params.author }}
-                            </li>
-                            <li class="list-inline-item">
-                                <span>at</span>
-                                <span>{{ .Date.Format .Site.Params.dateFormat }}</span>
-                            </li>
-                            <li class="list-inline-item">
-                                <span>·</span>
-                                <span>{{ .ReadingTime }} min read</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="post-content">
-                        <p>{{ .Summary }}</p>
-                    </div>
-                    <a class="btn btn-main" href="{{ .Permalink }}">Read more</a>
-                </div>
+                </a>
             </article>
             {{ "<!-- /single blog post -->" | safeHTML }}
             {{ end }}
-            <div class="col-12 text-center">
+            <div class="col-12 text-center pagination-wrapper">
                 {{ template "_internal/pagination.html" . }}
             </div>
         </div>

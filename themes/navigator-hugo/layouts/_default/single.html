@@ -1,71 +1,76 @@
 {{ define "main" }}
 
-
-
 {{ "<!-- React & JSX -->" | safeHTML }}
 <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
-<section class="blog-single section">
+
+<article class="blog-post-single section">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-lg-10 col-xl-8 mx-auto">
 
                 <div class="circle-ads bgmill">
-                    <a href="https://www.thewindmillblackthornhill.co.uk?utm_source=davedev&utm_medium=web&utm_campaign=dave_dev&utm_content=banner_1"><img src="/images/advert_windmill_oxford.jpg" class="w-100" alt="CircleAds"></a>
+                    <a href="https://www.thewindmillblackthornhill.co.uk?utm_source=davedev&utm_medium=web&utm_campaign=dave_dev&utm_content=banner_1">
+                        <img src="/images/advert_windmill_oxford.jpg" class="w-100" alt="CircleAds">
+                    </a>
                 </div>
 
-                <br/>
-                <!--
-                <img src="{{ with .Params.image }}{{ . | absURL }}{{ end }}" class="w-100 mb-3" alt="Post-Image">
-                -->
-                
-                <h2>{{ .Title }}</h2>
-                <div class="post-meta">
-                    <ul class="list-inline">
-                        <li class="list-inline-item">
-                            <span>By</span>
-                            <font color=#ff813f>{{ .Params.author }}</font>
-                        </li>
-                        <li class="list-inline-item">
-                            <span>at</span>
-                            <span><font color=#ff813f>{{ .Date.Format .Site.Params.dateFormat }}</font></span>
-                        </li>
-                        <li class="list-inline-item">
-                            <span>·</span>
-                            <span><font color=#ff813f>{{ .ReadingTime }} min read</font></span>
-                        </li>
-                    </ul>
+                <header class="post-header">
+                    <h1 class="post-title">{{ .Title }}</h1>
+                    <div class="post-meta-single">
+                        <span class="meta-item">
+                            <span class="meta-label">By</span>
+                            <span class="meta-value">{{ .Params.author }}</span>
+                        </span>
+                        <span class="meta-separator">·</span>
+                        <time class="meta-item" datetime="{{ .Date.Format "2006-01-02" }}">
+                            {{ .Date.Format .Site.Params.dateFormat }}
+                        </time>
+                        <span class="meta-separator">·</span>
+                        <span class="meta-item">{{ .ReadingTime }} min read</span>
+                    </div>
+                </header>
+
+                <div class="post-content-wrapper">
+                    {{ .Content }}
                 </div>
-                
-                {{ .Content }}
 
+                <footer class="post-footer">
+                    <div class="post-signoff">
+                        <p class="signoff-text"><strong>// {{ .Params.signoff }}</strong></p>
+                        <a href="https://buymeacoffee.com/davedotdev" class="coffee-link">
+                            Say thanks and buy me a coffee! ☕
+                        </a>
+                    </div>
 
+                    <div class="post-taxonomy">
+                        {{ with .Params.tags }}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Tags:</span>
+                            <div class="taxonomy-list">
+                                {{ range . }}
+                                <span class="taxonomy-tag">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
 
-        <div class="pt-20">
-            <div class="blogheader">                                
-                <div class="pt-20"></div>
-                <p><i><b>// {{ .Params.signoff }}</b></i></p>
-                <span class="border"></span>
-                <p><a href="https://buymeacoffee.com/davedotdev">Say thanks and buy me a coffee!</a></p>                        
-            </div>
-        </div>                
-
-
-    
-        <ul class="list-inline">
-            <li>
-                <span>Tags:</span>
-                <span><font color=#ff813f>{{ with .Params.tags }}{{ delimit . ", " }}{{end}}</font></span>
-            </li>
-            <li>
-                <span>Categories:</span>
-                <span><font color=#ff813f>{{ with .Params.categories }}{{ delimit . ", " }}{{end}}</font></span>
-            </li>
-        </ul>
+                        {{ with .Params.categories }}
+                        <div class="taxonomy-item">
+                            <span class="taxonomy-label">Categories:</span>
+                            <div class="taxonomy-list">
+                                {{ range . }}
+                                <span class="taxonomy-tag">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+                    </div>
+                </footer>
 
             </div>
         </div>
     </div>
-</section>
+</article>
 
 {{ end }}

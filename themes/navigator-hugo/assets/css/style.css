@@ -1792,8 +1792,116 @@ a:focus, a:hover {
 }
 
 /*=================================================================
-  Latest Posts
+  Latest Posts - Modern Card Design
 ==================================================================*/
+.post-card {
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  height: 100%;
+  margin-bottom: 2rem;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+}
+
+.post-card-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.post-card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.post-card:hover .post-card-image img {
+  transform: scale(1.05);
+}
+
+.post-card-content {
+  padding: 1.5rem;
+}
+
+.post-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.post-card:hover .post-card-title {
+  color: #ff813f;
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.post-card-meta .meta-author {
+  font-weight: 500;
+  color: #444;
+}
+
+.post-card-meta .meta-separator {
+  color: #ccc;
+}
+
+.post-card-meta time {
+  color: #666;
+}
+
+.post-card-meta .meta-reading-time {
+  color: #888;
+}
+
+.post-card-excerpt {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0 0 1rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ff813f;
+  transition: transform 0.2s ease;
+}
+
+.post-card:hover .post-card-link {
+  transform: translateX(4px);
+}
+
+.pagination-wrapper {
+  margin-top: 2rem;
+}
+
+/* Legacy support for old post-item classes */
 .post-item {
   background: #fff;
   margin-bottom: 40px;
@@ -1842,8 +1950,279 @@ a:focus, a:hover {
 }
 
 /*=================================================================
-  Single Blog Page
+  Single Blog Page - Modern Typography Design
 ==================================================================*/
+.blog-post-single {
+  background: #fafafa;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .blog-post-single {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.post-header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.post-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 2rem;
+  }
+}
+
+.post-meta-single {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: #666;
+}
+
+.post-meta-single .meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-meta-single .meta-label {
+  color: #888;
+}
+
+.post-meta-single .meta-value {
+  color: #ff813f;
+  font-weight: 500;
+}
+
+.post-meta-single time {
+  color: #ff813f;
+  font-weight: 500;
+}
+
+.post-meta-single .meta-separator {
+  color: #ccc;
+  user-select: none;
+}
+
+.post-content-wrapper {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  margin-bottom: 3rem;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .post-content-wrapper {
+    padding: 1.5rem;
+  }
+}
+
+/* Add visual separator at top of content */
+.post-content-wrapper::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #ff813f 0%, #ff6020 100%);
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+/* First paragraph styling for better intro */
+.post-content-wrapper > p:first-child,
+.post-content-wrapper > p:first-of-type {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.post-content-wrapper h1,
+.post-content-wrapper h2,
+.post-content-wrapper h3,
+.post-content-wrapper h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #1a1a1a;
+}
+
+/* First heading has less top margin */
+.post-content-wrapper h1:first-child,
+.post-content-wrapper h2:first-child,
+.post-content-wrapper h3:first-child,
+.post-content-wrapper h4:first-child {
+  margin-top: 0;
+}
+
+.post-content-wrapper h1 {
+  font-size: 2rem;
+}
+
+.post-content-wrapper h2 {
+  font-size: 1.75rem;
+}
+
+.post-content-wrapper h3 {
+  font-size: 1.5rem;
+}
+
+.post-content-wrapper p {
+  margin-bottom: 1.5rem;
+}
+
+.post-content-wrapper a {
+  color: #ff813f;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 129, 63, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+.post-content-wrapper a:hover {
+  border-bottom-color: #ff813f;
+}
+
+.post-content-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 2rem 0;
+}
+
+.post-content-wrapper code {
+  background: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #e83e8c;
+}
+
+.post-content-wrapper pre {
+  background: #282c34;
+  color: #abb2bf;
+  padding: 1.5rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.post-content-wrapper pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: 0.875rem;
+}
+
+.post-content-wrapper blockquote {
+  border-left: 4px solid #ff813f;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #555;
+}
+
+.post-footer {
+  margin-top: 3rem;
+}
+
+.post-signoff {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.signoff-text {
+  font-size: 1.125rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.coffee-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #ff813f 0%, #ff6020 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 129, 63, 0.3);
+}
+
+.coffee-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 129, 63, 0.4);
+  color: #fff;
+  text-decoration: none;
+}
+
+.post-taxonomy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.taxonomy-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.taxonomy-label {
+  font-weight: 600;
+  color: #555;
+  min-width: 100px;
+}
+
+.taxonomy-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.taxonomy-tag {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  background: #fff;
+  color: #ff813f;
+  border: 1px solid #ff813f;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.taxonomy-tag:hover {
+  background: #ff813f;
+  color: #fff;
+}
+
+/* Legacy support */
 #blog-banner {
   padding-bottom: 100px;
   padding-top: 150px;
