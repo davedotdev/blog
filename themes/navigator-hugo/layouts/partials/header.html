@@ -12,7 +12,11 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-md">
-                    <a class="navbar-brand" href="{{ .Site.BaseURL }}"><h2><font color=#ffffff>dave</font><font color=#ff813f>.</font>dev</h2>
+                    <a class="navbar-brand" href="{{ .Site.BaseURL }}">
+                        <div class="brand-container">
+                            <img src="{{ "images/dave_head_512.png" | absURL }}" alt="Dave" class="brand-head">
+                            <h2><font color=#ffffff>dave</font><font color=#ff813f>.</font>dev</h2>
+                        </div>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">

@@ -788,6 +788,9 @@ a:focus, a:hover {
 .navigation {
   transition: .3s all;
   background: #1f2532;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navigation .navbar-nav > li.active a {
@@ -796,9 +799,9 @@ a:focus, a:hover {
 
 .navigation .navbar-nav > li > a {
   color: #f0326b;
-  font-size: 20px;
-  line-height: 26px;
-  padding: 20px 15px !important;
+  font-size: 18px;
+  line-height: 22px;
+  padding: 12px 15px !important;
   transition: .2s ease-in-out 0s;
 }
 
@@ -872,11 +875,42 @@ a:focus, a:hover {
 
 .navbar-brand {
   height: auto;
-  padding: 8px 0;
+  padding: 0;
+  position: relative;
 }
 
 .navbar-brand h1 {
   margin: 0;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.brand-head {
+  width: 80px;
+  height: 80px;
+  background: #1f2532;
+  border-radius: 50%;
+  padding: 8px;
+  position: relative;
+  z-index: 100;
+  margin-left: 15px;
+  margin-bottom: -20px;
+  transition: all 0.3s ease;
+}
+
+.brand-head:hover {
+  transform: scale(1.05);
+}
+
+.brand-container h2 {
+  margin: 0;
+  line-height: 1;
+  padding-top: 5px;
 }
 
 .hero-area {
@@ -2490,19 +2524,46 @@ a:focus, a:hover {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #fff;
+  background: #1f2532;
   color: #fff;
   transition: all 0.2s ease-out 0s;
-  padding: 15px 0;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #dedede;
-  z-index: 10;
+  padding: 8px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid #2a2f3f;
+  z-index: 1000;
 }
 
 .top-bar.animated-header {
-  padding: 20px 0;
-  background: #fff;
-  box-shadow: none;
+  padding: 8px 0;
+  background: #1f2532;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Sticky header for blog posts */
+.navigation.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.blog-post-single .navigation {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Ensure content doesn't hide behind sticky header */
+body {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 0;
+  }
 }
 
 .attribution {
