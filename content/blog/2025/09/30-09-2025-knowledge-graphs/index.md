@@ -1,6 +1,6 @@
 ---
 title: "Knowledge graphs for networking"
-date: 2025-10-30T10:00:00+00:00
+date: 2025-12-31T10:00:00+00:00
 image: images/blog/graphops_header.png
 og_image: images/og-default.png
 author: David Gee
@@ -20,7 +20,13 @@ tags:
 - networking
 ---
 
-Knowledge graphs offer a multi-dimensional set of projected views and methods of managing cross-team, meaningful data for any business.<!--more-->The possibilities are near limitless for the management of information and infrastructure. Knowledge graphs cover configuration state, desired state and operational state, which goes way beyond the current tool-based approach. I want to suggest, the whole premise of knowledge graphs is an entire reshape of the current automation landscape, but there is a question of real world value, over nerd-value, which by the way, is off the charts! I'm pleased that people like Damien Garros are moving this field along with the [OpsMill InfraHub](https://opsmill.com/how-infrahub-compares/) product and I about fell off my comfy office chair when reading about the [Hashicorp InfraGraph announcement](https://newsroom.ibm.com/2025-09-25-hashicorp-previews-the-future-of-agentic-infrastructure-automation-with-project-infragraph). Finally, a sense that timing is right for this much-needed and extremely interesting next era of automation. If you're reading this, I must mention that I'm talking about this at a high level and if you were attempting to build one, some of the points in this article will be moot for those using products, but good info nevertheless. Productised knowledge graphs naturally will demand less of the operator than creating one from the ground up, but whatever track you follow, everything that follows suggests a non-trivial amount of work, time and knowledge to do it justice. 
+THIS IS DRAFT AND A MESS.
+
+For a long time, I've believed knowledge graphs are a key part of the future for network automation. Computer science is lacking somewhat from the current practise of network automation, and some of that is simply down to adoption, awareness and exposure time driving this area of the industry to evolve. Whilst we can argue
+
+
+
+Knowledge graphs offer a multi-dimensional set of capabilities covering both configuration and operational state for business IT infrastructure. They are game changing in nature, but introduce computer scienece grade complexities when not productised.<!--more-->They go way beyond the current tool-based approach and the possibilities are nearly limitless. I want to suggest, the whole premise of knowledge graphs is an entire reshape of the current automation landscape, but there is a question of real world value vs nerd-value (which is off the charts!). I'm pleased that people like Damien Garros are moving this field along with the [OpsMill InfraHub](https://opsmill.com/how-infrahub-compares/) product and I about fell off my comfy office chair when reading about the [Hashicorp InfraGraph announcement](https://newsroom.ibm.com/2025-09-25-hashicorp-previews-the-future-of-agentic-infrastructure-automation-with-project-infragraph). Finally, a sense that timing is right for this much-needed and extremely interesting next era of automation. Products, specifically with network capabilities are in their infancy, and whatever track you follow, everything that follows suggests a non-trivial amount of work, time and knowledge to build and integrate a knowledge graph.
 
 Before you go out looking for a knowledge graph, it's worth stating that you're probably not going to find a fully complete off-the-shelf system just yet. Knowledge graphs as of 2025 will be driven by a skilled developer with a computer science background in partnership with a network engineer. This is where I believe the partnership between both sides delivers actual fruit. Business-wide, the effects should be felt deeply and widely.
 
