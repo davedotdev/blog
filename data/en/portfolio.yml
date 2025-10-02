@@ -49,3 +49,18 @@ item   :
     image : images/portfolio/portfolio-7.jpg
     description: "An occasional presener on the Modulate Demodulate Podcast (MODEM)"
     category  : education, automation
+
+  - title : Dumperoo.com
+    image : images/portfolio/portfolio-8.jpg
+    description: "Free tool for capturing, inspecting, and monitoring webhooks and HTTP requests"
+    category  : development
+
+  - title : ViralHeadline.net
+    image : images/portfolio/portfolio-9.jpg
+    description: "Create catchy, attention-grabbing headlines for social media platforms"
+    category  : development
+
+  - title : Curvium.com
+    image : images/portfolio/portfolio-10.jpg
+    description: "Expert network consultancy specializing in Arista hardware and software solutions"
+    category  : development

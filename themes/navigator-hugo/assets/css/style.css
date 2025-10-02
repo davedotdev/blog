@@ -797,12 +797,24 @@ a:focus, a:hover {
   color: #fff;
 }
 
+.navigation .navbar-nav {
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.navigation .navbar-nav > li {
+  margin-bottom: 0;
+}
+
 .navigation .navbar-nav > li > a {
-  color: #f0326b;
-  font-size: 18px;
-  line-height: 22px;
-  padding: 12px 15px !important;
-  transition: .2s ease-in-out 0s;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 5px 18px !important;
+  padding-top: 15px !important;
+  transition: all .3s ease;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 @media (max-width: 480px) {
@@ -819,7 +831,7 @@ a:focus, a:hover {
 
 .navigation .navbar-nav > li > a:hover, .navigation .navbar-nav > li > a:active, .navigation .navbar-nav > li > a:focus {
   background: none;
-  color: #707d8f;
+  color: #ff813f;
 }
 
 .navigation .navbar-toggler {
@@ -873,10 +885,18 @@ a:focus, a:hover {
   opacity: 1;
 }
 
+.navbar {
+  align-items: center !important;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .navbar-brand {
   height: auto;
   padding: 0;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-brand h1 {
@@ -891,15 +911,16 @@ a:focus, a:hover {
 }
 
 .brand-head {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   background: #1f2532;
-  border-radius: 50%;
-  padding: 8px;
+  border-radius: 0 0 50% 50%;
+  padding: 5px;
   position: relative;
   z-index: 100;
   margin-left: 15px;
-  margin-bottom: -20px;
+  margin-top: -20px;
+  margin-bottom: -35px;
   transition: all 0.3s ease;
 }
 
@@ -910,7 +931,7 @@ a:focus, a:hover {
 .brand-container h2 {
   margin: 0;
   line-height: 1;
-  padding-top: 5px;
+  padding-top: 0px;
 }
 
 .hero-area {
@@ -2429,52 +2450,122 @@ a:focus, a:hover {
 }
 
 /*=================================================================
-  Footer section
+  Footer section - Modern Design
 ==================================================================*/
 .top-footer {
-  background-color: #222222;
-  border-top: 1px solid #404040;
-  padding: 20px 0 20px;
+  background: linear-gradient(135deg, #1a1d23 0%, #1f2532 100%);
+  border-top: 2px solid #ff813f;
+  padding: 60px 0 40px;
+}
+
+.top-footer .row > div {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .top-footer {
+    padding: 40px 0 20px;
+  }
+
+  .top-footer .row > div {
+    margin-bottom: 35px;
+  }
+
+  .top-footer .row > div:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .top-footer h3 {
-  font-size: 16px;
-  line-height: 1.5;
-  color: #fff;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.top-footer h3:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40px;
+  height: 3px;
+  background: #ff813f;
+  border-radius: 2px;
 }
 
 .top-footer p {
-  font-size: 13px;
-  line-height: 30px;
-  color: #bdbdbd;
-  font-weight: 300;
-  padding-right: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #b8b8b8;
+  font-weight: 400;
+}
+
+.top-footer a {
+  color: #b8b8b8;
+  transition: all 0.3s ease;
+}
+
+.top-footer a:hover {
+  color: #ff813f;
+  text-decoration: none;
 }
 
 .top-footer li a {
-  font-size: 13px;
-  line-height: 30px;
-  color: #bdbdbd;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  transition: color .3s;
+  font-size: 14px;
+  line-height: 2.2;
+  color: #b8b8b8;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
   font-family: "Titillium Web", sans-serif;
-  display: block;
+  display: inline-block;
+  position: relative;
 }
 
 .top-footer li a:hover {
-  color: #f0326b;
+  color: #ff813f;
+  padding-left: 5px;
+}
+
+.social-icon ul {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-icon li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon li a:hover {
+  background: #ff813f;
+  border-color: #ff813f;
+  transform: translateY(-3px);
+  padding-left: 0;
+}
+
+.social-icon li a i {
+  font-size: 18px;
+  color: #ffffff;
 }
 
 .footer-bottom {
   text-align: center;
-  background-color: #1b1b1b;
-  border-top: 1px solid #2c2c2c;
+  background-color: #151820;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 30px 0;
 }
 
@@ -2504,7 +2595,7 @@ a:focus, a:hover {
 }
 
 .footer-bottom a {
-  color: #f0326b;
+  color: #ff813f;
 }
 
 .subscribe-form .form-control {

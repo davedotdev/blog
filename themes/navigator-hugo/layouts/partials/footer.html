@@ -3,11 +3,12 @@
     <div class="top-footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="col-sm-12 col-md-4 col-lg-4">
 		    <h3>{{ .Site.Params.footerAboutTitle }}</h3>
+		    <p>Software engineering insights, architecture patterns, and practical development wisdom.</p>
 		    {{ with .Site.Params.footerDescription }}<a href="{{ . }}">me@dave.dev</a>{{ end }}
 		</div>
-                <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="col-sm-12 col-md-4 col-lg-4">
                     <h3>{{ .Site.Params.footerServiceTitle }}</h3>
                     <div class="social-icon">
                     <ul class="list-inline social-icon">
@@ -78,13 +79,12 @@
                     </ul>
                     </div>
                 </div>
-                <div class="col-sm-3 col-md-3 col-lg-3">
-                    <h3>Treat the Author</h3>
-		        <a href="https://www.buymeacoffee.com/davedotdev"><img border="0" alt="Buy me a coffee!" src="/images/bmac.png"></a>
-                </div>
-                <div class="col-sm-3 col-md-3 col-lg-3">
-                    <h3>Copyright</h3>
-                    <p><font color=#ff813f>{{ .Site.Params.copyright }}</font></p>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <h3>Support</h3>
+                    <p style="margin-bottom: 16px;">Enjoying the content? Consider supporting my work!</p>
+		        <a href="https://www.buymeacoffee.com/davedotdev" style="display: inline-block;">
+		            <img border="0" alt="Buy me a coffee!" src="/images/bmac.png" style="height: 40px; border-radius: 8px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+		        </a>
                 </div>
 
                 <!-- Script imports from front matter for React app modules -->
@@ -97,6 +97,17 @@
                 {{ end }}
                 <!-- Script imports like React end-->
 
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p style="margin: 0; color: #888;">
+                        <font color=#ff813f>{{ .Site.Params.copyright }}</font>
+                    </p>
+                </div>
             </div>
         </div>
     </div>

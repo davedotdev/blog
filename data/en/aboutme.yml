@@ -3,10 +3,10 @@ topTitle: Nice to meet you
 title   : Nice to meet you
 
 filtermenu :
-  - name      : About Me
+  - name      : About
     category  : aboutme
 
 item   :
-  - title : About me
+  - title : About
     category  : aboutmne
     description: "About dave.dev"
