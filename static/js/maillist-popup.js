@@ -4,8 +4,9 @@
     // Configuration
     const CACHE_KEY = 'maillist_popup_dismissed';
     const CACHE_DURATION_DAYS = 30;
-    const RECAPTCHA_SITE_KEY = 'YOUR_RECAPTCHA_SITE_KEY'; // Replace with your actual site key
+    const RECAPTCHA_SITE_KEY = '6LcC5tsrAAAAANk-kEjnyWrPBoJzs11q_xvRfQSy'; // Replace with your actual site key
     const API_ENDPOINT = 'https://formail.metrics.gmbh/maillist?domain=dave.dev&action=subscribe';
+    // const API_ENDPOINT = 'http://localhost:8081/maillist?domain=dave.dev&action=subscribe';
 
     // Check if popup should be shown
     function shouldShowPopup() {
@@ -119,21 +120,26 @@
 
     // Render reCAPTCHA challenge
     function renderRecaptcha() {
-        if (typeof grecaptcha === 'undefined' || !grecaptcha.enterprise) {
-            console.error('reCAPTCHA not loaded');
+        const container = document.getElementById('recaptcha-container');
+        if (!container) {
             return;
         }
 
-        const container = document.getElementById('recaptcha-container');
-        if (!container) return;
+        if (typeof grecaptcha === 'undefined' || !grecaptcha.enterprise) {
+            setTimeout(renderRecaptcha, 500);
+            return;
+        }
 
-        grecaptcha.enterprise.ready(function() {
-            recaptchaWidgetId = grecaptcha.enterprise.render('recaptcha-container', {
-                'sitekey': RECAPTCHA_SITE_KEY,
-                'action': 'subscribe',
-                'theme': 'light'
+        try {
+            grecaptcha.enterprise.ready(function() {
+                recaptchaWidgetId = grecaptcha.enterprise.render('recaptcha-container', {
+                    'sitekey': RECAPTCHA_SITE_KEY,
+                    'theme': 'light'
+                });
             });
-        });
+        } catch (error) {
+            // reCAPTCHA render failed
+        }
     }
 
     // Get reCAPTCHA response
@@ -311,26 +317,28 @@
     }
 
     // Load reCAPTCHA script
-    function loadRecaptcha() {
-        if (typeof grecaptcha !== 'undefined') {
+    function loadRecaptcha(callback) {
+        if (typeof grecaptcha !== 'undefined' && grecaptcha.enterprise) {
+            if (callback) callback();
             return;
         }
 
         const script = document.createElement('script');
-        script.src = `https://www.google.com/recaptcha/enterprise.js?render=${RECAPTCHA_SITE_KEY}`;
+        script.src = 'https://www.google.com/recaptcha/enterprise.js';
         script.async = true;
         script.defer = true;
+        script.onload = function() {
+            if (callback) callback();
+        };
         document.head.appendChild(script);
     }
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
-            loadRecaptcha();
-            initPopup();
+            loadRecaptcha(initPopup);
         });
     } else {
-        loadRecaptcha();
-        initPopup();
+        loadRecaptcha(initPopup);
     }
 })();
