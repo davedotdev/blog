@@ -811,7 +811,7 @@ a:focus, a:hover {
   font-size: 16px;
   line-height: 20px;
   padding: 5px 18px !important;
-  padding-top: 15px !important;
+  padding-top: 10px !important;
   transition: all .3s ease;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -887,8 +887,8 @@ a:focus, a:hover {
 
 .navbar {
   align-items: center !important;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .navbar-brand {
@@ -906,21 +906,21 @@ a:focus, a:hover {
 .brand-container {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
   position: relative;
 }
 
 .brand-head {
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
   background: #1f2532;
   border-radius: 0 0 50% 50%;
   padding: 5px;
   position: relative;
   z-index: 100;
-  margin-left: 15px;
-  margin-top: -20px;
-  margin-bottom: -35px;
+  margin-left: 10px;
+  margin-top: -23px;
+  margin-bottom: -28px;
   transition: all 0.3s ease;
 }
 
