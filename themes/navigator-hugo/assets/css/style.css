@@ -808,10 +808,10 @@ a:focus, a:hover {
 
 .navigation .navbar-nav > li > a {
   color: #ffffff;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 17px;
+  line-height: 21px;
   padding: 5px 18px !important;
-  padding-top: 10px !important;
+  padding-top: 16px !important;
   transition: all .3s ease;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -913,19 +913,30 @@ a:focus, a:hover {
 .brand-head {
   width: 65px;
   height: 65px;
-  background: #1f2532;
+  background: linear-gradient(to bottom, transparent 0%, transparent 50%, #1f2532 50%, #1f2532 100%);
   border-radius: 0 0 50% 50%;
   padding: 5px;
+  padding-top: 0;
   position: relative;
   z-index: 100;
   margin-left: 10px;
-  margin-top: -23px;
-  margin-bottom: -28px;
+  margin-top: -20px;
+  margin-bottom: -31px;
+  overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .brand-head:hover {
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .brand-head {
+    width: 50px;
+    height: 50px;
+    margin-top: -13px;
+    margin-bottom: -25px;
+  }
 }
 
 .brand-container h2 {
